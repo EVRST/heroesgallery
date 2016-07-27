@@ -44,6 +44,7 @@ ul.nav a:hover {
 
 .home-top {
   background-image: image-url('home_top_bg.png');
+  background-size:100%;
   color: white;
   padding-bottom: 20px;
 }
@@ -63,8 +64,13 @@ ul.nav a:hover {
 	text-align: justify;
 }
 
+.hg_color {
+  color: #e8b053;
+}
+
 .concept {
   background-image: image-url('concept_bg.png');
+  background-size:100%;
   color: white;
   padding-bottom: 20px;
   background-color: #31313b; 
@@ -77,6 +83,7 @@ ul.nav a:hover {
 
 .finitions {
   background-image: image-url('finitions_bg.png');
+  background-size:100%;
   color: white;
   padding-bottom: 20px;
   background-color: #31313b;

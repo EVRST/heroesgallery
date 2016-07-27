@@ -5,6 +5,9 @@ class VisitorsController < ApplicationController
 	def concept
 	end
 
+	def finitions
+	end
+
 	def contact
 	end
 end

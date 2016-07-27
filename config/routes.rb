@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 
   get 'your_visuals' => 'visuals#your_visuals'
   get 'concept' => 'visitors#concept'
+  get 'finitions' => 'visitors#finitions'
   get 'contact' => 'visitors#contact'
 end

@@ -63,4 +63,24 @@ ul.nav a:hover {
 	text-align: justify;
 }
 
+.concept {
+  background-image: image-url('concept_bg.png');
+  color: white;
+  padding-bottom: 20px;
+  background-color: #31313b; 
+}
+
+.concept-title {
+  margin-top: 90px;
+  margin-bottom: 90px;
+}
+
+.finitions {
+  background-image: image-url('finitions_bg.png');
+  color: white;
+  padding-bottom: 20px;
+  background-color: #31313b;
+  min-height: 100vh;
+}
+
 

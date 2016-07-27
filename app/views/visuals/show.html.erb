@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @visual.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @visual.price %>
+</p>
+
+<p>
+  <strong>Artist:</strong>
+  <%= @visual.artist_id %>
+</p>
+
+<p>
+  <strong>Is drawing:</strong>
+  <%= @visual.is_drawing %>
+</p>
+
+<p>
+  <strong>Is picture:</strong>
+  <%= @visual.is_picture %>
+</p>
+
+<%= link_to 'Edit', edit_visual_path(@visual) %> |
+<%= link_to 'Back', visuals_path %>

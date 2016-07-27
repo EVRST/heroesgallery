@@ -1,0 +1,15 @@
+<%= simple_form_for(@visual) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :price %>
+    <%= f.input :artist_id %>
+    <%= f.input :is_drawing %>
+    <%= f.input :is_picture %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

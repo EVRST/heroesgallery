@@ -1,0 +1,16 @@
+<%= simple_form_for(@article) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title_fr %>
+    <%= f.input :content_fr %>
+    <%= f.input :title_en %>
+    <%= f.input :content_en %>
+    <%= f.input :title_nl %>
+    <%= f.input :content_nl %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+
+.navbar-brand {
+  position: absolute;
+  }
+
+ .navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+.home-top {
+	height: 100vh;
+}
+
+.home-middle {
+	text-align: justify;
+}
+
+

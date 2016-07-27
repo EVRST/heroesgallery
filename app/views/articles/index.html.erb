@@ -1,22 +1,93 @@
-<p id="notice"><%= notice %></p>
+<div class="container home-top">
+  <div class="row">
+    <div class='col-md-offset-2 col-md-8 text-center'>
+    <h2>News</h2>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-md-offset-2 col-md-8'>
+      <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+        <!-- Bottom Carousel Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
+          <li data-target="#quote-carousel" data-slide-to="1"></li>
+          <li data-target="#quote-carousel" data-slide-to="2"></li>
+        </ol>
+        
+        <!-- Carousel Slides / Quotes -->
+        <div class="carousel-inner">
+        
+          <!-- Quote 1 -->
+          <div class="item active">
+            
+              <div class="row">
+                <div class="col-sm-6 text-center">
+                  image
+                  <!--<img class="img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg" style="width: 100px;height:100px;">-->
+                </div>
+                <div class="col-sm-6">
+                  <h4>News Title</h4>
+                  <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. </p>
+                </div>
+              </div>
+            
+          </div>
+          <!-- Quote 2 -->
+          <div class="item">
+            
+              <div class="row">
+                <div class="col-sm-3 text-center">
+                  image
+                </div>
+                <div class="col-sm-9">
+                  <h4>News Title</h4>
+                  <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. </p>
+                </div>
+              </div>
+            
+          </div>
+          <!-- Quote 3 -->
+          <div class="item">
+            
+              <div class="row">
+                <div class="col-sm-3 text-center">
+                  image
+                </div>
+                <div class="col-sm-9">
+                  <h4>News Title</h4>
+                  <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. </p>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+        
+        <!-- Carousel Buttons Next/Prev -->
+        <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
+        <a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
+      </div>                          
+    </div>
+  </div>
+</div>
 
-<h1>Listing Articles</h1>
+<script>
+$(document).ready(function() {
+  //Set the carousel options
+  $('#quote-carousel').carousel({
+    pause: true,
+    interval: 4000,
+  });
+});
+</script>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title fr</th>
-      <th>Content fr</th>
-      <th>Title en</th>
-      <th>Content en</th>
-      <th>Title nl</th>
-      <th>Content nl</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<!--<p id="notice"><%= notice %></p>
 
-  <tbody>
+<h1 class="text-center">News</h1>
+
+
     <% @articles.each do |article| %>
+    <div class="row">
+    </div>
       <tr>
         <td><%= article.title_fr %></td>
         <td><%= article.content_fr %></td>
@@ -28,10 +99,8 @@
         <td><%= link_to 'Edit', edit_article_path(article) %></td>
         <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    <% end %>-->
 
-<br>
 
-<%= link_to 'New Article', new_article_path %>
+
+

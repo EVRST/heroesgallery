@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.news {
+  background-image: image-url('news_bg.png');
+  color: white;
+  padding-top: 50px;
+  min-height: 100vh;
+  margin-bottom: -90px;
+}
+
 .white {
   background-color: white;
 }

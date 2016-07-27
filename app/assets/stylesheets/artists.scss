@@ -1,3 +1,10 @@
 // Place all the styles related to the Artists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.artists {
+  background-image: image-url('artists_bg.png');
+  color: white;
+  padding-top: 50px;
+  min-height: 100vh;
+}

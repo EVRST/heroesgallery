@@ -14,9 +14,15 @@
  *= require_self
  */
 
+
+
 .navbar-brand {
   position: absolute;
   }
+
+.container-content {
+  padding-top: 51px;
+}
 
  .navbar .navbar-nav {
   display: inline-block;
@@ -32,8 +38,25 @@
   text-align: center;
 }
 
+ul.nav a:hover {
+ color: #e8b053 !important; 
+}
+
 .home-top {
-	height: 100vh;
+  background-image: image-url('home_top_bg.png');
+  color: white;
+  padding-bottom: 20px;
+}
+
+@media (min-width: 480px) {
+  .home_top_logo {
+    margin-left: 20px;
+  }
+
+  .home_top_photos {
+    margin-top: -150px;
+    margin-left: -40px;
+  }
 }
 
 .home-middle {

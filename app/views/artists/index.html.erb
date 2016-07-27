@@ -1,5 +1,7 @@
+<div class="row artists">
 <p id="notice"><%= notice %></p>
-<div class="container">
+
+<div class="container container-content">
 
     <% @artists.each do |artist| %>
       <% if cycle('odd', 'even') == 'odd' %>
@@ -33,4 +35,5 @@
         <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
         <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %> -->
     <% end %>
+</div>
 </div>

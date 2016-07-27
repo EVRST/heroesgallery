@@ -1,3 +1,6 @@
+$navbar-inverse-bg: transparent;
+$navbar-inverse-link-color: white;
+
 // import the CSS framework
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -37,9 +40,9 @@ main {
   @extend .container;
   background-color: #eee;
   font-family: 'Lato';
-  padding-bottom: 80px;
   width: 100%;
-  margin-top: 51px; // accommodate the navbar
+  margin-top: 0px; // accommodate the navbar
+
   }
 section {
   @extend .row;

@@ -2,7 +2,21 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container container-content">
+  <div class="col-md-4">
+  Sélectionnez par
+</div>
+<div class="col-md-8">
+  <div class="row">
+    <% @visuals.each do |visual| %>
+      <div class="col-md-4">
+        <%= visual.artist.full_name %>
+        <%= link_to image_tag("http://placehold.it/270x270"), visual %>
+      </div>
+    <% end %>
+  </div>
 
+</div>
+<!--
 <h1>Listing Visuals</h1>
 
 <table>
@@ -35,6 +49,6 @@
 
 <br>
 
-<%= link_to 'New Visual', new_visual_path %>
+<%= link_to 'New Visual', new_visual_path %>-->
 </div>
 </div>

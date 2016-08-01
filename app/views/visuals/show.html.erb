@@ -1,24 +1,98 @@
-<p id="notice"><%= notice %></p>
+<div class="row artists">
 
-<p>
-  <strong>Name:</strong>
-  <%= @visual.name %>
-</p>
+  <div class="container">
 
-<p>
-  <strong>Price:</strong>
-  <%= @visual.price %>
-</p>
+    <div class="row start-page">
+      <div class="col-md-3">
+        <div class="panel panel-default visual-cart">
+          <div class="panel-body text-center">
+            <h3>Format</h3>
+            Carré | Rectangle
 
-<p>
-  <strong>Artist:</strong>
-  <%= @visual.artist_id %>
-</p>
+            <h3>Dimensions</h3>
 
-<p>
+              80 x 80 |                60 x 80
+              <br>100 x 100 |              100 x 130
+              <br>120 x 120 |              120 x 160
+
+            <h3>Support</h3>
+            Alu | Plexi
+
+            <hr>
+            <h4><%= @visual.price %> €</h4>
+              <%= link_to "Ajouter au panier", "", class: "btn btn-primary btn-block" %>
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+
+        <%= image_tag "http://placehold.it/976x600", class: "responsive-img" %>
+        <div class="row">
+          <div class="col-md-9">
+            <h3><%= @visual.name %></h3>
+            <h4><%= @visual.artist.full_name %></h4>
+
+          </div>
+          <div class='col-md-3 text-right'>
+            <br>
+            <p>à partir de <%= @visual.price %> €</p>
+          </div>
+        </div>
+        <p><%= @visual.presentation_fr %></p>
+      </div>
+    </div>
+
+    <div class="other-visuals">
+      <h1 class="text-center">Autres visuels de <%= @visual.artist.full_name %></h1>
+
+      <% @visual.artist.visuals.each do |visual| %>
+
+        <% if cycle('odd', 'even') == 'odd' %>
+          <div class="row">
+            <div class="col-md-6">
+              <br>
+              <%= image_tag "http://placehold.it/600x270" %>
+            </div>
+            <div class="col-md-6">
+              <h3><%= visual.name %></h3>
+              <p><%= visual.presentation_fr %></p>
+              <h3><%= link_to 'Discover', visual, class: 'btn btn-default btn-lg btn-transparent' %></h3>
+            </div>
+          </div>
+
+        <% else %>
+
+          <div class="row">
+            <div class="col-md-6">
+              <h3><%= visual.name %></h3>
+              <p><%= visual.presentation_fr %></p>
+              <h3><%= link_to 'Discover', visual, class: 'btn btn-default btn-lg pull-right btn-transparent' %></h3>
+            </div>
+            <div class="col-md-6">
+               <br>
+              <%= image_tag "http://placehold.it/600x270" %>
+              
+            </div>
+          </div>
+        <% end %>
+
+      <% end %>
+    </div>
+
+
+
+
+
+  </div>
+</div>
+
+
+
+<!--
   <strong>Is drawing:</strong>
   <%= @visual.is_drawing %>
-</p>
+
 
 <p>
   <strong>Is picture:</strong>
@@ -27,3 +101,4 @@
 
 <%= link_to 'Edit', edit_visual_path(@visual) %> |
 <%= link_to 'Back', visuals_path %>
+-->

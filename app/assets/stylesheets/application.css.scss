@@ -14,6 +14,13 @@
  *= require_self
  */
 
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+p, ol, ul, td {
+  font-family: 'Lato', sans-serif;
+}
 
 
 .navbar-brand {
@@ -88,6 +95,35 @@ ul.nav a:hover {
   padding-bottom: 20px;
   background-color: #31313b;
   min-height: 100vh;
+}
+
+.contact {
+  background-image: image-url('contact_bg.png');
+  background-color: #31313b;
+  background-size: 100% 100%;
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  min-height: 100vh;
+  font-family: 'Lato', sans-serif;
+}
+
+.contact a {
+  color: white;
+}
+
+.contact a:hover {
+  color: #e8b053;
+  text-decoration: transparent;
+  background-color: transparent;
+}
+
+.contact-title {
+  margin-bottom: 40px;
+}
+
+.contact-map {
+  padding-top: 20px;
 }
 
 

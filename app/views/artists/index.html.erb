@@ -6,7 +6,9 @@
   <h1 class="text-center">
     Nos <b>Artistes</b>
     <% if user_signed_in? %>
-    <br><small><%= link_to "Ajouter un artiste", new_artist_path, class: "pull-right btn btn-primary" %></small>
+    <br>
+    <small>
+      <%= link_to "Ajouter un artiste", new_artist_path, class: "pull-right btn btn-primary" %></small>
     <% end %>
   </h1>
   <br>
@@ -28,7 +30,7 @@
             <div class="inside">
               <h3><%= artist.first_name %> <%= artist.last_name %></h3>
               <p><%= artist.presentation_fr %></p>
-              <h3><%= link_to 'Discover', artist, class: 'btn btn-primary btn-lg btn-transparent' %></h3>
+              <h3><%= link_to 'Discover', artist, class: 'btn btn-primary btn-lg btn-transparent pull-left' %></h3>
             </div>
           </div>
         </div>

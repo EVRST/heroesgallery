@@ -44,7 +44,11 @@
           </div>
         </div>
       <% else %>
+        <% if artist == @artists.last %>
+        <div class="row">
+        <% else %>
         <div class="row bottom-line">
+          <% end %>
           <div class="col-md-6 right-line-artist">
             <div class="inside">
               <h3>

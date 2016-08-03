@@ -5,7 +5,9 @@
 
   <h1 class="text-center">
     Nos <b>Artistes</b>
+    <% if user_signed_in? %>
     <br><small><%= link_to "Ajouter un artiste", new_artist_path, class: "pull-right btn btn-primary" %></small>
+    <% end %>
   </h1>
   <br>
   <br>

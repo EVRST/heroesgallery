@@ -11,6 +11,7 @@ class ArtistsController < ApplicationController
   # GET /artists/1.json
   def show
     @visual = @artist.visuals.new
+    @visuals = @artist.visuals
   end
 
   # GET /artists/new

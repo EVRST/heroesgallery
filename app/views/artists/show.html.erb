@@ -2,18 +2,44 @@
 
   <div class="container">
 
-  <%= image_tag "http://placehold.it/483x303" %>
+  
+<div class="start-page">
 
-
+<p class="lead text-right"><%= @artist.full_name %></p>
+<div class="row">
 <div class="col-md-4">
-  <%= @artist.full_name %>
+  
 
-  <%= @artist.presentation_fr %>
+  <p><%= @artist.presentation_fr %></p>
 
   <%= @artist.presentation_en %>
 
   <%= @artist.presentation_nl %>
 </div>
+<div class="col-md-8">
+
+  <%= image_tag "http://placehold.it/976x600" %>
+</div>
+</div>
+</div>
+
+
+<div class="other-visuals">
+      <h1 class="text-center">
+        Visuels de <%= @visual.artist.full_name %>
+        <% if user_signed_in? %>
+        <br>
+        <small><%= link_to "Ajouter un visuel de #{@artist.full_name}", "", class: "btn btn-primary pull-right" %></small>
+        <br>
+        <% end %>
+      </h1>
+
+      <%= render partial: "artists/artist_visuals", locals: {visuals: @artist.visuals} %>
+    
+    </div>
+
+
+
 
 <% if user_signed_in? %>
 

@@ -51,6 +51,7 @@ ul.nav a:hover {
 
 .home-top {
   background-image: image-url('home_top_bg.png');
+  background-repeat: no-repeat;
   background-size:100%;
   color: white;
   padding-bottom: 20px;
@@ -77,6 +78,7 @@ ul.nav a:hover {
 
 .concept {
   background-image: image-url('concept_bg.png');
+  background-repeat: no-repeat;
   background-size:100%;
   color: white;
   padding-bottom: 20px;
@@ -90,6 +92,7 @@ ul.nav a:hover {
 
 .finitions {
   background-image: image-url('finitions_bg.png');
+  background-repeat: no-repeat;
   background-size:100%;
   color: white;
   padding-bottom: 20px;
@@ -99,6 +102,7 @@ ul.nav a:hover {
 
 .contact {
   background-image: image-url('contact_bg.png');
+  background-repeat: no-repeat;
   background-color: #31313b;
   background-size: 100% 100%;
   color: white;
@@ -124,6 +128,18 @@ ul.nav a:hover {
 
 .contact-map {
   padding-top: 20px;
+}
+
+.upload {
+  background-image: image-url('upload_full_bg.png');
+  background-repeat: no-repeat;
+  background-color: #31313b;
+  background-size: 100% 100%;
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  min-height: 100vh;
+  font-family: 'Lato', sans-serif;
 }
 
 

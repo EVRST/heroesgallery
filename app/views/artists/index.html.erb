@@ -1,32 +1,48 @@
 <div class="row artists">
 <p id="notice"><%= notice %></p>
 
-<div class="container container-content">
+<div class="container container-content start-page">
+
+  <h1 class="text-center">
+    Nos <b>Artistes</b>
+    <br><small><%= link_to "Ajouter un artiste", new_artist_path, class: "pull-right btn btn-primary" %></small>
+  </h1>
+  <br>
+  <br>
 
     <% @artists.each do |artist| %>
       <% if cycle('odd', 'even') == 'odd' %>
+      <% if artist == @artists.last %>
         <div class="row">
-          <div class="col-md-6">
-            <br>
-            <%= image_tag "http://placehold.it/600x270" %>
+      <% else %>
+        <div class="row bottom-line">
+      <% end %>
+          <div class="col-md-6 right-line">
+            <div class="inside">
+              <%= image_tag "http://placehold.it/600x350" %>
+            </div>
           </div>
           <div class="col-md-6">
-            <h3><%= artist.first_name %> <%= artist.last_name %></h3>
-            <p><%= artist.presentation_fr %></p>
-            <h3><%= link_to 'Discover', artist, class: 'btn btn-default btn-lg btn-transparent' %></h3>
+            <div class="inside">
+              <h3><%= artist.first_name %> <%= artist.last_name %></h3>
+              <p><%= artist.presentation_fr %></p>
+              <h3><%= link_to 'Discover', artist, class: 'btn btn-primary btn-lg btn-transparent' %></h3>
+            </div>
           </div>
         </div>
       <% else %>
-        <div class="row">
-          <div class="col-md-6">
-            <h3><%= artist.first_name %> <%= artist.last_name %></h3>
-            <p><%= artist.presentation_fr %></p>
-            <h3><%= link_to 'Discover', artist, class: 'btn btn-default btn-lg pull-right btn-transparent' %></h3>
+        <div class="row bottom-line">
+          <div class="col-md-6 right-line-artist">
+            <div class="inside">
+              <h3><%= artist.first_name %> <%= artist.last_name %></h3>
+              <p><%= artist.presentation_fr %></p>
+              <h3><%= link_to 'Discover', artist, class: 'btn btn-primary btn-lg pull-right btn-transparent' %></h3>
+            </div>
           </div>
           <div class="col-md-6">
-             <br>
-            <%= image_tag "http://placehold.it/600x270" %>
-            
+             <div class="inside">
+              <%= image_tag "http://placehold.it/600x350" %>
+            </div>
           </div>
         </div>
       <% end %>

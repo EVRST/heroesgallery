@@ -28,7 +28,7 @@ class VisualsController < ApplicationController
 
     respond_to do |format|
       if @visual.save
-        format.html { redirect_to @visual, notice: 'Visual was successfully created.' }
+        format.html { redirect_to :back, notice: 'Visual was successfully created.' }
         format.json { render :show, status: :created, location: @visual }
       else
         format.html { render :new }

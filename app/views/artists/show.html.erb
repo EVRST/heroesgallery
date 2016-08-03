@@ -1,32 +1,51 @@
-<%= image_tag "http://placehold.it/483x303" %>
+<div class="row artists">
+
+  <div class="container">
+
+  <%= image_tag "http://placehold.it/483x303" %>
 
 
-<p id="notice"><%= notice %></p>
+<div class="col-md-4">
+  <%= @artist.full_name %>
 
-<p>
-  <strong>First name:</strong>
-  <%= @artist.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @artist.last_name %>
-</p>
-
-<p>
-  <strong>Presentation fr:</strong>
   <%= @artist.presentation_fr %>
-</p>
 
-<p>
-  <strong>Presentation en:</strong>
   <%= @artist.presentation_en %>
-</p>
 
-<p>
-  <strong>Presentation nl:</strong>
   <%= @artist.presentation_nl %>
-</p>
+</div>
 
-<%= link_to 'Edit', edit_artist_path(@artist) %> |
-<%= link_to 'Back', artists_path %>
+<% if user_signed_in? %>
+
+<div class="col-md-6 col-md-offset-3">
+<h1 class="text-center page-header">Ajouter un visuel de <%= @artist.full_name %></h1>
+<%= simple_form_for(@visual) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, label: false, placeholder: "Nom du visuel" %>
+    <%= f.input :presentation_fr, label: false, placeholder: "Présentation du visuel FR" %>
+    <%= f.input :presentation_nl, label: false, placeholder: "Présentation du visuel NL" %>
+    <%= f.input :presentation_en, label: false, placeholder: "Présentation du visuel EN" %>
+    <div class="row">
+      <div class="col-md-4">
+        <%= f.input :price, label: false, placeholder: "Prix de départ" %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :is_drawing, label: "dessin" %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :is_picture, label: "photo" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Ajouter le visuel", class: "btn btn-primary btn-block" %>
+  </div>
+<% end %>
+</div>
+
+<% end %>
+
+</div>

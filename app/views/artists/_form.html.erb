@@ -2,14 +2,22 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :presentation_fr %>
-    <%= f.input :presentation_en %>
-    <%= f.input :presentation_nl %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :first_name, label: false, placeholder: "Prénom" %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :last_name, label: false, placeholder: "Nom" %>
+      </div>
+    </div>
+    <%= f.input :presentation_fr, label: false, placeholder: "Présentation de l'artiste FR" %>
+    <%= f.input :presentation_nl, label: false, placeholder: "Présentation de l'artiste NL" %>
+    <%= f.input :presentation_en, label: false, placeholder: "Présentation de l'artiste EN" %>
+    
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.submit "Ajouter l'artiste", class: "btn btn-primary btn-block btn-lg" %>
   </div>
 <% end %>
+</div>

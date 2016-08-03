@@ -29,9 +29,17 @@
           </div>
           <div class="col-md-6">
             <div class="inside">
-              <h3><%= artist.first_name %> <%= artist.last_name %></h3>
+              <h3>
+                <%= artist.first_name %> <%= artist.last_name %>
+                <% if user_signed_in? %>
+                  <%= link_to 'Delete', artist, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-transparent btn-xs pull-right" %>
+                <% end %>
+              </h3>
               <p><%= artist.presentation_fr %></p>
-              <h3><%= link_to 'Discover', artist, class: 'btn btn-primary btn-lg btn-transparent pull-left' %></h3>
+              <h3>
+                <%= link_to 'Discover', artist, class: 'btn btn-primary btn-lg btn-transparent pull-left' %>
+
+              </h3>
             </div>
           </div>
         </div>
@@ -39,7 +47,12 @@
         <div class="row bottom-line">
           <div class="col-md-6 right-line-artist">
             <div class="inside">
-              <h3><%= artist.first_name %> <%= artist.last_name %></h3>
+              <h3>
+                <%= artist.first_name %> <%= artist.last_name %>
+                <% if user_signed_in? %>
+                  <%= link_to 'Delete', artist, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-transparent btn-xs pull-right" %>
+                <% end %>
+              </h3>
               <p><%= artist.presentation_fr %></p>
               <h3><%= link_to 'Discover', artist, class: 'btn btn-primary btn-lg pull-right btn-transparent' %></h3>
             </div>

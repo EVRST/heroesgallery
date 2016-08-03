@@ -15,7 +15,12 @@
             </div>
             <div class="col-md-6">
             	<div class="inside">
-              <h3><%= visual.name %></h3>
+              <h3>
+                <%= visual.name %>
+                <% if user_signed_in? %>
+                  <%= link_to 'Delete', visual, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-transparent btn-xs pull-right" %>
+                <% end %>
+              </h3>
               <p><%= visual.presentation_fr %></p>
               <h3><%= link_to 'Discover', visual, class: 'btn btn-primary btn-lg btn-transparent' %></h3>
           </div>
@@ -31,7 +36,12 @@
           	<% end %>
             <div class="col-md-6 right-line-visuals">
             	<div class="inside">
-              <h3><%= visual.name %></h3>
+              <h3>
+                <%= visual.name %>
+                <% if user_signed_in? %>
+                  <%= link_to 'Delete', visual, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-transparent btn-xs pull-right" %>
+                <% end %>
+              </h3>
               <p><%= visual.presentation_fr %></p>
               <h3><%= link_to 'Discover', visual, class: 'btn btn-primary btn-lg pull-right btn-transparent' %></h3>
           </div>

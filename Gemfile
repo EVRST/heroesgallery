@@ -22,6 +22,7 @@ gem 'simple_form'
 gem 'thin'
 
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem 'aws-sdk'
 
 group :development do
   gem 'better_errors'

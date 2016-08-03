@@ -53,6 +53,7 @@
     <%= f.input :presentation_fr, label: false, placeholder: "Présentation du visuel FR" %>
     <%= f.input :presentation_nl, label: false, placeholder: "Présentation du visuel NL" %>
     <%= f.input :presentation_en, label: false, placeholder: "Présentation du visuel EN" %>
+    <%= f.hidden_field :artist_id, value: @artist.id %>
     <div class="row">
       <div class="col-md-4">
         <%= f.input :price, label: false, placeholder: "Prix de départ" %>

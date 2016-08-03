@@ -2,17 +2,26 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name, label: false, placeholder: "Nom" %>
+    <%= f.input :name, label: false, placeholder: "Nom du visuel" %>
+    <%= f.input :image, as: :file %>
     <%= f.input :presentation_fr, label: false, placeholder: "Présentation du visuel FR" %>
     <%= f.input :presentation_nl, label: false, placeholder: "Présentation du visuel NL" %>
     <%= f.input :presentation_en, label: false, placeholder: "Présentation du visuel EN" %>
-    <%= f.input :price, label: false, placeholder: "Prix de départ" %>
-    <%= f.input :artist_id, label: false, placeholder: "Artiste" %>
-    <%= f.input :is_drawing %>
-    <%= f.input :is_picture %>
+    <%= f.hidden_field :artist_id %>
+    <div class="row">
+      <div class="col-md-4">
+        <%= f.input :price, label: false, placeholder: "Prix de départ" %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :is_drawing, label: "dessin" %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :is_picture, label: "photo" %>
+      </div>
+    </div>
   </div>
 
   <div class="form-actions">
-    <%= f.submit "Ajouter le visuel", class: "btn btn-primary btn-block" %>
+    <%= f.submit "Modifier le visuel", class: "btn btn-primary btn-block" %>
   </div>
 <% end %>

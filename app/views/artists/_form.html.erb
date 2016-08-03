@@ -10,6 +10,7 @@
         <%= f.input :last_name, label: false, placeholder: "Nom" %>
       </div>
     </div>
+    <%= f.input :image, as: :file %>
     <%= f.input :presentation_fr, label: false, placeholder: "Présentation de l'artiste FR" %>
     <%= f.input :presentation_nl, label: false, placeholder: "Présentation de l'artiste NL" %>
     <%= f.input :presentation_en, label: false, placeholder: "Présentation de l'artiste EN" %>
@@ -17,7 +18,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.submit "Ajouter l'artiste", class: "btn btn-primary btn-block btn-lg" %>
+    <%= f.submit "Publier l'artiste", class: "btn btn-primary btn-block btn-lg" %>
   </div>
 <% end %>
 </div>

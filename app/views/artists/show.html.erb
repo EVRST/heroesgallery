@@ -5,7 +5,11 @@
   
 <div class="start-page">
 
-<p class="lead text-right"><%= @artist.full_name %></p>
+<p class="lead text-right">
+  <%= link_to "Modifier", edit_artist_path(@artist), class: "btn btn-primary btn-xs" %>
+  <%= @artist.full_name %>
+
+</p>
 <div class="row">
 <div class="col-md-4">
   
@@ -18,7 +22,8 @@
 </div>
 <div class="col-md-8">
 
-  <%= image_tag "http://placehold.it/976x600" %>
+  
+  <%= image_tag @artist.image.url(:large) %>
 </div>
 </div>
 </div>
@@ -29,7 +34,7 @@
         Visuels de <%= @visual.artist.full_name %>
         <% if user_signed_in? %>
         <br>
-        <small><%= link_to "Ajouter un visuel de #{@artist.full_name}", "", class: "btn btn-primary pull-right" %></small>
+        <small><%= link_to "Ajouter un visuel de #{@artist.full_name}", "#add_visual", class: "btn btn-primary pull-right" %></small>
         <br>
         <% end %>
       </h1>
@@ -43,13 +48,14 @@
 
 <% if user_signed_in? %>
 
-<div class="col-md-6 col-md-offset-3">
+<div class="col-md-6 col-md-offset-3" id="add_visual">
 <h1 class="text-center page-header">Ajouter un visuel de <%= @artist.full_name %></h1>
 <%= simple_form_for(@visual) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :name, label: false, placeholder: "Nom du visuel" %>
+    <%= f.input :image, as: :file %>
     <%= f.input :presentation_fr, label: false, placeholder: "Présentation du visuel FR" %>
     <%= f.input :presentation_nl, label: false, placeholder: "Présentation du visuel NL" %>
     <%= f.input :presentation_en, label: false, placeholder: "Présentation du visuel EN" %>

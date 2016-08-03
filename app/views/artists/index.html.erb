@@ -23,7 +23,8 @@
       <% end %>
           <div class="col-md-6 right-line">
             <div class="inside">
-              <%= image_tag "http://placehold.it/600x350" %>
+              <%= image_tag artist.image.url(:medium) %>
+              
             </div>
           </div>
           <div class="col-md-6">
@@ -45,7 +46,7 @@
           </div>
           <div class="col-md-6">
              <div class="inside">
-              <%= image_tag "http://placehold.it/600x350" %>
+              <%= image_tag artist.image.url(:medium) %>
             </div>
           </div>
         </div>

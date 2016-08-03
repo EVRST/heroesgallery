@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160801144520) do
+ActiveRecord::Schema.define(version: 20160803211002) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,8 +33,12 @@ ActiveRecord::Schema.define(version: 20160801144520) do
     t.text     "presentation_fr"
     t.text     "presentation_en"
     t.text     "presentation_nl"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,11 +66,15 @@ ActiveRecord::Schema.define(version: 20160801144520) do
     t.integer  "artist_id"
     t.boolean  "is_drawing"
     t.boolean  "is_picture"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.text     "presentation_fr"
     t.text     "presentation_en"
     t.text     "presentation_nl"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
 end

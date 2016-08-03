@@ -73,6 +73,6 @@ class VisualsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def visual_params
-      params.require(:visual).permit(:name, :price, :artist_id, :is_drawing, :is_picture, :presentation_fr, :presentation_en, :presentation_nl)
+      params.require(:visual).permit(:name, :price, :artist_id, :is_drawing, :is_picture, :presentation_fr, :presentation_en, :presentation_nl, :image)
     end
 end

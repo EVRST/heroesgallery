@@ -10,8 +10,21 @@
   <div class="row">
     <% @visuals.each do |visual| %>
       <div class="col-md-4">
-        <%= visual.artist.full_name %>
-        <%= link_to image_tag(visual.image.url(:thumb)), visual %>
+
+        <div class="card_image">
+            <span class="card_caption" id="card_caption_<%= visual.id %>">
+              <%= link_to visual.artist.full_name, visual_path(visual) %>
+            </span>
+            <% if visual.miniature.blank? %>
+            <%= image_tag visual.image.url(:thumb) %> 
+            <% else %>
+            <%= image_tag visual.miniature.url(:thumb) %> 
+            <% end %>
+          </div>
+
+
+
+
       </div>
     <% end %>
   </div>

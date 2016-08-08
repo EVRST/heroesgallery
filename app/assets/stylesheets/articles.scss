@@ -35,12 +35,14 @@
 /* Previous button  */
 #quote-carousel .carousel-control.left 
 {
-  left: -12px;
+  left: -80px;
+  top: 100px;
 }
 /* Next button  */
 #quote-carousel .carousel-control.right 
 {
-  right: -12px !important;
+  right: -80px !important;
+  top: 100px;
 }
 /* Changes the position of the indicators */
 #quote-carousel .carousel-indicators 
@@ -59,11 +61,11 @@
 {
   background: #e8b053;
 }
-#quote-carousel img
+/*#quote-carousel img
 {
   width: 250px;
   height: 300px
-}
+}*/
 /* End carousel */
 
 .item blockquote {

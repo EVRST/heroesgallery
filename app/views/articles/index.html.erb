@@ -17,49 +17,33 @@
         
         <!-- Carousel Slides / Quotes -->
         <div class="carousel-inner">
-        
+        <% @articles.each do |article| %>
           <!-- Quote 1 -->
+          <% if article == @articles.last %>
           <div class="item active">
+            <% else %>
+          <div class="item">
+            <% end %>
             
               <div class="row">
                 <div class="col-md-6 col-sm-6">
-                  <%= image_tag "http://placehold.it/600x300", class: "img-responsive" %>
+                  <%= image_tag article.image.url(:medium), class: "img-responsive" %>
                 </div>
-                <div class="col-md-6 col-sm-6">
-                  <h4>News Title</h4>
-                  <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. </p>
+                <div class="col-md-6 col-sm-6 right-article">
+                  <h3>
+                    <%= article.title_fr %>
+                    <br><small><i><%= article.created_at %></i></small>
+                  </h3>
+                  <p><%= article.content_fr %></p>
+
+                  <%= link_to "Voir tout l'article", "", class: "btn btn-transparent btn-primary pull-right" %>
                 </div>
               </div>
             
           </div>
+          <% end %>
           <!-- Quote 2 -->
-          <div class="item">
-            
-              <div class="row">
-                <div class="col-md-6 col-sm-6 text-center">
-                  <%= image_tag "http://placehold.it/600x400", class: "img-responsive" %>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                  <h4>News Title</h4>
-                  <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. </p>
-                </div>
-              </div>
-            
-          </div>
-          <!-- Quote 3 -->
-          <div class="item">
-            
-              <div class="row">
-                <div class="col-sm-6 col-md-6 text-center">
-                  <%= image_tag "http://placehold.it/600x400", class: "img-responsive" %>
-                </div>
-                <div class="col-sm-6 col-md-6">
-                  <h4>News Title</h4>
-                  <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. </p>
-                </div>
-              </div>
-            
-          </div>
+          
         </div>
         
         <!-- Carousel Buttons Next/Prev -->

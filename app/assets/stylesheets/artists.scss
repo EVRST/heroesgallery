@@ -4,12 +4,15 @@
 
 .artists {
   background-image: image-url('artists_bg.png');
+  background-repeat: no-repeat;
   background-color: #31313b;
   background-size: 100% 100%;
   color: white;
   padding-top: 50px;
   padding-bottom: 30px;
   min-height: 100vh;
+
+  
 }
 
 .right-line-artist {

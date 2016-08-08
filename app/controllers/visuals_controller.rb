@@ -1,10 +1,19 @@
 class VisualsController < ApplicationController
   before_action :set_visual, only: [:show, :edit, :update, :destroy]
+  before_action :set_artists, only: [:index, :drawings, :photos]
 
   # GET /visuals
   # GET /visuals.json
   def index
     @visuals = Visual.all
+  end
+
+  def drawings
+    @visuals = Visual.where(:is_drawing => true).order("created_at DESC")
+  end
+
+  def photos
+    @visuals = Visual.where(:is_picture => true).order("created_at DESC")
   end
 
   # GET /visuals/1
@@ -69,6 +78,10 @@ class VisualsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_visual
       @visual = Visual.find(params[:id])
+    end
+
+    def set_artists
+      @artists = Artist.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

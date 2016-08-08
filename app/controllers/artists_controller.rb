@@ -1,10 +1,15 @@
 class ArtistsController < ApplicationController
-  before_action :set_artist, only: [:show, :edit, :update, :destroy]
+  before_action :set_artist, only: [:show, :edit, :update, :destroy, :my_visuals]
 
   # GET /artists
   # GET /artists.json
   def index
     @artists = Artist.all
+  end
+
+  def my_visuals
+    @artists = Artist.all
+    @visuals = @artist.visuals
   end
 
   # GET /artists/1

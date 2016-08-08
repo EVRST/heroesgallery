@@ -1,19 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class="row news">
+<div class="container container-content">
 
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @book.author %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @book.content %>
-</p>
-
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+	<div class="row">
+		<div class="col-md-5">
+			<%= image_tag @book.image.url(:medium) %>
+		</div>
+		<div class="col-md-7">
+			<h1><%= @book.title %>
+				<% if user_signed_in? %>
+				  <%= link_to "Modifier", edit_book_path(@book), class: "btn btn-primary btn-xs" %>
+				<% end %>
+				<br><small><i><%= @book.author %></i></small>
+			</h1>
+			<hr>
+			<p class="lead"><%= @book.content %></p>
+		</div>
+	</div>
+</div>
+</div>

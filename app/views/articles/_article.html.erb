@@ -1,0 +1,31 @@
+<!-- Modal -->
+<div class="modal fade" id="article_<%= article.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    	<%= image_tag article.image.url(:large) %>
+      <div class="modal-header in-black">
+
+                  
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+        	<%= article.title_fr %>
+            <br><small><i><%= article.created_at %></i></small>
+        </h4>
+
+      </div>
+      <div class="modal-body in-black">
+        <p><%= article.content_fr %></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+
+        <% if user_signed_in? %>
+    
+      <small>
+        <%= link_to "Modifier", edit_article_path(article), class: "btn btn-primary pull-right" %></small>
+
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

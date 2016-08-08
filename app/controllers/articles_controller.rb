@@ -28,7 +28,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
+        format.html { redirect_to articles_path }
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+        format.html { redirect_to articles_path }
         format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit }
@@ -69,6 +69,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title_fr, :content_fr, :title_en, :content_en, :title_nl, :content_nl)
+      params.require(:article).permit(:title_fr, :content_fr, :title_en, :content_en, :title_nl, :content_nl, :image)
     end
 end

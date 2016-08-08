@@ -1,0 +1,31 @@
+<% @visuals.each do |visual| %>
+      <div class="col-md-4">
+
+        <div class="card_image">
+          
+          <%= link_to visual_path(visual) do %>
+            <span class="card_caption" id="card_caption_<%= visual.id %>">
+              <%= visual.artist.full_name %>
+              <br>
+              <br>
+              <br>
+              
+              <p><span class= "visual_name"><%= visual.name %></span>
+            
+              <br>à partir de <%= visual.price %> €</p>
+              
+            </span>
+          <% end %>
+
+            <% if visual.miniature.blank? %>
+            <%= image_tag visual.image.url(:thumb) %> 
+            <% else %>
+            <%= image_tag visual.miniature.url(:thumb) %> 
+            <% end %>
+          </div>
+
+
+
+
+      </div>
+    <% end %>

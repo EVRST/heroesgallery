@@ -34,9 +34,18 @@
       <div class="col-md-4">
 
         <div class="card_image">
+            <%= link_to visual_path(visual) do %>
             <span class="card_caption" id="card_caption_<%= visual.id %>">
-              <%= link_to visual.artist.full_name, visual_path(visual) %>
+              <%= visual.name %>
+              <br>
+              <br>
+              
+              <p>
+            
+              à partir de <%= visual.price %> €</p>
+              
             </span>
+          <% end %>
             <% if visual.miniature.blank? %>
             <%= image_tag visual.image.url(:thumb) %> 
             <% else %>

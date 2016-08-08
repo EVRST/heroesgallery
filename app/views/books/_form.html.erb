@@ -1,0 +1,13 @@
+<%= simple_form_for(@book) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title, label: false, placeholder: "Titre" %>
+    <%= f.input :author, label: false, placeholder: "Auteur" %>
+    <%= f.input :content, :input_html => {:rows => 7}, label: false, placeholder: "Résumé" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Publier le livre", class: "btn btn-primary btn-block btn-lg" %>
+  </div>
+<% end %>

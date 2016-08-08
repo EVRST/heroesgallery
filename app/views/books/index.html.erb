@@ -1,0 +1,51 @@
+<div class="row news">
+<div class="container container-content">
+
+  <div class="row">
+    <div class='text-center'>
+    <h2>
+      Books
+      <% if user_signed_in? %>
+      <br>
+      <small>
+        <%= link_to "Ajouter un livre", new_book_path, class: "pull-right btn btn-primary" %></small>
+        <br>
+      <% end %>
+    </h2>
+
+    </div>
+  </div>
+
+  <div class="row">
+  <% @books.each do |book| %>
+      <div class="col-md-3">
+
+        <div class="card_image">
+          
+          <%= link_to book_path(book) do %>
+            <span class="card_caption" id="card_caption_<%= book.id %>">
+              <%= book.title %>
+              
+              
+              <p><span class= "visual_name"><%= book.author %></span>
+            
+              
+              </p>
+            </span>
+          <% end %>
+
+            <% if book.miniature.blank? %>
+            <%= image_tag book.image.url(:thumb) %> 
+            <% else %>
+            <%= image_tag book.miniature.url(:thumb) %> 
+            <% end %>
+          </div>
+
+
+
+
+      </div>
+    <% end %>
+  </div>
+</div>
+</div>

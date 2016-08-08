@@ -10,18 +10,19 @@
     <li><%= link_to "Tous", visuals_path %></li>
     <li><%= link_to "Dessins", drawings_path %></li>
     <li> <%= link_to "Photos", photos_path %></li>
+    <li class="active"><%= link_to "Artiste : #{@artist.full_name}", "" %></li>
     <li role="presentation" class="dropdown">
 	    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-	      Artistes<span class="caret"></span>
+	      Autres artistes<span class="caret"></span>
 	    </a>
 	    <ul class="dropdown-menu">
-	      <% @artists.each do |artist| %>
+	      <% @other_artists.each do |artist| %>
 	      <li><%= link_to artist.full_name, my_visuals_artist_path(artist) %></li>
 	      <% end %>
 	    </ul>
 	    
 	</li>
-	<li class="active"><%= link_to "Artiste : #{@artist.full_name}", "" %></li>
+	
 	
 
   </ul>

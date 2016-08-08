@@ -10,6 +10,7 @@ class ArtistsController < ApplicationController
   def my_visuals
     @artists = Artist.all
     @visuals = @artist.visuals
+    @other_artists = Artist.all.where.not(id: @artist.id)
   end
 
   # GET /artists/1

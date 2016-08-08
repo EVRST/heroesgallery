@@ -1,0 +1,28 @@
+<div class="row upload">
+<p id="notice"><%= notice %></p>
+
+<div class="container container-content">
+
+<div class="row">
+	<div class="col-md-5 col-md-offset-1 upload-preview ">
+		<div class="row">
+    <%= image_tag "logo.png", size:"234x108", class: "pull-left" %>
+  </div>
+  
+    <p class="lead">Vous apercevrez votre photo ici</p>
+	</div>
+<div class="col-md-5 uploads-form text-center">
+	
+
+	<p class="lead">
+		Chargez votre image depuis votre périphérique local
+		<hr></p>
+	<p class="lead">	<small>
+		<u><strong>Format</strong> requis</u> : jpg | <u><strong>Taille</strong> min</u> : 2Mb</small>
+	</p>
+	<%= render 'form' %>
+</div>
+</div>
+	
+</div>
+</div>

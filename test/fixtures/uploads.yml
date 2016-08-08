@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  horizontal: false
+  plexi: false
+  hauteur: 1
+  largeur: 1
+  note: MyText
+  user_id: 1
+
+two:
+  horizontal: false
+  plexi: false
+  hauteur: 1
+  largeur: 1
+  note: MyText
+  user_id: 1

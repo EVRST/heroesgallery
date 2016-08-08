@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :uploads
   resources :articles
   resources :artists
   resources :visuals
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
       end
   end
 
-  get 'your_visuals' => 'visuals#your_visuals'
+  get 'your_visuals' => 'uploads#new'
   get 'concept' => 'visitors#concept'
   get 'finitions' => 'visitors#finitions'
   get 'contact' => 'visitors#contact'

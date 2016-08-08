@@ -1,0 +1,34 @@
+<%= simple_form_for(@upload) do |f| %>
+  <%= f.error_notification %>
+
+
+
+  <div class="form-inputs">
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :horizontal %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :plexi %>
+      </div>
+    </div>
+    
+    
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :hauteur, label: false, placeholder: "hauteur" %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :largeur, label: false, placeholder: "largeur" %>
+      </div>
+    </div>
+    <%= f.input :note, label: false, placeholder: "Commentaire pour l'expert Heroes Gallery" %>
+    <!-- <%= f.input :user_id %> -->
+    <%= f.input :image, as: :file %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-transparent btn-info btn-block" %>
+  </div>
+<% end %>
+

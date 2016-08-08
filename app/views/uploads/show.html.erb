@@ -1,0 +1,28 @@
+<div class="row upload">
+<p id="notice"><%= notice %></p>
+
+<div class="container container-content">
+
+<div class="row">
+  <div class="col-md-5 col-md-offset-1 upload-preview ">
+    <div class="row">
+    <%= image_tag "logo.png", size:"234x108", class: "pull-left" %>
+  </div>
+
+    <p class="lead">Aperçu de votre photo</p>
+    <%= image_tag @upload.image.url(:medium) %>
+    <br><%= link_to "Valider & payer", "", class: "btn btn-transparent btn-primary btn-lg" %>
+  </div>
+<div class="col-md-5 uploads-form text-center">
+  <p class="lead">
+    Modifiez votre image
+    <hr></p>
+  <p class="lead">  <small>
+    <u><strong>Format</strong> requis</u> : jpg | <u><strong>Taille</strong> min</u> : 2Mb</small>
+  </p>
+  <%= render 'form' %>
+</div>
+</div>
+  
+</div>
+</div>

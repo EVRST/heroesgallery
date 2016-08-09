@@ -144,7 +144,7 @@ ul.nav a:hover {
 
 .timeline {
   
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .step {
@@ -167,6 +167,20 @@ ul.nav a:hover {
   padding-top: 100px;
 }
 
+.last_step {
+  padding-bottom: 150px;
+}
+
+.first_step {
+  margin-top: 100px;
+}
+
+.text-in-first-step {
+  text-transform: uppercase;
+  padding-top: -10px;
+  margin-bottom: 20px;
+}
+
 .step_left {
   padding-right: 50px;
 }
@@ -175,16 +189,55 @@ ul.nav a:hover {
   padding-left: 50px;
 }
 
-.dot {
-  background: transparent;
+.first_dot {
+   background: transparent;
     border: 2px solid white;
     border-radius: 50%;
     content: "";
     height: 11px;
     left: -6.5px;
     position: absolute;
-    top: -9px;
+    top: 90px;
     width: 11px;
+}
+
+.second_dot {
+    background: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    content: "";
+    height: 11px;
+    left: -6.5px;
+    position: absolute;
+    top: 120px;
+    width: 11px;
+
+}
+
+.third_dot {
+    background: #31313b;
+    border: 2px solid white;
+    border-radius: 50%;
+    content: "";
+    height: 11px;
+    left: -6.5px;
+    position: absolute;
+    top: 120px;
+    width: 11px;
+
+}
+
+.last_dot {
+    background: #e8b053;
+    border: 2px solid #e8b053;
+    border-radius: 50%;
+    content: "";
+    height: 20px;
+    left: -11px;
+    position: absolute;
+    top: 380px;
+    width: 20px;
+
 }
 
 

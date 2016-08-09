@@ -33,8 +33,8 @@
 <div class="timeline">
 
 <div class="row step">
-	<div class="col-md-6 step_text step_line step_left">
-		<div class="step_title text-right">Choisissez <b>l'oeuvre</b></div>
+	<div class="col-md-6 step_text step_line first_step step_left">
+		<div class="text-right text-in-first-step">Choisissez <b>l'oeuvre</b></div>
 
 		<p class="text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 		<p class="text-right">Ut enim ad minim veniam, quis <span class="hg_color">nostrud exercitation.</span></p>
@@ -42,7 +42,7 @@
 	</div>
 
 	<div class="col-md-6">
-		<div class="dot"></div>
+		<div class="first_dot"></div>
 		<%= image_tag "choisir_oeuvre.png" %>
 	</div>
 </div>
@@ -53,13 +53,15 @@
 	</div>
 
 	<div class="col-md-6 step_text step_right">
-		
+		<div class="second_dot"></div>
 		<div class="step_title">Choisissez <b>la taille</b></div>
 
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 		<p>Ut enim ad minim veniam, quis <span class="hg_color">nostrud exercitation.</span></p>
 	</div>
 </div>
+
+
 
 <div class="row step">
 	<div class="col-md-6 step_text step_line following_step step_left">
@@ -71,20 +73,26 @@
 	</div>
 
 	<div class="col-md-6">
+		<div class="third_dot"></div>
 		<%= image_tag "choisir_finition.png" %>
 	</div>
 </div>
 
+
+
 <div class="row step">
-	<div class="col-md-6 step_line following_step step_right">
+	<div class="col-md-6 step_line following_step last_step step_right">
 		<%= image_tag "choisir_endroit.png" %>
 	</div>
 
 	<div class="col-md-6 step_text step_right">
+		<div class="second_dot"></div>
 		<div class="step_title">Choisissez <b>l'endroit</b></div>
 
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 		<p>Ut enim ad minim veniam, quis <span class="hg_color">nostrud exercitation.</span></p>
+
+		<div class="last_dot"></div>
 	</div>
 </div>
 </div>

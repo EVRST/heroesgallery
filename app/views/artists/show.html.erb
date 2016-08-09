@@ -6,7 +6,9 @@
 <div class="start-page">
 
 <p class="lead text-right">
+  <% if user_signed_in? %>
   <%= link_to "Modifier", edit_artist_path(@artist), class: "btn btn-primary btn-xs" %>
+  <% end %>
   <%= @artist.full_name %>
 
 </p>

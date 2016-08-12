@@ -18,7 +18,7 @@
 <div class="text-left">
 	<%= simple_form_for order_item, remote: true do |f| %>
 		<%= f.hidden_field :quantity, value: 1, class: "form-control", min: 1 %> 
-		<%= f.hidden_field :unit_price, value: order_item.price %> 
+		<%= f.hidden_field :unit_price, value: visual.price %> 
     	<%= f.hidden_field :visual_id, value: visual.id %>
     	<%= f.collection_radio_buttons(:dimension_id, visual.dimensions, :id, :whole_name) do |b| %>
     		<%= b.label(:"data-value" => b.value) { b.radio_button + " " + " " + b.text } %>

@@ -25,13 +25,7 @@ class OrderItem < ActiveRecord::Base
   end
 
   def price
-    if dimension_id == 5
-      20
-    elsif dimension_id == 2
-      38
-    else
-      visual.price
-    end
+    dimension.price
   end
 
 private

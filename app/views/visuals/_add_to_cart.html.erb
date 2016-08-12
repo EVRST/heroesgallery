@@ -1,17 +1,37 @@
 <% if @current_order_item %>
-<%= form_for order_item, remote: true do |f| %>
-     <h4 class="text-center"><span style="color: green"><%= number_to_currency @current_order_item.price %></span></h4>
-    
-   
-    <%= f.hidden_field :quantity, value: 1, class: "form-control", min: 1 %>
-   
-    <%= f.hidden_field :visual_id, value: visual.id %>
-        <%= f.submit "Add to Cart", class: "btn btn-primary btn-block" %>
-     
 
+	<%= simple_form_for @current_order_item, :html => {method: :put, multipart: true} do |f| %>
+	     <h4 class="text-center hg_color">
+	     	<span class="hg_color">
+		     	<%= number_to_currency @current_order_item.price %>
+		    </span>
+	     </h4>
+	    
+	   
+	    <%= f.hidden_field :quantity, value: 1, class: "form-control", min: 1 %>
+	    <%= f.hidden_field :unit_price, value: @current_order_item.price %>
+	    <%= f.hidden_field :visual_id, value: visual.id %>
+	    
+	    <%= f.submit "Add to Cart", class: "btn btn-primary btn-block" %>    
+	<% end %>
 
-
-<% end %>
 <% else %>
-<%= link_to "Add to Cart", "", class: 'btn btn-primary btn-block' %>
+
+	<!-- achat direct avec les données de base point de vue dimensions et finitions -->
+	<%= simple_form_for order_item, remote: true do |f| %>
+	     <h4 class="text-center hg_color">
+	     	<span class="hg_color">
+		     	<%= number_to_currency visual.price %>
+		    </span>
+	     </h4>
+	    
+	   	<%= f.hidden_field :dimension_id, value: visual.dimensions.first.id %>
+	   	<%= f.hidden_field :finish_id, value: Finish.first %>
+	    <%= f.hidden_field :quantity, value: 1, class: "form-control", min: 1 %>
+	    <%= f.hidden_field :unit_price, value: visual.price %>
+	    <%= f.hidden_field :visual_id, value: visual.id %>
+	    
+	    <%= f.submit "Add to Cart", class: "btn btn-primary btn-block" %>    
+	<% end %>
+
 <% end %>

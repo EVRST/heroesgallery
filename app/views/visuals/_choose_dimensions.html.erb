@@ -8,7 +8,7 @@
         <%= f.collection_radio_buttons(:dimension_id, visual.dimensions, :id, :whole_name) do |b| %>    
             <%= b.label(:"data-value" => b.value) { b.radio_button + " " + " " + b.text } %>        
         <% end %>
-        <%= f.submit "modifier", class: 'btn btn-primary btn-transparent btn-xs' %>
+        <%= f.submit "Modifier", class: 'btn btn-primary btn-transparent btn-xs' %>
     <% end %>
     
 </div>
@@ -23,7 +23,7 @@
     	<%= f.collection_radio_buttons(:dimension_id, visual.dimensions, :id, :whole_name) do |b| %>
     		<%= b.label(:"data-value" => b.value) { b.radio_button + " " + " " + b.text } %>
     	<% end %>
-    	<%= f.submit "créer", class: 'btn btn-primary btn-transparent btn-xs' %>
+    	<%= f.submit "Confirmer", class: 'btn btn-primary btn-transparent btn-xs' %>
 	<% end %>
 </div>
 <% end %>

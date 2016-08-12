@@ -6,6 +6,7 @@
             <p><%= b.label(:"data-value" => b.value) { b.radio_button + " " + " " + b.text } %></p>
                   
         <% end %>
+        <%= f.hidden_field :unit_price, value: @current_order_item.price %>
         <%= f.submit "Modifier", class: 'btn btn-primary btn-transparent btn-xs' %>
         <% end %>
     <% end %>

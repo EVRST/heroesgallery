@@ -18,6 +18,18 @@ class Dimension < ActiveRecord::Base
 		end
 	end
 
+	def price_plexi
+		if gabarit.id == 1
+			price_paysage_plexi
+		elsif gabarit.id == 2
+			price_portrait_plexi
+		elsif gabarit.id == 3
+			price_carre_plexi
+		elsif gabarit.id == 4
+			price_pano_plexi
+		end
+	end
+
 	def price_paysage
 		if id == 4
 			1
@@ -27,6 +39,18 @@ class Dimension < ActiveRecord::Base
 			225
 		else
 			135
+		end
+	end
+
+	def price_paysage_plexi
+		if id == 4
+			1
+		elsif id == 3
+			500
+		elsif id == 2
+			400
+		else
+			275
 		end
 	end
 
@@ -42,6 +66,18 @@ class Dimension < ActiveRecord::Base
 		end
 	end
 
+	def price_portrait_plexi
+		if id == 8
+			1
+		elsif id == 7
+			500
+		elsif id == 6
+			400
+		else
+			275
+		end
+	end
+
 	def price_carre
 		if id == 11
 			285
@@ -52,6 +88,16 @@ class Dimension < ActiveRecord::Base
 		end
 	end
 
+	def price_carre_plexi
+		if id == 11
+			485
+		elsif id == 10
+			415
+		else
+			275
+		end
+	end
+
 	def price_pano
 		if id == 14
 			1
@@ -59,6 +105,16 @@ class Dimension < ActiveRecord::Base
 			1
 		else
 			1
+		end
+	end
+
+	def price_pano_plexi
+		if id == 14
+			2
+		elsif id == 13
+			2
+		else
+			2
 		end
 	end
 end

@@ -13,11 +13,7 @@ class OrderItem < ActiveRecord::Base
   before_save :finalize
 
   def unit_price
-    if persisted?
-      self[:unit_price]
-    else
-      visual.price
-    end
+    price
   end
 
   def total_price
@@ -25,7 +21,11 @@ class OrderItem < ActiveRecord::Base
   end
 
   def price
-    dimension.price
+    if finish_id == 2
+      dimension.price_plexi
+    else
+      dimension.price
+    end
   end
 
 private

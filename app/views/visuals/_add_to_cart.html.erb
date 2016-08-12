@@ -1,6 +1,10 @@
 <% if @current_order_item %>
-
-	<%= simple_form_for @current_order_item, :html => {method: :put, multipart: true} do |f| %>
+	<h4 class="text-center hg_color">
+	     	<span class="hg_color">
+		     	<%= number_to_currency @current_order_item.price %>
+		    </span>
+	     </h4>
+	<!--<%= simple_form_for @current_order_item, :html => {method: :put, multipart: true} do |f| %>
 	     <h4 class="text-center hg_color">
 	     	<span class="hg_color">
 		     	<%= number_to_currency @current_order_item.price %>
@@ -13,7 +17,9 @@
 	    <%= f.hidden_field :visual_id, value: visual.id %>
 	    
 	    <%= f.submit "Add to Cart", class: "btn btn-primary btn-block" %>    
-	<% end %>
+	<% end %> -->
+	
+	<%= link_to "Remove from cart", @current_order_item, { data: { confirm: "Are you sure you wish to delete the product '#{@current_order_item.visual.name}' from your cart?" }, method: :delete, class: "btn btn-danger btn-transparent btn-block" } %>
 
 <% else %>
 

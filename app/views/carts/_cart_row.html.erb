@@ -2,12 +2,19 @@
 
   <div class="row">
     <div class="col-xs-8">
+    	<div class="row">
+    		<div class="col-md-4">
+    			<%= image_tag visual.image.url(:medium), class: 'img-rounded' %>
+    		</div>
+    		<div class="col-md-8">
       <h4><%= visual.name %></h4>
+  </div>
+</div>
     </div>
     <div class="col-xs-4">
       
       <%= form_for order_item, remote: true do |f| %>
-        <h4 class="text-right">Unit Price: <span style="color: green"><%= number_to_currency order_item.unit_price %></span></h4>
+        <h4 class="text-right">Prix unitaire: <span style="color: green"><%= number_to_currency order_item.unit_price %></span></h4>
         <div class="row">
           <div class="col-xs-4">
             <%= f.number_field :quantity, value: order_item.quantity.to_i, class: "form-control", min: 1 %>
@@ -15,12 +22,12 @@
           </div>
           <div class="col-xs-8 text-right">
             <div class="btn-group">
-              <%= f.submit "Update Quantity", class: "btn btn-primary" %>
-              <%= link_to "Delete", order_item, { data: { confirm: "Are you sure you wish to delete the product '#{order_item.visual.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger" } %>
+              <%= f.submit "Changer quantité", class: "btn btn-primary" %>
+              <%= link_to "Supprimer", order_item, { data: { confirm: "Are you sure you wish to delete the product '#{order_item.visual.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger" } %>
             </div>
           </div>
         </div>
-        <h4 class="text-right">Total Price: <span style="color: green"><%= number_to_currency order_item.total_price %></span></h4>
+        <h4 class="text-right">Prix total: <span style="color: green"><%= number_to_currency order_item.total_price %></span></h4>
       <% end %>
     </div>
     

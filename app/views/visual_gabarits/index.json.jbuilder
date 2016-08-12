@@ -1,0 +1,1 @@
+json.array! @visual_gabarits, partial: 'visual_gabarits/visual_gabarit', as: :visual_gabarit

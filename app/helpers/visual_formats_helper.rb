@@ -1,0 +1,2 @@
+module VisualFormatsHelper
+end

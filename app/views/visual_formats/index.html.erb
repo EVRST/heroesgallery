@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Visual Formats</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Visual</th>
+      <th>Format</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @visual_formats.each do |visual_format| %>
+      <tr>
+        <td><%= visual_format.visual_id %></td>
+        <td><%= visual_format.format_id %></td>
+        <td><%= link_to 'Show', visual_format %></td>
+        <td><%= link_to 'Edit', edit_visual_format_path(visual_format) %></td>
+        <td><%= link_to 'Destroy', visual_format, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Visual format', new_visual_format_path %>

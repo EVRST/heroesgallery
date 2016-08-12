@@ -6,19 +6,28 @@
       <div class="col-md-3">
         <div class="panel panel-default visual-cart">
           <div class="panel-body text-center">
-            <h3>Format</h3>
-            Carré | Rectangle
+            <h4>
+              Format
+              <small> <%= @visual.gabarits.last.name %></small>
+            </h4>
 
-            <h3>Dimensions</h3>
+         <div class="text-left">
+                <%= collection_radio_buttons(:dimension, :visual_id, @visual.dimensions, :id, :whole_name) do |b| %>
 
-              80 x 80 |                60 x 80
-              <br>100 x 100 |              100 x 130
-              <br>120 x 120 |              120 x 160
+                
+                 
+                    
+                    <br><%= b.label(:"data-value" => b.value) { b.radio_button + " " + " " + b.text } %>
+                  
+                  <% end %>
+</div>
+            
+          <hr>
 
-            <h3>Support</h3>
+            <h4>Finition</h4>
             Alu | Plexi
-
-            <h3>Endroit</h3>
+          <hr>
+            <h4>Endroit</h4>
             Livraison | Retrait
 
             <hr>

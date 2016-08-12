@@ -1,0 +1,1 @@
+json.partial! "gabarits/gabarit", gabarit: @gabarit

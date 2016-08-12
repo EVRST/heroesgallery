@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Visual:</strong>
+  <%= @visual_format.visual_id %>
+</p>
+
+<p>
+  <strong>Format:</strong>
+  <%= @visual_format.format_id %>
+</p>
+
+<%= link_to 'Edit', edit_visual_format_path(@visual_format) %> |
+<%= link_to 'Back', visual_formats_path %>

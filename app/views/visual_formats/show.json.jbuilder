@@ -1,0 +1,1 @@
+json.partial! "visual_formats/visual_format", visual_format: @visual_format

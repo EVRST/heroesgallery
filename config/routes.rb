@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :visual_gabarits
+  resources :gabarits
+  resources :visual_formats
+  resources :dimensions
+  resources :formats
   resources :books
   resources :uploads
   resources :articles
@@ -12,6 +17,12 @@ Rails.application.routes.draw do
       member do
         get 'my_visuals'
       end
+  end
+
+  resources :visuals do
+    member do
+      get 'gabarits'
+    end
   end
 
   get 'your_visuals' => 'uploads#new'

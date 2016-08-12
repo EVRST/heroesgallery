@@ -1,0 +1,1 @@
+json.partial! "visual_gabarits/visual_gabarit", visual_gabarit: @visual_gabarit

@@ -1,0 +1,1 @@
+json.array! @gabarits, partial: 'gabarits/gabarit', as: :gabarit

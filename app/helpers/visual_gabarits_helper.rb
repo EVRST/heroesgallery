@@ -1,0 +1,2 @@
+module VisualGabaritsHelper
+end

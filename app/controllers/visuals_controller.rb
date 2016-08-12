@@ -16,6 +16,12 @@ class VisualsController < ApplicationController
     @visuals = Visual.where(:is_picture => true).order("created_at DESC")
   end
 
+  def gabarits
+    @visual = Visual.find(params[:id])
+    @gabarits = Gabarit.all
+    @visual_gabarit = VisualGabarit.new
+  end
+
   # GET /visuals/1
   # GET /visuals/1.json
   def show
@@ -38,7 +44,7 @@ class VisualsController < ApplicationController
 
     respond_to do |format|
       if @visual.save
-        format.html { redirect_to :back, notice: 'Visual was successfully created.' }
+        format.html { redirect_to gabarits_visual_path(@visual), notice: 'Visual was successfully created.' }
         format.json { render :show, status: :created, location: @visual }
       else
         format.html { render :new }

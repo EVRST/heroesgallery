@@ -1,1 +1,11 @@
-<%= link_to "#{current_order.order_items.size} Items ( #{number_to_currency current_order.subtotal} )", cart_path, class: "btn btn-link" %>
+
+
+<!--<%= link_to "#{current_order.order_items.size} Items ( #{number_to_currency current_order.subtotal} )", cart_path, class: "btn btn-link" %>
+
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>-->
+
+
+
+<%= link_to cart_path do %>
+	<%= content_tag(:i, " (#{current_order.order_items.size})", class: "fa fa-shopping-cart fa-lg") %>
+		            <% end %>

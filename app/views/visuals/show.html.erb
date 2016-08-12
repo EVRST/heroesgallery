@@ -8,10 +8,11 @@
           <div class="panel-body text-center">
             <h4>
               Format
-              <small> <%= @visual.gabarits.last.name %></small>
+              <small> <%= @visual.gabarits.last.name if @visual.gabarits.any? %></small>
             </h4>
 
          <div class="text-left">
+          <% if @visual.dimensions %>
                 <%= collection_radio_buttons(:dimension, :visual_id, @visual.dimensions, :id, :whole_name) do |b| %>
 
                 
@@ -19,6 +20,7 @@
                     
                     <br><%= b.label(:"data-value" => b.value) { b.radio_button + " " + " " + b.text } %>
                   
+                  <% end %>
                   <% end %>
 </div>
             

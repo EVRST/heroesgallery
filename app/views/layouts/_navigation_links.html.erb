@@ -8,6 +8,9 @@
 <li><%= link_to 'News', articles_path %></li>
 <li><%= link_to 'Livres', books_path %></li>
 <li><%= link_to 'Contact', contact_path %></li>
+
+<li><%= render 'layouts/cart_text' %></li>
+
 <% if user_signed_in? %>
 	<li><%= link_to destroy_user_session_path, :method=>'delete' do %>
 		<%= content_tag(:i, " ", class: "fa fa-lg fa-inverse fa-sign-out") %>

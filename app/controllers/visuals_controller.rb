@@ -26,6 +26,7 @@ class VisualsController < ApplicationController
   # GET /visuals/1.json
   def show
     @visuals = @visual.artist.visuals
+    @order_item = current_order.order_items.new
   end
 
   # GET /visuals/new

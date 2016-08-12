@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'order_items/create'
+
+  get 'order_items/update'
+
+  get 'order_items/destroy'
+
+  get 'carts/show'
+
   resources :visual_gabarits
   resources :gabarits
   resources :visual_formats
@@ -24,6 +32,9 @@ Rails.application.routes.draw do
       get 'gabarits'
     end
   end
+
+  resource :cart, only: [:show]
+  resources :order_items, only: [:create, :update, :destroy]
 
   get 'your_visuals' => 'uploads#new'
   get 'concept' => 'visitors#concept'

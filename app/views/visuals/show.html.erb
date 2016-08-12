@@ -33,8 +33,10 @@
             Livraison | Retrait
 
             <hr>
-            <h4><%= @visual.price %> €</h4>
-              <%= link_to "Ajouter au panier", "", class: "btn btn-primary btn-block" %>
+            <!--<h4><%= @visual.price %> €</h4>
+              <%= link_to "Ajouter au panier", "", class: "btn btn-primary btn-block" %>-->
+
+              <%= render partial: "visuals/add_to_cart", locals: {visual: @visual, order_item: @order_item} %>
             
           </div>
         </div>

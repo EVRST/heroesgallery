@@ -13,3 +13,22 @@ position: fixed; /* to stop the div from scrolling */
 top: 0;          /* to fix the div at the top its containing element */
 right: 0;        /* to fix the div at the right of its containing element */
 }
+
+.hg_color_link a:visited{
+	color: #e8b053;
+}
+
+.hg_color_link a{
+	color: #e8b053;
+}
+
+.hg_color_link a:hover{
+	color: #e8b053;
+	text-decoration: none;
+	background-color: transparent;
+}
+
+.neutral_link a:hover {
+	text-decoration: none;
+	background-color: transparent;
+}

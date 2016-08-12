@@ -27,6 +27,9 @@ class VisualsController < ApplicationController
   def show
     @visuals = @visual.artist.visuals
     @order_item = current_order.order_items.new
+
+    @current_order_item = current_order.order_items.where(visual_id: @visual.id).last if current_order
+    #current_user.order_product(@product) if current_user && current_user.order_product(@product)
   end
 
   # GET /visuals/new

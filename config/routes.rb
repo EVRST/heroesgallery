@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :finishes
   get 'order_items/create'
 
   get 'order_items/update'
@@ -40,6 +41,7 @@ Rails.application.routes.draw do
   get 'concept' => 'visitors#concept'
   get 'finitions' => 'visitors#finitions'
   get 'contact' => 'visitors#contact'
+  get 'terms' => 'visitors#terms'
 
   get 'drawings' => "visuals#drawings"
   get 'photos' => "visuals#photos"

@@ -1,0 +1,22 @@
+<% if @current_order_item %>
+<div class="text-left">
+    <% if @current_order_item.visual.dimensions %>
+    	<%= simple_form_for @current_order_item, :html => {method: :put, multipart: true} do |f| %>
+        <%= f.collection_radio_buttons(:finish_id, Finish.all, :id, :name) do |b| %>    
+            <p><%= b.label(:"data-value" => b.value) { b.radio_button + " " + " " + b.text } %></p>
+                  
+        <% end %>
+        <%= f.submit "Modifier", class: 'btn btn-primary btn-transparent btn-xs' %>
+        <% end %>
+    <% end %>
+</div>
+
+<% else %>
+	<%= simple_form_for order_item, remote: true do |f| %>
+		<%= f.collection_radio_buttons(:finish_id, Finish.all, :id, :name) do |b| %>    
+            <p><%= b.label(:"data-value" => b.value) { b.radio_button + " " + " " + b.text } %></p>
+                  
+        <% end %>
+    	<%= f.submit "Modifier", class: 'btn btn-primary btn-transparent btn-xs' %>
+	<% end %>
+<% end %>

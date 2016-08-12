@@ -3,6 +3,9 @@
   <div class="container">
 
     <div class="row start-page">
+
+      
+
       <div class="col-md-3">
         <div class="panel panel-default visual-cart">
           <div class="panel-body text-center">
@@ -11,28 +14,14 @@
               <small> <%= @visual.gabarits.last.name if @visual.gabarits.any? %></small>
             </h4>
 
-         <div class="text-left">
-          <% if @visual.dimensions %>
-                <%= collection_radio_buttons(:dimension, :visual_id, @visual.dimensions, :id, :whole_name) do |b| %>
-
-                
-                 
-                    
-                    <br><%= b.label(:"data-value" => b.value) { b.radio_button + " " + " " + b.text } %>
-                  
-                  <% end %>
-                  <% end %>
-</div>
+         <%= render partial: "visuals/choose_dimensions", locals: {visual: @visual, order_item: @order_item} %>
             
           <hr>
 
             <h4>Finition</h4>
-            Alu | Plexi
+          <%= render partial: "visuals/chooser_finish", locals: {visual: @visual, order_item: @order_item} %>
           <hr>
-            <h4>Endroit</h4>
-            Livraison | Retrait
-
-            <hr>
+            
             <!--<h4><%= @visual.price %> €</h4>
               <%= link_to "Ajouter au panier", "", class: "btn btn-primary btn-block" %>-->
 

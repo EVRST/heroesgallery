@@ -4,6 +4,7 @@ end
 class OrderItem < ActiveRecord::Base
   belongs_to :visual
   belongs_to :order
+  belongs_to :dimension
 
   validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
   validate :visual_present
@@ -23,6 +24,16 @@ class OrderItem < ActiveRecord::Base
     unit_price * quantity
   end
 
+  def price
+    if dimension_id == 5
+      20
+    elsif dimension_id == 2
+      38
+    else
+      visual.price
+    end
+  end
+
 private
   def visual_present
     if visual.nil?
@@ -40,4 +51,6 @@ private
     self[:unit_price] = unit_price
     self[:total_price] = quantity * self[:unit_price]
   end
+
+
 end

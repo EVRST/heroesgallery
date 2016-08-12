@@ -10,4 +10,7 @@ class VisitorsController < ApplicationController
 
 	def contact
 	end
+
+	def terms
+	end
 end

@@ -8,7 +8,18 @@
 		  <%= render "shopping_cart" %>
 		</div>
 
-		<div class="cart_subtotal"><%= current_order.subtotal %></div>
+
+		<div class="cart_subtotal">
+			
+				<form>
+				  <div class="form-group">
+				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email address">
+				  </div>
+				</form>
+				<p class="lead text-right">
+				Total : <span class="hg_color"><%= number_to_currency current_order.subtotal %></span></p>
+			<%= link_to "Finaliser la commande", "", class: "btn btn-primary btn-block" %>
+		</div>
 </div>
 </div>
 </div>

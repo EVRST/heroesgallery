@@ -3,7 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .cart_subtotal {
-	position: absolute;
+	position: fixed;
 	top: 200px;
 	right: 100px;
+}
+
+.span3.affix{
+position: fixed; /* to stop the div from scrolling */
+top: 0;          /* to fix the div at the top its containing element */
+right: 0;        /* to fix the div at the right of its containing element */
 }

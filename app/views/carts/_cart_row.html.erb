@@ -15,7 +15,7 @@
           </p>
 
           <p>
-            <%= number_to_currency order_item.price %>
+            <strong><%= number_to_currency order_item.price %></strong>
             <br><%= order_item.dimension.whole_name if order_item.dimension %></p>
           <p><%= link_to "Supprimer", order_item, { data: { confirm: "Are you sure you wish to delete the product '#{order_item.visual.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger btn-xs btn-transparent" } %>
           </p>

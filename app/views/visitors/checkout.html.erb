@@ -51,11 +51,11 @@
 
 	    			<hr>
 	    			<div class="text-center">
-	    			<span class="fa-stack fa-lg hg_color">
-					  <i class="fa fa-circle-thin fa-stack-2x"></i>
-					  <i class="fa fa-truck fa-stack-1x"></i>
-					</span>
-				</div>
+		    			<span class="fa-stack fa-lg hg_color">
+						  <i class="fa fa-circle-thin fa-stack-2x"></i>
+						  <i class="fa fa-truck fa-stack-1x"></i>
+						</span>
+					</div>
 	    			
 	    			<p class="text-center">La livraison aura lieu entre ... et ... à l'adresse suivante :</p>
 	    			<%= current_user.shipping_address %>
@@ -132,10 +132,9 @@
     					</div>
     				</div>
     				
-
-    				<h3><%= link_to "Payer #{number_to_currency @order.total}", "", class: "btn btn-success btn-block" %></h3>
-
     				
+    				<h3><%= render "visitors/checkout_button" %></h3>
+	
     			</div>
     		</div>
     	

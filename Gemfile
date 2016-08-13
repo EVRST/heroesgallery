@@ -24,6 +24,9 @@ gem 'thin'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk'
 
+gem 'stripe'
+gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x'
+
 group :development do
   gem 'better_errors'
   gem 'hub', :require=>nil

@@ -1,10 +1,9 @@
-class OrderItem < ActiveRecord::Base
-end
 
 class OrderItem < ActiveRecord::Base
   belongs_to :visual
   belongs_to :order
   belongs_to :dimension
+  has_one :purchase
 
   validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
   validate :visual_present

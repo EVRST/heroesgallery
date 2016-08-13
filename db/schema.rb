@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160813095741) do
+ActiveRecord::Schema.define(version: 20160813225652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,6 +119,14 @@ ActiveRecord::Schema.define(version: 20160813095741) do
     t.boolean  "with_shipping"
   end
 
+  create_table "purchases", force: :cascade do |t|
+    t.integer  "order_item_id"
+    t.integer  "buyer_id"
+    t.integer  "visual_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "uploads", force: :cascade do |t|
     t.boolean  "horizontal"
     t.boolean  "plexi"
@@ -163,6 +171,7 @@ ActiveRecord::Schema.define(version: 20160813095741) do
     t.string   "billing_telephone"
     t.string   "lead_source"
     t.boolean  "billing_as_shipping"
+    t.string   "stripeid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

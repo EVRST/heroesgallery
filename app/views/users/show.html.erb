@@ -1,3 +1,25 @@
-<h3>User</h3>
-<p>Name: <%= @user.name if @user.name %></p>
-<p>Email: <%= @user.email if @user.email %></p>
+<div class="row artists">
+
+  <div class="container">
+
+    <div class="row col-md-10 col-md-offset-1">
+
+    	<h2 class="page-header text-center">Suivi de vos commandes</h2>
+
+    	<div class="well">
+    		<% current_user.purchases.each do |purchase| %>
+    			<div class="row">
+    				<div class="col-md-2">
+    					<%= image_tag purchase.visual.miniature.url(:thumb) %>
+    				</div>
+    				<div class="col-md-10">
+    			<%= purchase.created_at %>
+    			<br><%= purchase.visual.name %>
+    		</div>
+    	</div>
+    			<hr>
+    		<% end %>
+    	</div>
+    </div>
+</div>
+</div>

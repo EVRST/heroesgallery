@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :purchases
   resources :finishes
   get 'order_items/create'
 
@@ -42,6 +43,10 @@ Rails.application.routes.draw do
 
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
+
+  #for stripe
+  resources :charges
+  post '/buy/:id', to: 'charges#create', as: :buy
 
   get 'your_visuals' => 'uploads#new'
   get 'concept' => 'visitors#concept'

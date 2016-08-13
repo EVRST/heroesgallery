@@ -19,8 +19,11 @@ Rails.application.routes.draw do
   resources :artists
   resources :visuals
   root to: 'visitors#home'
-  devise_for :users
+  
+  devise_for :users, controllers: { registrations: "registrations" }
   resources :users
+
+
 
   resources :artists do
       member do
@@ -45,4 +48,8 @@ Rails.application.routes.draw do
 
   get 'drawings' => "visuals#drawings"
   get 'photos' => "visuals#photos"
+
+  get 'shipping' => "visitors#shipping"
+  get 'billing' => "visitors#billing"
+  get 'checkout' => "visitors#checkout"
 end

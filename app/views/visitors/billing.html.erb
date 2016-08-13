@@ -1,0 +1,49 @@
+<div class="row artists">
+
+  <div class="container">
+
+    <div class="row col-md-10 col-md-offset-1">
+
+    	<h2 class="page-header text-center">Vos données de facturation</h2>
+
+
+    	<h4 class="alert alert-info text-center">
+    		Votre adresse de facturation
+    	</h4>
+
+    	<div class="col-md-6 col-md-offset-3">
+    		<div class="well">
+    			<%= simple_form_for(current_user) do |f| %>
+  					<%= f.error_notification %>
+   
+   				 <%= devise_error_messages! %>
+
+			    <div class="form-group">
+			      <%= f.text_field :billing_street, placeholder: "Rue", class: 'form-control' %>
+			    </div>
+			    <div class="form-group">  
+			      <%= f.text_field :billing_number, placeholder: "Numéro de rue", class: 'form-control' %>
+			    </div>
+			    <div class="form-group">
+			    	<div class="row">
+			    		<div class="col-md-4">
+			    			<%= f.text_field :billing_zipcode, placeholder: "Code postal", class: 'form-control' %>
+			    		</div>
+			    		<div class="col-md-8">
+			    			<%= f.text_field :billing_city, placeholder: "Ville", class: 'form-control' %>
+			    		</div>
+			    	</div>
+			    </div>
+			    <div class="form-group">  
+			      <%= f.text_field :billing_telephone, placeholder: "Téléphone", class: 'form-control' %>
+			    </div>
+			     <%= f.submit 'Confirmer', :class => 'btn btn-primary btn-block' %>
+			  <% end %>
+    		</div>
+    	</div>
+
+
+
+    </div>
+</div>
+</div>

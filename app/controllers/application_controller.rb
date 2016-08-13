@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
       Order.new
     end
   end
+
+  def after_sign_up_path
+    shipping_path
+  end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160812130009) do
+ActiveRecord::Schema.define(version: 20160813075056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -115,6 +115,7 @@ ActiveRecord::Schema.define(version: 20160812130009) do
     t.integer  "order_status_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "user_email"
   end
 
   create_table "uploads", force: :cascade do |t|
@@ -146,6 +147,21 @@ ActiveRecord::Schema.define(version: 20160812130009) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "name"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email_invite"
+    t.string   "shipping_street"
+    t.string   "shipping_number"
+    t.string   "shipping_zipcode"
+    t.string   "shipping_city"
+    t.string   "shipping_telephone"
+    t.string   "billing_street"
+    t.string   "billing_number"
+    t.string   "billing_zipcode"
+    t.string   "billing_city"
+    t.string   "billing_telephone"
+    t.string   "lead_source"
+    t.boolean  "billing_as_shipping"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

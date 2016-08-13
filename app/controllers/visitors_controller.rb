@@ -13,4 +13,13 @@ class VisitorsController < ApplicationController
 
 	def terms
 	end
+
+	def shipping
+	end
+
+	def billing
+	end
+
+	def checkout
+	end
 end

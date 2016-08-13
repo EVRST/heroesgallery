@@ -1,10 +1,7 @@
 <div class="row artists">
 
   <div class="container">
-<%= current_order.id %>
-<%= current_order.created_at %>
-<%= current_order.subtotal %>
-<%= current_order.with_shipping %>
+
     <div class="row col-md-10 col-md-offset-1">
 
     	<h2 class="page-header text-center">Récapitulatif de votre commande</h2>
@@ -19,7 +16,13 @@
     					<hr>
 					    <%= render 'carts/cart_checkout_row', visual: order_item.visual, order_item: order_item, show_total: true %>
 					<% end %>
+
+					<br>
+					<div class="text-center">
+					<%= link_to "Retourner au panier", cart_path, class: 'btn btn-primary btn-transparent btn-xs' %>
+				</div>
     			</div>
+
     		</div>
 
     		<div class="col-md-4">
@@ -27,6 +30,10 @@
     				<p class="lead text-center hg_color">Livraison / Retrait</p>
     				<hr>
     				<h5 class="text-center">Faites votre choix</h5>
+
+	    			<% if current_order.with_shipping %>
+
+	    			
     				<div class="row">
     					<div class="col-md-6">
 		    				<%= simple_form_for @order, :html => {method: :put, multipart: true} do |f| %>
@@ -42,16 +49,54 @@
 		    			</div>
 		    	    </div>
 
-	    			<% if current_order.with_shipping %>
 	    			<hr>
-	    			La livraison aura lieu entre ... et ... à l'adresse suivante :
-	    			<br>(adresse de livraison - modifier)
+	    			<div class="text-center">
+	    			<span class="fa-stack fa-lg hg_color">
+					  <i class="fa fa-circle-thin fa-stack-2x"></i>
+					  <i class="fa fa-truck fa-stack-1x"></i>
+					</span>
+				</div>
+	    			
+	    			<p class="text-center">La livraison aura lieu entre ... et ... à l'adresse suivante :</p>
+	    			<%= current_user.shipping_address %>
+	    			<br><%= current_user.shipping_town %>
+	    			<br><%= current_user.shipping_telephone %>
+	    			<%= link_to "modifier l'adresse", shipping_path, class: 'btn btn-primary btn-transparent btn-xs pull-right' %>
 
 	    			<% else %>
+
+	    			<div class="row">
+    					<div class="col-md-6">
+		    				<%= simple_form_for @order, :html => {method: :put, multipart: true} do |f| %>
+		    					<%= f.hidden_field :with_shipping, value: true %>
+		    					<%= f.submit "Livraison", class: 'btn btn-primary btn-transparent btn-sm btn-block' %>
+		    				<% end %>
+		    			</div>
+		    			<div class="col-md-6">
+		    				<%= simple_form_for @order, :html => {method: :put, multipart: true} do |f| %>
+		    					<%= f.hidden_field :with_shipping, value: false %>
+		    					<%= f.submit "Retrait en magasin", class: 'btn btn-primary btn-sm btn-block' %>
+		    				<% end %>
+		    			</div>
+		    	    </div>
+
 	    			<hr>
-	    			La commande peut être retirée en magasin dès le ...
-	    			<br>(voir l'adresse du magasin)
+	    			<div class="text-center">
+		    			<span class="fa-stack fa-lg hg_color">
+						  <i class="fa fa-circle-thin fa-stack-2x"></i>
+						  <i class="fa fa-map-marker fa-stack-1x"></i>
+						</span>
+					</div>
+	    			<p class="text-center">La commande peut être retirée en magasin dès le ...</p> 
+	    			<p class="lead text-center"><span class="btn-link-hg"><%= link_to "voir l'adresse du magasin", contact_path, class: 'btn btn-primary btn-transparent btn-sm' %></span>
+	    			</p>
 	    			<% end %>
+	    			<hr>
+    				<p>Adresse de facturation :</p>
+    				<%= current_user.billing_address %>
+	    			<br><%= current_user.billing_town %>
+	    			<br><%= current_user.billing_telephone %>
+	    			<%= link_to "modifier l'adresse", billing_path, class: 'btn btn-primary btn-transparent btn-xs pull-right' %>
     		
     			</div>
     		</div>
@@ -70,10 +115,10 @@
     				</div>
 
     				<div class="row">
-    					<div class="col-md-7">
-    						Livraison
+    					<div class="col-md-6">
+    						<%= @order.with_shipping ? "Livraison" : "Retrait" %>
     					</div>
-    					<div class="col-md-5 text-right">
+    					<div class="col-md-6 text-right">
     						<%= number_to_currency @order.shipping %>
     					</div>
     				</div>
@@ -88,7 +133,9 @@
     				</div>
     				
 
-    				<h3><%= link_to "Payer", "", class: "btn btn-success btn-block" %></h3>
+    				<h3><%= link_to "Payer #{number_to_currency @order.total}", "", class: "btn btn-success btn-block" %></h3>
+
+    				
     			</div>
     		</div>
     	

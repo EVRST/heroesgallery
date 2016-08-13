@@ -1,7 +1,10 @@
 <div class="row artists">
 
   <div class="container">
-
+<%= current_order.id %>
+<%= current_order.created_at %>
+<%= current_order.subtotal %>
+<%= current_order.with_shipping %>
     <div class="row col-md-10 col-md-offset-1">
 
     	<h2 class="page-header text-center">Récapitulatif de votre commande</h2>
@@ -26,35 +29,66 @@
     				<h5 class="text-center">Faites votre choix</h5>
     				<div class="row">
     					<div class="col-md-6">
-    				<%= simple_form_for current_order, :html => {method: :put, multipart: true} do |f| %>
-    					<%= f.hidden_field :with_shipping, value: true %>
-    					<%= f.submit "Livraison", class: 'btn btn-primary btn-sm btn-block' %>
-    				<% end %>
-    			</div>
-    			<div class="col-md-6">
-    				<%= simple_form_for current_order, :html => {method: :put, multipart: true} do |f| %>
-    					<%= f.hidden_field :with_shipping, value: false %>
-    					<%= f.submit "Retrait en magasin", class: 'btn btn-primary btn-transparent btn-sm btn-block' %>
-    				<% end %>
-    			</div>
+		    				<%= simple_form_for @order, :html => {method: :put, multipart: true} do |f| %>
+		    					<%= f.hidden_field :with_shipping, value: true %>
+		    					<%= f.submit "Livraison", class: 'btn btn-primary btn-sm btn-block' %>
+		    				<% end %>
+		    			</div>
+		    			<div class="col-md-6">
+		    				<%= simple_form_for @order, :html => {method: :put, multipart: true} do |f| %>
+		    					<%= f.hidden_field :with_shipping, value: false %>
+		    					<%= f.submit "Retrait en magasin", class: 'btn btn-primary btn-transparent btn-sm btn-block' %>
+		    				<% end %>
+		    			</div>
+		    	    </div>
 
-    			<% if current_order.with_shipping %>
-    			<hr>
-    			La livraison aura lieu entre ... et ... à l'adresse suivante :
-    			<br>(adresse de livraison - modifier)
+	    			<% if current_order.with_shipping %>
+	    			<hr>
+	    			La livraison aura lieu entre ... et ... à l'adresse suivante :
+	    			<br>(adresse de livraison - modifier)
 
-    			<% else %>
-    			<hr>
-    			La commande peut être retirée en magasin dès le ...
-    			<br>(voir l'adresse du magasin)
-    			<% end %>
-    		</div>
+	    			<% else %>
+	    			<hr>
+	    			La commande peut être retirée en magasin dès le ...
+	    			<br>(voir l'adresse du magasin)
+	    			<% end %>
+    		
     			</div>
     		</div>
 
     		<div class="col-md-3">
     			<div class="well">
     				<p class="lead text-center hg_color">Paiement</p>
+    				<hr>
+    				<div class="row">
+    					<div class="col-md-7">
+    						Produits (<%= @order.order_items.count %>)
+    					</div>
+    					<div class="col-md-5 text-right">
+    						<%= number_to_currency @order.subtotal %>
+    					</div>
+    				</div>
+
+    				<div class="row">
+    					<div class="col-md-7">
+    						Livraison
+    					</div>
+    					<div class="col-md-5 text-right">
+    						<%= number_to_currency @order.shipping %>
+    					</div>
+    				</div>
+    				<hr>
+    				<div class="row">
+    					<div class="col-md-7">
+    						<strong>Total</strong>
+    					</div>
+    					<div class="col-md-5 text-right">
+    						<strong><%= number_to_currency @order.total %></strong>
+    					</div>
+    				</div>
+    				
+
+    				<h3><%= link_to "Payer", "", class: "btn btn-success btn-block" %></h3>
     			</div>
     		</div>
     	

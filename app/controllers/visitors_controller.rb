@@ -21,5 +21,6 @@ class VisitorsController < ApplicationController
 	end
 
 	def checkout
+		@order_items = current_order.order_items
 	end
 end

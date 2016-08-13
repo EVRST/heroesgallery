@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'carts/show'
 
+
+
   resources :visual_gabarits
   resources :gabarits
   resources :visual_formats
@@ -18,6 +20,7 @@ Rails.application.routes.draw do
   resources :articles
   resources :artists
   resources :visuals
+  resources :orders
   root to: 'visitors#home'
   
   devise_for :users, controllers: { registrations: "registrations" }

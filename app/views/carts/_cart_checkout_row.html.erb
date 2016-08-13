@@ -1,0 +1,25 @@
+
+
+    
+      
+    	<div class="row">
+    		<div class="col-md-5">
+    			<%= link_to image_tag(visual.image.url(:medium), class: 'img-rounded'), visual_path(visual) %>
+    		</div>
+    		<div class="col-md-7">
+          <p>
+            <span class="hg_color_link"><%= link_to visual.name, visual_path(visual) %></span>
+            <br><small><span class="neutral_link"><%= link_to visual.artist.full_name, artist_path(visual.artist) %></span></small>
+          </p>
+
+          <p>
+            <strong><%= number_to_currency order_item.price %></strong>
+            <br><%= order_item.dimension.whole_name if order_item.dimension %></p>
+          
+        </div>
+      </div>
+    
+    
+
+    
+

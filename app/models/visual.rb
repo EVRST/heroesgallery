@@ -17,4 +17,12 @@ class Visual < ActiveRecord::Base
     def with_this(gabarit)
 	  visual_gabarits.where(:gabarit_id => gabarit.id).last
 	end
+
+	def miniature_or_placeholder
+		if miniature.present?
+			miniature
+		else
+			image
+		end
+	end
 end

@@ -10,11 +10,12 @@
     		<% current_user.purchases.each do |purchase| %>
     			<div class="row">
     				<div class="col-md-2">
-    					<%= image_tag purchase.visual.miniature.url(:thumb) %>
+    					<%= image_tag purchase.visual.miniature_or_placeholder.url(:thumb) %>
     				</div>
     				<div class="col-md-10">
     			<%= purchase.created_at %>
-    			<br><%= purchase.visual.name %>
+    			<br><%= link_to purchase.visual.name, visual_path(purchase.visual) %>
+
     		</div>
     	</div>
     			<hr>

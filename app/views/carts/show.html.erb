@@ -8,7 +8,7 @@
 		  <%= render "shopping_cart" %>
 		</div>
 
-
+		<% unless @order_items.size == 0 %>
 		<div class="cart_subtotal">
 			
 				<p class="lead text-right">
@@ -20,6 +20,7 @@
 			<%= link_to "Finaliser la commande", new_user_registration_path, class: "btn btn-primary btn-block" %>
 			<% end %>
 		</div>
+		<% end %>
 </div>
 </div>
 </div>

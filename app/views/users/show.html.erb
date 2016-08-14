@@ -8,6 +8,7 @@
 
     	<div class="well">
     		<% current_user.purchases.each do |purchase| %>
+                
     			<div class="row">
     				<div class="col-md-2">
     					<%= image_tag purchase.visual.miniature_or_placeholder.url(:thumb) %>

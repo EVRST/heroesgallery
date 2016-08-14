@@ -27,6 +27,8 @@ gem 'aws-sdk'
 gem 'stripe'
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x'
 
+gem 'social-share-button'
+
 group :development do
   gem 'better_errors'
   gem 'hub', :require=>nil

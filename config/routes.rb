@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :subscriptions
   resources :purchases
   resources :finishes
   get 'order_items/create'

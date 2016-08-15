@@ -11,7 +11,12 @@
 
     <p class="lead">Aperçu de votre photo</p>
     <%= image_tag @upload.image.url(:medium) %>
-    <br><%= link_to "Valider & payer", "", class: "btn btn-transparent btn-primary btn-lg" %>
+    <br>
+    <% if user_signed_in? %>
+      <%= link_to "Valider & envoyer la demande", user_path(current_user), class: "btn btn-transparent btn-primary btn-lg" %>
+    <% else %>
+    <%= link_to "Valider & envoyer la demande", new_user_registration_path, class: "btn btn-transparent btn-primary btn-lg" %>
+    <% end %>
   </div>
 <div class="col-md-5 uploads-form text-center">
   <p class="lead">

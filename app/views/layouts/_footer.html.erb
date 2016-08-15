@@ -26,14 +26,27 @@
 			</div>
 			<div class="col-md-6 text-center">
 				
-				<p class="lead"><%= link_to "contact", contact_path %> |
-				<%= link_to "concept", concept_path %> |
-				<%= link_to "conditions", terms_path %></p>
+				<p class="lead">
+					<%= link_to "Contact", contact_path %> 
+					<span class="upper"><i class="fa fa-circle fa-small" aria-hidden="true"></i></small>
+					<%= link_to "Concept", concept_path %> 
+					<i class="fa fa-circle fa-small" aria-hidden="true"></i>
+					<%= link_to "Conditions", terms_path %></p>
 
 				<p class="lead">
-					<%= link_to "Facebook", "" %> |
-					<%= link_to "Twitter", "" %> |
-					<%= link_to "Pinterest", "" %></p>
+					<%= link_to "" do %>
+						<%= content_tag(:i, "", class: "fa fa-facebook") %>
+					<% end %>
+					<%= link_to "" do %>
+						<%= content_tag(:i, "", class: "fa fa-twitter") %>
+					<% end %>
+					<%= link_to "" do %>
+						<%= content_tag(:i, "", class: "fa fa-pinterest") %>
+					<% end %>
+					<%= link_to "" do %>
+						<%= content_tag(:i, "", class: "fa fa-envelope") %>
+					<% end %>
+					</p>
 
 				<p><small>Heroes Gallery 2016 - All rights reserved</small></p>
 			</div>

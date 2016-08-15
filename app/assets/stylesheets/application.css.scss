@@ -251,9 +251,17 @@ ul.nav a:hover {
   padding-top: 20px;
   padding-bottom: 30px;
   min-height: 100px;
-  border-top: 2px solid #e8b053;
+  border-top: 1px solid #e8b053;
   background-color: #31313b;
   color: white;
+}
+
+.footer a {
+  color: #e8b053;
+}
+
+.footer a:hover {
+  background-color: transparent;
 }
 
 .subscription {
@@ -263,5 +271,13 @@ ul.nav a:hover {
 .subscription-text {
   padding-top: 7px;
 }
+
+.fa.fa-small {
+  font-size: 0.4em;
+  margin-left: 7px;
+  margin-right: 7px;
+}
+
+
 
 

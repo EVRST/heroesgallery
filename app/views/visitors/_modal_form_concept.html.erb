@@ -1,0 +1,119 @@
+<!-- Modal -->
+<div class="modal fade" id="ModalConcept" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content black-text">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modifier la page Concept</h4>
+      </div>
+      <%= simple_form_for(@custom) do |f| %>
+      <div class="modal-body">
+        
+		  <%= f.error_notification %>
+		    
+		    		<%= f.input :concept_text_fr, label: false, placeholder: "Contenu FR",
+		    		as: :text, :input_html => { :rows => 8 } %>
+		    	
+		    		<%= f.input :concept_text_en, label: false, placeholder: "Contenu EN",
+		    		as: :text, :input_html => { :rows => 8 } %>
+				
+		    		<%= f.input :concept_text_nl, label: false, placeholder: "Contenu NL",
+		    		as: :text, :input_html => { :rows => 8 } %>
+			
+
+		    <hr>
+
+		    <div class="row">
+		    	<h4 class="text-center">Etape 1</h4>
+		    	<div class="col-md-4">
+		    		<%= f.input :step_one_title_fr, label: false, placeholder: "Titre FR" %>
+		    		<%= f.input :step_one_text_fr, label: false, placeholder: "Contenu FR",
+		    		as: :text, :input_html => { :rows => 8 } %>
+		    	</div>
+				<div class="col-md-4">
+					<%= f.input :step_one_title_en, label: false, placeholder: "Title EN" %>
+		    		<%= f.input :step_one_text_en, label: false, placeholder: "Content EN",
+		    		as: :text, :input_html => { :rows => 8 } %>
+				</div>
+				<div class="col-md-4">
+					<%= f.input :step_one_title_nl, label: false, placeholder: "Title NL" %>
+		    		<%= f.input :step_one_text_nl, label: false, placeholder: "Content NL",
+		    		as: :text, :input_html => { :rows => 8 } %>
+				</div>
+		    </div>
+
+		    <div class="row">
+		    	<h4 class="text-center">Etape 2</h4>
+		    	<div class="col-md-4">
+		    		<%= f.input :step_two_title_fr, label: false, placeholder: "Titre FR" %>
+		    		<%= f.input :step_two_text_fr, label: false, placeholder: "Contenu FR",
+		    		as: :text, :input_html => { :rows => 8 } %>
+		    	</div>
+				<div class="col-md-4">
+					<%= f.input :step_two_title_en, label: false, placeholder: "Title EN" %>
+		    		<%= f.input :step_two_text_en, label: false, placeholder: "Content EN",
+		    		as: :text, :input_html => { :rows => 8 } %>
+				</div>
+				<div class="col-md-4">
+					<%= f.input :step_two_title_nl, label: false, placeholder: "Title NL" %>
+		    		<%= f.input :step_two_text_nl, label: false, placeholder: "Content NL",
+		    		as: :text, :input_html => { :rows => 8 } %>
+				</div>
+		    </div>
+
+		    <div class="row">
+		    	<h4 class="text-center">Etape 3</h4>
+		    	<div class="col-md-4">
+		    		<%= f.input :step_three_title_fr, label: false, placeholder: "Titre FR" %>
+		    		<%= f.input :step_three_text_fr, label: false, placeholder: "Contenu FR",
+		    		as: :text, :input_html => { :rows => 8 } %>
+		    	</div>
+				<div class="col-md-4">
+					<%= f.input :step_three_title_en, label: false, placeholder: "Title EN" %>
+		    		<%= f.input :step_three_text_en, label: false, placeholder: "Content EN",
+		    		as: :text, :input_html => { :rows => 8 } %>
+				</div>
+				<div class="col-md-4">
+					<%= f.input :step_three_title_nl, label: false, placeholder: "Title NL" %>
+		    		<%= f.input :step_three_text_nl, label: false, placeholder: "Content NL",
+		    		as: :text, :input_html => { :rows => 8 } %>
+				</div>
+		    </div>
+
+		    <div class="row">
+		    	<h4 class="text-center">Etape 4</h4>
+		    	<div class="col-md-4">
+		    		<%= f.input :step_four_title_fr, label: false, placeholder: "Titre FR" %>
+		    		<%= f.input :step_four_text_fr, label: false, placeholder: "Contenu FR",
+		    		as: :text, :input_html => { :rows => 8 } %>
+		    	</div>
+				<div class="col-md-4">
+					<%= f.input :step_four_title_en, label: false, placeholder: "Title EN" %>
+		    		<%= f.input :step_four_text_en, label: false, placeholder: "Content EN",
+		    		as: :text, :input_html => { :rows => 8 } %>
+				</div>
+				<div class="col-md-4">
+					<%= f.input :step_four_title_nl, label: false, placeholder: "Title NL" %>
+		    		<%= f.input :step_four_text_nl, label: false, placeholder: "Content NL",
+		    		as: :text, :input_html => { :rows => 8 } %>
+				</div>
+		    </div>
+
+
+
+		  
+					
+				    
+
+		   
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+        <%= f.submit "Appliquer les modifications", class: 'btn btn-primary' %>
+      </div>
+
+
+    <% end %>
+    </div>
+  </div>
+</div>

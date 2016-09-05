@@ -1,0 +1,43 @@
+<%= simple_form_for(@custom) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :home_text_fr %>
+    <%= f.input :home_text_nl %>
+    <%= f.input :home_text_en %>
+    <%= f.input :concept_title_fr %>
+    <%= f.input :concept_title_nl %>
+    <%= f.input :concept_title_en %>
+    <%= f.input :concept_text_fr %>
+    <%= f.input :concept_text_nl %>
+    <%= f.input :concept_text_en %>
+    <%= f.input :step_one_title_fr %>
+    <%= f.input :step_one_title_nl %>
+    <%= f.input :step_one_title_en %>
+    <%= f.input :step_one_text_fr %>
+    <%= f.input :step_one_text_nl %>
+    <%= f.input :step_one_text_en %>
+    <%= f.input :step_two_title_fr %>
+    <%= f.input :step_two_title_nl %>
+    <%= f.input :step_two_title_en %>
+    <%= f.input :step_two_text_fr %>
+    <%= f.input :step_two_text_nl %>
+    <%= f.input :step_two_text_en %>
+    <%= f.input :step_three_title_fr %>
+    <%= f.input :step_three_title_nl %>
+    <%= f.input :step_three_title_en %>
+    <%= f.input :step_three_text_fr %>
+    <%= f.input :step_one_three_nl %>
+    <%= f.input :step_three_text_en %>
+    <%= f.input :step_four_title_fr %>
+    <%= f.input :step_four_title_nl %>
+    <%= f.input :step_four_title_en %>
+    <%= f.input :step_four_text_fr %>
+    <%= f.input :step_four_text_nl %>
+    <%= f.input :step_four_text_en %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

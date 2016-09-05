@@ -1,4 +1,4 @@
-$navbar-inverse-bg: transparent;
+$navbar-inverse-bg: rgba(49,49,59,0.3);
 $navbar-inverse-link-color: white;
 $brand-primary: #e8b053;
 $brand-info: #31313b;
@@ -18,6 +18,8 @@ img {
 .navbar-brand {
   font-size: inherit;
   }
+.navbar-inverse {
+  border-color: transparent;}
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes

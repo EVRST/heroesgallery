@@ -1,0 +1,91 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Customs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Home text fr</th>
+      <th>Home text nl</th>
+      <th>Home text en</th>
+      <th>Concept title fr</th>
+      <th>Concept title nl</th>
+      <th>Concept title en</th>
+      <th>Concept text fr</th>
+      <th>Concept text nl</th>
+      <th>Concept text en</th>
+      <th>Step one title fr</th>
+      <th>Step one title nl</th>
+      <th>Step one title en</th>
+      <th>Step one text fr</th>
+      <th>Step one text nl</th>
+      <th>Step one text en</th>
+      <th>Step two title fr</th>
+      <th>Step two title nl</th>
+      <th>Step two title en</th>
+      <th>Step two text fr</th>
+      <th>Step two text nl</th>
+      <th>Step two text en</th>
+      <th>Step three title fr</th>
+      <th>Step three title nl</th>
+      <th>Step three title en</th>
+      <th>Step three text fr</th>
+      <th>Step one three nl</th>
+      <th>Step three text en</th>
+      <th>Step four title fr</th>
+      <th>Step four title nl</th>
+      <th>Step four title en</th>
+      <th>Step four text fr</th>
+      <th>Step four text nl</th>
+      <th>Step four text en</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customs.each do |custom| %>
+      <tr>
+        <td><%= custom.home_text_fr %></td>
+        <td><%= custom.home_text_nl %></td>
+        <td><%= custom.home_text_en %></td>
+        <td><%= custom.concept_title_fr %></td>
+        <td><%= custom.concept_title_nl %></td>
+        <td><%= custom.concept_title_en %></td>
+        <td><%= custom.concept_text_fr %></td>
+        <td><%= custom.concept_text_nl %></td>
+        <td><%= custom.concept_text_en %></td>
+        <td><%= custom.step_one_title_fr %></td>
+        <td><%= custom.step_one_title_nl %></td>
+        <td><%= custom.step_one_title_en %></td>
+        <td><%= custom.step_one_text_fr %></td>
+        <td><%= custom.step_one_text_nl %></td>
+        <td><%= custom.step_one_text_en %></td>
+        <td><%= custom.step_two_title_fr %></td>
+        <td><%= custom.step_two_title_nl %></td>
+        <td><%= custom.step_two_title_en %></td>
+        <td><%= custom.step_two_text_fr %></td>
+        <td><%= custom.step_two_text_nl %></td>
+        <td><%= custom.step_two_text_en %></td>
+        <td><%= custom.step_three_title_fr %></td>
+        <td><%= custom.step_three_title_nl %></td>
+        <td><%= custom.step_three_title_en %></td>
+        <td><%= custom.step_three_text_fr %></td>
+        <td><%= custom.step_one_three_nl %></td>
+        <td><%= custom.step_three_text_en %></td>
+        <td><%= custom.step_four_title_fr %></td>
+        <td><%= custom.step_four_title_nl %></td>
+        <td><%= custom.step_four_title_en %></td>
+        <td><%= custom.step_four_text_fr %></td>
+        <td><%= custom.step_four_text_nl %></td>
+        <td><%= custom.step_four_text_en %></td>
+        <td><%= link_to 'Show', custom %></td>
+        <td><%= link_to 'Edit', edit_custom_path(custom) %></td>
+        <td><%= link_to 'Destroy', custom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Custom', new_custom_path %>

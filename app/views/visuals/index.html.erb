@@ -4,23 +4,25 @@
 <div class="container container-content">
 
   <div class="col-md-3">
-  <h2><span class="hg_color">Sélectionnez</span> par</h2>
+    <div class="selector">
+      <h2><span class="hg_color">Sélectionnez</span> par</h2>
 
-  <ul class="nav nav-pills nav-stacked">
-    <li class="active"><%= link_to "Tous", visuals_path %></li>
-    <li><%= link_to "Dessins", drawings_path %></li>
-    <li> <%= link_to "Photos", photos_path %></li>
-    <li role="presentation" class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-      Artistes <span class="caret"></span>
-    </a>
-    <ul class="dropdown-menu">
-      <% @artists.each do |artist| %>
-      <li><%= link_to artist.full_name, my_visuals_artist_path(artist) %></li>
-      <% end %>
-    </ul>
-  </li>
-  </ul>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><%= link_to "Tous", visuals_path %></li>
+        <li><%= link_to "Dessins", drawings_path %></li>
+        <li> <%= link_to "Photos", photos_path %></li>
+        <li role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          Artistes <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <% @artists.each do |artist| %>
+          <li><%= link_to artist.full_name, my_visuals_artist_path(artist) %></li>
+          <% end %>
+        </ul>
+      </li>
+      </ul>
+    </div>
   
   
 </div>

@@ -1,0 +1,22 @@
+// Place all the styles related to the Customs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.edit-button {
+	position: fixed;
+	right: 70px;
+	top: 70px;
+	}
+
+.show-for-sr, {
+    position: absolute!important;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+}
+
+.black-text {
+	color: black;
+}

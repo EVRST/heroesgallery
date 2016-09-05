@@ -1,23 +1,52 @@
 <% if @current_order_item %>
-<div class="text-left">
+
     <% if @current_order_item.visual.dimensions %>
-    	<%= simple_form_for @current_order_item, :html => {method: :put, multipart: true} do |f| %>
-        <%= f.collection_radio_buttons(:finish_id, Finish.all, :id, :name) do |b| %>    
-            <p><%= b.label(:"data-value" => b.value) { b.radio_button + " " + " " + b.text } %></p>
-                  
+    	<!--<%= simple_form_for @current_order_item, :html => {method: :put, multipart: true} do |f| %>
+            <%= f.collection_radio_buttons(:finish_id, Finish.all, :id, :name) do |b| %>    
+                <p><%= b.label(:"data-value" => b.value) { b.radio_button + " " + " " + b.text } %></p>
+                      
+            <% end %>
+            <%= f.hidden_field :unit_price, value: @current_order_item.price %>
+            <%= f.submit "Modifier", class: 'btn btn-primary btn-transparent btn-xs' %>
+            <% end %>
+        <% end %> -->
+
+    <% Finish.all.each do |finish| %>
+    <div class="col-md-6">
+        <%= simple_form_for @current_order_item, :html => {method: :put, multipart: true} do |f| %>
+            <%= f.hidden_field :finish_id, value: finish.id %>
+            <%= f.hidden_field :unit_price, value: @current_order_item.price %>
+            <% if finish == @current_order_item.finish %>
+            <%= f.submit "#{finish.name}", class: 'btn btn-primary btn-xs btn-block' %>
+            <% else %>
+            <%= f.submit "#{finish.name}", class: 'btn btn-info btn-transparent btn-xs btn-block' %>
+            <% end %>
         <% end %>
-        <%= f.hidden_field :unit_price, value: @current_order_item.price %>
-        <%= f.submit "Modifier", class: 'btn btn-primary btn-transparent btn-xs' %>
-        <% end %>
+    </div>
     <% end %>
-</div>
+
 
 <% else %>
-	<%= simple_form_for order_item, remote: true do |f| %>
+	<!--<%= simple_form_for order_item, remote: true do |f| %>
 		<%= f.collection_radio_buttons(:finish_id, Finish.all, :id, :name) do |b| %>    
             <p><%= b.label(:"data-value" => b.value) { b.radio_button + " " + " " + b.text } %></p>
                   
         <% end %>
     	<%= f.submit "Modifier", class: 'btn btn-primary btn-transparent btn-xs' %>
-	<% end %>
+	<% end %> -->
+
+    <% Finish.all.each do |finish| %>
+    <div class="col-md-6">
+        <%= simple_form_for order_item, remote: true do |f| %>
+            <%= f.hidden_field :finish_id, value: finish.id %>
+            <%= f.hidden_field :unit_price, value: order_item.price %>
+            <% if finish == order_item.finish %>
+            <%= f.submit "#{finish.name}", class: 'btn btn-primary btn-xs btn-block' %>
+            <% else %>
+            <%= f.submit "#{finish.name}", class: 'btn btn-info btn-transparent btn-xs btn-block' %>
+            <% end %>
+        <% end %>
+    </div>
+    <% end %>
+
 <% end %>

@@ -1,0 +1,60 @@
+<!-- Modal -->
+<div class="modal fade" id="ModalHome" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modifier la page d'accueil</h4>
+      </div>
+      <%= simple_form_for(@custom) do |f| %>
+      <div class="modal-body">
+        
+		  <%= f.error_notification %>
+		  	<div class="row">
+		    	<div class="col-md-4">
+		    		<%= f.label :image_one, "Ajouter image 1",  class: "btn btn-info btn-block" %>
+  					<%= f.file_field :image_one, class: "show-for-sr" %>
+		    	</div>
+		    	<div class="col-md-4">
+		    		<%= f.label :image_two, "Ajouter image 2",  class: "btn btn-info btn-block" %>
+  					<%= f.file_field :image_two, class: "show-for-sr" %>
+		    	</div>
+		    	<div class="col-md-4">
+		    		<%= f.label :image_three, "Ajouter image 3",  class: "btn btn-info btn-block" %>
+  					<%= f.file_field :image_three, class: "show-for-sr" %>
+		    	</div>
+		    </div>
+		    <hr>
+		    
+		    		<%= f.input :home_text_fr, label: false, placeholder: "Contenu FR",
+		    		as: :text, :input_html => { :rows => 8 } %>
+		    	
+		    		<%= f.input :home_text_en, label: false, placeholder: "Contenu EN",
+		    		as: :text, :input_html => { :rows => 8 } %>
+				
+		    		<%= f.input :home_text_nl, label: false, placeholder: "Contenu NL",
+		    		as: :text, :input_html => { :rows => 8 } %>
+			
+
+		    <hr>
+
+		    <%= f.label :image_down, "Ajouter image du bas",  class: "btn btn-info btn-block" %>
+  			<%= f.file_field :image_down, class: "show-for-sr" %>
+
+
+		  
+					
+				    
+
+		   
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+        <%= f.submit "Appliquer les modifications", class: 'btn btn-primary' %>
+      </div>
+
+
+    <% end %>
+    </div>
+  </div>
+</div>

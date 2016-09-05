@@ -5,7 +5,7 @@
           
           <%= link_to visual_path(visual) do %>
             <span class="card_caption" id="card_caption_<%= visual.id %>">
-              <%= visual.artist.full_name %>
+              <%= truncate(visual.artist.full_name, length: 15) %>
               <br>
               <br>
               <br>

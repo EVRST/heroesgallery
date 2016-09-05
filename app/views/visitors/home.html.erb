@@ -1,5 +1,8 @@
 <div class="row"> 
 
+
+
+
 	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -10,27 +13,44 @@
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
+
+  	
+
     <div class="item active">
-      <%= image_tag "front_slide.png" %>
+    	<% if @custom.image_one.present? %>
+    		<%= image_tag @custom.image_one.url(:cover) %>
+    	<% else %>
+    		<img src="http://placehold.it/1900x870&text=Slide One" alt="...">
+    	<% end %>
+      
       <div class="carousel-caption">
-        Heroes Gallery, en partenariat avec Marcel & C°, vous<br> proposent de superbes visuels de l'univers vintage du monde automobile.
+        <!--Heroes Gallery, en partenariat avec Marcel & C°, vous<br> proposent de superbes visuels de l'univers vintage du monde automobile.
 				<br>
 				Découvrez sur ce site les magnifiques photos ou dessins proposés en exclusivité.
 				<br>
-				Choisissez, commandez et habillez vos murs de vos héros.
+				Choisissez, commandez et habillez vos murs de vos héros.-->
       </div>
     </div>
     <div class="item">
-      <img src="http://placehold.it/1900x870&text=Slide Two" alt="...">
+    	<% if @custom.image_one.present? %>
+    		<%= image_tag @custom.image_two.url(:cover) %>
+    	<% else %>
+    		<img src="http://placehold.it/1900x870&text=Slide Two" alt="...">
+    	<% end %>
+      
       <div class="carousel-caption">
-        ...
+        <!--...-->
       </div>
     </div>
     
     <div class="item">
-      <img src="http://placehold.it/1900x870&text=Slide Three" alt="...">
+      <% if @custom.image_one.present? %>
+    		<%= image_tag @custom.image_three.url(:cover) %>
+    	<% else %>
+    		<img src="http://placehold.it/1900x870&text=Slide Three" alt="...">
+    	<% end %>
       <div class="carousel-caption">
-        ...
+        <!--...-->
       </div>
     </div>
   </div>
@@ -65,6 +85,15 @@
 	</div>
 </div>
 </div>-->
+<% if user_signed_in? %>
+<div class="edit-button">
+	  <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#ModalHome">
+	  	Modifier
+	  </button>
+	</div>
+
+	<%= render "modal_form_home" %>
+<% end %>
 
 <div class="container home-middle">
 	<div class="row">
@@ -74,7 +103,9 @@
 
 			<b>Vos héros</b> sur <span class="hg_color">plexi</span> ou sur <span class="hg_color">alu</span>
 		</h1>
-
+		<% if @custom.home_text.present? %>
+			<%= @custom.home_text %>
+		<% else %>
 		<p>
 			Heroes Gallery est né dans la tête de quelques amoureux de l'univers vintage du monde automobile.
 			<br>
@@ -100,12 +131,18 @@
 			
 			
 		</p>
+		<% end %>
 	</div>
 </div>
 </div>
 
 <div class="home-images-cars text-center">
-	<%= image_tag "home_cars.png" %>
+	<% if @custom.image_down.present? %>
+    	<%= image_tag @custom.image_down.url %>
+    <% else %>
+    	<%= image_tag "home_cars.png" %>
+    <% end %>
+	
 </div>
 
 <h3 class="text-center">

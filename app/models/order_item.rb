@@ -3,6 +3,7 @@ class OrderItem < ActiveRecord::Base
   belongs_to :visual
   belongs_to :order
   belongs_to :dimension
+  belongs_to :finish
   has_one :purchase
 
   validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }

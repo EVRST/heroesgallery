@@ -4,10 +4,20 @@
   <div class="form-inputs">
     <%= f.input :title, label: false, placeholder: "Titre" %>
     <%= f.input :author, label: false, placeholder: "Auteur" %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :image, as: :file %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :miniature, as: :file %>
+      </div>
+    </div>
     <%= f.input :content, :input_html => {:rows => 7}, label: false, placeholder: "Résumé" %>
+
   </div>
 
   <div class="form-actions">
     <%= f.submit "Publier le livre", class: "btn btn-primary btn-block btn-lg" %>
   </div>
 <% end %>
+<br><br>

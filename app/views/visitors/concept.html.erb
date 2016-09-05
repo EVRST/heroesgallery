@@ -1,10 +1,22 @@
 <div class="row concept">
 	<div class="container container-content">
+		<% if user_signed_in? %>
+<div class="edit-button">
+	  <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#ModalConcept">
+	  	Modifier
+	  </button>
+	</div>
+
+	<%= render "modal_form_concept" %>
+<% end %>
 	<div class="row">
 	<div class="col-md-8 col-md-offset-2">
 
 		<h1 class="text-center concept-title">Rien de plus <b>facile</b></h1>
 
+		<% if @custom.concept_text.present? %>
+			<%= @custom.concept_text %>
+		<% else %>
 		<p>
 			Heroes Gallery est né dans la tête de quelques amoureux de l'univers vintage du monde automobile.
 			<br>
@@ -28,16 +40,31 @@
 			<br>
 			Vous aussi, vous deviendrez vos propres héros !
 		</p>
+		<% end %>
 
 
 <div class="timeline">
 
 <div class="row step">
 	<div class="col-md-6 step_text step_line first_step step_left">
-		<div class="text-right text-in-first-step">Choisissez <b>l'oeuvre</b></div>
+		<div class="text-right text-in-first-step">
+			<% if @custom.step_one_title.present? %>
+				<% @custom.step_one_title %>
+			<% else %>
+			Choisissez <b>l'oeuvre</b>
+			<% end %>
+		</div>
 
-		<p class="text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-		<p class="text-right">Ut enim ad minim veniam, quis <span class="hg_color">nostrud exercitation.</span></p>
+		<p class="text-right">
+			<% if @custom.step_one_text.present? %>
+				<% @custom.step_one_text %>
+			<% else %>
+
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			<br><br>Ut enim ad minim veniam, quis <span class="hg_color">nostrud exercitation.</span>
+
+			<% end %>
+		</p>
 
 	</div>
 
@@ -54,10 +81,23 @@
 
 	<div class="col-md-6 step_text step_right">
 		<div class="second_dot"></div>
-		<div class="step_title">Choisissez <b>la taille</b></div>
+		<div class="step_title">
+			<% if @custom.step_two_title.present? %>
+				<% @custom.step_two_title %>
+			<% else %>
+			Choisissez <b>la taille</b>
+			<% end %>
+			
+		</div>
 
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-		<p>Ut enim ad minim veniam, quis <span class="hg_color">nostrud exercitation.</span></p>
+		<p>
+			<% if @custom.step_two_text.present? %>
+				<% @custom.step_two_text %>
+			<% else %>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			<br><br>Ut enim ad minim veniam, quis <span class="hg_color">nostrud exercitation.</span>
+			<% end %>
+		</p>
 	</div>
 </div>
 
@@ -66,10 +106,22 @@
 <div class="row step">
 	<div class="col-md-6 step_text step_line following_step step_left">
 		
-		<div class="step_title text-right">Choisissez <b>la finition</b></div>
+		<div class="step_title text-right">
+			<% if @custom.step_three_title.present? %>
+				<% @custom.step_three_title %>
+			<% else %>
+			Choisissez <b>la finition</b>
+			<% end %>
+		</div>
 
-		<p class="text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-		<p class="text-right">Ut enim ad minim veniam, quis <span class="hg_color">nostrud exercitation.</span></p>
+		<p class="text-right">
+			<% if @custom.step_three_text.present? %>
+				<% @custom.step_three_text %>
+			<% else %>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				<br><br>Ut enim ad minim veniam, quis <span class="hg_color">nostrud exercitation.</span>
+			<% end %>
+		</p>
 	</div>
 
 	<div class="col-md-6">
@@ -87,10 +139,22 @@
 
 	<div class="col-md-6 step_text step_right">
 		<div class="second_dot"></div>
-		<div class="step_title">Choisissez <b>l'endroit</b></div>
+		<div class="step_title">
+			<% if @custom.step_four_title.present? %>
+				<% @custom.step_four_title %>
+			<% else %>
+				Choisissez <b>l'endroit</b>
+			<% end %>
+		</div>
 
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-		<p>Ut enim ad minim veniam, quis <span class="hg_color">nostrud exercitation.</span></p>
+		<p>
+			<% if @custom.step_four_text.present? %>
+				<% @custom.step_four_text %>
+			<% else %>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			<br><br>Ut enim ad minim veniam, quis <span class="hg_color">nostrud exercitation.</span>
+			<% end %>
+		</p>
 
 		<div class="last_dot"></div>
 	</div>

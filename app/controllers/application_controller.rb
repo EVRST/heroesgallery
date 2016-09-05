@@ -19,6 +19,12 @@ class ApplicationController < ActionController::Base
     @subscription = Subscription.new
   end
 
+  before_action :set_custom
+
+  def set_custom
+    @custom = Custom.last
+  end
+
   def after_sign_up_path
     shipping_path
   end

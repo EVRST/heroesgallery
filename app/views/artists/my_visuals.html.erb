@@ -4,6 +4,7 @@
 <div class="container container-content">
 
   <div class="col-md-3">
+    <div class="selector">
   <h2><span class="hg_color">Sélectionnez</span> par</h2>
 
   <ul class="nav nav-pills nav-stacked">
@@ -27,7 +28,7 @@
 
   </ul>
   
-  
+  </div>
 </div>
 <div class="col-md-8 col-md-offset-1">
   <div class="row">
@@ -37,7 +38,7 @@
         <div class="card_image">
             <%= link_to visual_path(visual) do %>
             <span class="card_caption" id="card_caption_<%= visual.id %>">
-              <%= visual.name %>
+              <%= truncate(visual.name, length: 15) %>
               <br>
               <br>
               

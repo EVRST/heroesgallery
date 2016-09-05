@@ -7,4 +7,14 @@ class Artist < ActiveRecord::Base
 	def full_name
 		"#{first_name} #{last_name}"
 	end
+
+	def presentation
+		if I18n.locale.to_s.include?("en")
+	      presentation_en
+	    elsif I18n.locale.to_s.include?("fr")
+	      presentation_fr
+	    elsif I18n.locale.to_s.include?("nl")
+	      presentation_nl
+	    end
+	end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160814200752) do
+ActiveRecord::Schema.define(version: 20160905143827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,61 @@ ActiveRecord::Schema.define(version: 20160814200752) do
     t.string   "miniature_content_type"
     t.integer  "miniature_file_size"
     t.datetime "miniature_updated_at"
+  end
+
+  create_table "customs", force: :cascade do |t|
+    t.text     "home_text_fr"
+    t.text     "home_text_nl"
+    t.text     "home_text_en"
+    t.string   "concept_title_fr"
+    t.string   "concept_title_nl"
+    t.string   "concept_title_en"
+    t.text     "concept_text_fr"
+    t.text     "concept_text_nl"
+    t.text     "concept_text_en"
+    t.string   "step_one_title_fr"
+    t.string   "step_one_title_nl"
+    t.string   "step_one_title_en"
+    t.text     "step_one_text_fr"
+    t.text     "step_one_text_nl"
+    t.text     "step_one_text_en"
+    t.string   "step_two_title_fr"
+    t.string   "step_two_title_nl"
+    t.string   "step_two_title_en"
+    t.text     "step_two_text_fr"
+    t.text     "step_two_text_nl"
+    t.text     "step_two_text_en"
+    t.string   "step_three_title_fr"
+    t.string   "step_three_title_nl"
+    t.string   "step_three_title_en"
+    t.text     "step_three_text_fr"
+    t.text     "step_one_three_nl"
+    t.text     "step_three_text_en"
+    t.string   "step_four_title_fr"
+    t.string   "step_four_title_nl"
+    t.string   "step_four_title_en"
+    t.text     "step_four_text_fr"
+    t.text     "step_four_text_nl"
+    t.text     "step_four_text_en"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "image_one_file_name"
+    t.string   "image_one_content_type"
+    t.integer  "image_one_file_size"
+    t.datetime "image_one_updated_at"
+    t.string   "image_two_file_name"
+    t.string   "image_two_content_type"
+    t.integer  "image_two_file_size"
+    t.datetime "image_two_updated_at"
+    t.string   "image_three_file_name"
+    t.string   "image_three_content_type"
+    t.integer  "image_three_file_size"
+    t.datetime "image_three_updated_at"
+    t.string   "image_down_file_name"
+    t.string   "image_down_content_type"
+    t.integer  "image_down_file_size"
+    t.datetime "image_down_updated_at"
+    t.text     "step_three_text_nl"
   end
 
   create_table "dimensions", force: :cascade do |t|

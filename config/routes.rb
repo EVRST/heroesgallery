@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :customs
   resources :subscriptions
   resources :purchases
   resources :finishes

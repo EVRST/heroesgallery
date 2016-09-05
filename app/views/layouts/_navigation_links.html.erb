@@ -11,6 +11,20 @@
 
 <li><%= render 'layouts/cart_text' %></li>
 
+<li>
+	<% if user_signed_in? %>
+		<%= link_to user_path(current_user) do %>
+		<%= content_tag(:i, " ", class: "fa fa-lg fa-inverse fa-user") %>
+		<% end %>
+
+	<% else %>
+
+		<%= link_to new_user_session_path do %>
+		<%= content_tag(:i, " ", class: "fa fa-lg fa-inverse fa-user") %>
+		<% end %>
+	<% end %>
+</li>
+
 <% if user_signed_in? %>
 	<li><%= link_to destroy_user_session_path, :method=>'delete' do %>
 		<%= content_tag(:i, " ", class: "fa fa-lg fa-inverse fa-sign-out") %>

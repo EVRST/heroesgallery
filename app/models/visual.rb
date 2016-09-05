@@ -25,4 +25,14 @@ class Visual < ActiveRecord::Base
 			image
 		end
 	end
+
+	def presentation
+		if I18n.locale.to_s.include?("en")
+	      presentation_en
+	    elsif I18n.locale.to_s.include?("fr")
+	      presentation_fr
+	    elsif I18n.locale.to_s.include?("nl")
+	      presentation_nl
+	    end
+	end
 end

@@ -50,12 +50,12 @@
               <%= @visual.name %>
               <%= link_to "Modifier", edit_visual_path(@visual), class: "btn btn-primary btn-xs" %>
             </h3>
-            <h4><%= @visual.artist.full_name %></h4>
+            <h4><%= link_to @visual.artist.full_name, artist_path(@visual.artist) %></h4>
 
           </div>
           <div class='col-md-3 text-right'>
             <br>
-            <p>à partir de <%= @visual.price %> €</p>
+            <p class='lead'>à partir de <%= @visual.price %> €</p>
           </div>
         </div>
         <p><%= @visual.presentation_fr %></p>

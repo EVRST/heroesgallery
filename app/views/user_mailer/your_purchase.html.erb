@@ -3,7 +3,12 @@
 <p>
 	
 	Merci pour votre commande :
-	<br><b>Visuel choisi :</b> <%= @purchase.visual.name %>
+	<br><b>Visuel choisi :</b> 
+		<% unless @purchase.is_upload %>
+		<%= link_to @purchase.visual.name, visual_url(@purchase.visual) %>
+		<% else %>
+		<%= link_to "Visuel personnalisé", upload_url(@purchase.visual.upload) %>
+		<% end %>
     <br><b>Format :</b> <%= @purchase.order_item.dimension.whole_name %>
     <br><b>Support :</b> <%= @purchase.order_item.finish.name %>
 	<br><b>Prix :</b> <%= @purchase.order_item.price %> EUR tvac

@@ -49,7 +49,7 @@
 <div class="row step">
 	<div class="col-md-6 step_text step_line first_step step_left">
 		<div class="text-right text-in-first-step">
-			<% if @custom.step_one_title.present? %>
+			<span class="number">01</span><% if @custom.step_one_title.present? %>
 				<%= @custom.step_one_title %>
 			<% else %>
 			Choisissez <b>l'oeuvre</b>
@@ -83,7 +83,7 @@
 	<div class="col-md-6 step_text step_right">
 		<div class="second_dot"></div>
 		<div class="step_title">
-			<% if @custom.step_two_title.present? %>
+			<span class="number">02</span><% if @custom.step_two_title.present? %>
 				<%= @custom.step_two_title %>
 			<% else %>
 			Choisissez <b>la taille</b>
@@ -108,7 +108,7 @@
 	<div class="col-md-6 step_text step_line following_step step_left">
 		
 		<div class="step_title text-right">
-			<% if @custom.step_three_title.present? %>
+			<span class="number">03</span><% if @custom.step_three_title.present? %>
 				<%= @custom.step_three_title %>
 			<% else %>
 			Choisissez <b>la finition</b>
@@ -141,7 +141,7 @@
 	<div class="col-md-6 step_text step_right">
 		<div class="second_dot"></div>
 		<div class="step_title">
-			<% if @custom.step_four_title.present? %>
+			<span class="number">04</span><% if @custom.step_four_title.present? %>
 				<%= @custom.step_four_title %>
 			<% else %>
 				Choisissez <b>l'endroit</b>

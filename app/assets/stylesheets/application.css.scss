@@ -305,6 +305,30 @@ header.carousel .fill {
   color: #31313b;
 }
 
+.with-underline {
+  border-bottom: 0.01em solid #e8b053;
+  padding-bottom: 15px;
+  min-width: 300px;
+}
+
+.with-underline-last {
+  border-bottom: 0.01em solid #e8b053;
+  padding-bottom: 15px;
+  max-width: 250px;
+}
+
+.format-border-left {
+  border-left: 0.01em solid #e8b053;
+  min-height: 150px;
+}
+
+.number {
+  color: rgba(232, 176, 83, 0.3);
+  font-size: 2em;
+  font-weight: 700;
+  font-style: italic;
+}
+
 
 
 

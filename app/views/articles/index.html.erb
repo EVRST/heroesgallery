@@ -42,7 +42,7 @@
                     <% if user_signed_in? && current_user.is_admin %>
                   <%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-transparent btn-xs pull-right" %>
                 <% end %>
-                    <br><small><i><%= article.created_at %></i>
+                    <br><small><i><%= article.created_at.strftime("%d/%m/%Y") %></i>
                     
                   </small>
                   </h3>

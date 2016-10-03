@@ -11,6 +11,14 @@ class UploadsController < ApplicationController
   # GET /uploads/1.json
   def show
     @upload_gabarit = UploadGabarit.new
+    @visual = Visual.where(upload_id: @upload.id).last
+
+    @order_item = current_order.order_items.new
+
+    @current_order_item = current_order.order_items.where(visual_id: @visual.id).last if current_order
+
+    @gabarits = Gabarit.all
+    @visual_gabarit = VisualGabarit.new
   end
 
   # GET /uploads/new
@@ -30,6 +38,7 @@ class UploadsController < ApplicationController
 
     respond_to do |format|
       if @upload.save
+        Visual.create(is_upload: true, upload_id: @upload.id)
         format.html { redirect_to @upload, notice: 'Upload was successfully created.' }
         format.json { render :show, status: :created, location: @upload }
       else

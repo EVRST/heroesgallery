@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161003082305) do
+ActiveRecord::Schema.define(version: 20161003145846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -279,6 +279,8 @@ ActiveRecord::Schema.define(version: 20161003082305) do
     t.string   "miniature_content_type"
     t.integer  "miniature_file_size"
     t.datetime "miniature_updated_at"
+    t.boolean  "is_upload"
+    t.integer  "upload_id"
   end
 
 end

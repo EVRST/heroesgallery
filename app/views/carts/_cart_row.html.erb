@@ -6,12 +6,26 @@
       <div class="well">
     	<div class="row">
     		<div class="col-md-5">
+          <% unless visual.is_upload %>
     			<%= link_to image_tag(visual.image.url(:medium), class: 'img-rounded'), visual_path(visual) %>
+          <% else %>
+          <%= link_to image_tag(visual.upload.image.url(:medium), class: 'img-rounded'), visual_path(visual.upload) %>
+          <% end %>
     		</div>
     		<div class="col-md-7">
           <p class="lead">
-            <span class="hg_color_link"><%= link_to visual.name, visual_path(visual) %></span>
-            <br><small><span class="neutral_link"><%= link_to visual.artist.full_name, artist_path(visual.artist) %></span></small>
+            <span class="hg_color_link">
+              <% unless visual.is_upload %>
+                <%= link_to visual.name, visual_path(visual) %>
+              <% else %>
+                <i><%= link_to "Votre visuel personnalisé", upload_path(visual.upload) %></i>
+              <% end %>
+            </span>
+            <br><small><span class="neutral_link">
+            <% unless visual.is_upload %>
+            <%= link_to visual.artist.full_name, artist_path(visual.artist) %>
+            <% end %>
+          </span></small>
           </p>
 
           <p>

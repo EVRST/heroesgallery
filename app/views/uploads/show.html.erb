@@ -11,12 +11,12 @@
 
     <p class="lead">Aperçu de votre photo</p>
     <%= image_tag @upload.image.url(:medium) %>
-    <br>
+    <!--<br>
     <% if user_signed_in? %>
       <%= link_to "Valider & envoyer la demande", user_path(current_user), class: "btn btn-transparent btn-primary btn-lg" %>
     <% else %>
     <%= link_to "Valider & envoyer la demande", new_user_registration_path, class: "btn btn-transparent btn-primary btn-lg" %>
-    <% end %>
+    <% end %>-->
   </div>
 <div class="col-md-5 uploads-form text-center">
   <p class="lead">
@@ -26,10 +26,26 @@
     <u><strong>Format</strong> requis</u> : jpg | <u><strong>Taille</strong> min</u> : 2Mb</small>
   </p>
 
-  <%= render 'uploads/choose_gabarits' %>
-  <%= render 'uploads/choose_dimensions' %>
-  <%= render 'uploads/choose_finishes' %>
+   <%= render 'uploads/choose_gabarits' %>
+<% if @visual.gabarits.any? %>
+  <h4>Format</h4>
+      <small> <%= @visual.gabarits.last.name if @visual.gabarits.any? %></small>
+            </h4>
 
+         <%= render partial: "visuals/choose_dimensions", locals: {visual: @visual, order_item: @order_item} %>
+<% end %>
+<% if @current_order_item && @current_order_item.dimension_id %>            
+          <hr>
+
+            <h4>Finition</h4>
+          <%= render partial: "visuals/chooser_finish", locals: {visual: @visual, order_item: @order_item} %>
+<% end %>
+          
+
+<% if @current_order_item && @current_order_item.dimension_id && @current_order_item.finish_id %>
+<hr>
+              <%= render partial: "visuals/add_to_cart", locals: {visual: @visual, order_item: @order_item} %>
+<% end %>
 
 </div>
 </div>

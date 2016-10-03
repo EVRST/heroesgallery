@@ -1,1 +1,53 @@
-_choose_dimensions.html.erb
+<% if @current_order_item %>
+    <!--<%= simple_form_for @current_order_item, :html => {method: :put, multipart: true} do |f| %>
+
+        <%= f.collection_radio_buttons(:dimension_id, visual.dimensions, :id, :whole_name) do |b| %>    
+            <%= b.label(:"data-value" => b.value) { b.radio_button + " " + " " + b.text } %>        
+        <% end %>
+        <%= f.hidden_field :unit_price, value: @current_order_item.price %>
+        <%= f.submit "Modifier", class: 'btn btn-primary btn-transparent btn-xs' %>
+
+    <% end %> -->
+
+    <% visual.dimensions.each do |dimension| %>
+        <%= simple_form_for @current_order_item, :html => {method: :put, multipart: true} do |f| %>
+            <%= f.hidden_field :dimension_id, value: dimension.id %>
+            <%= f.hidden_field :unit_price, value: @current_order_item.price %>
+            <% if dimension == @current_order_item.dimension %>
+            <%= f.submit "#{dimension.whole_name}", class: 'btn btn-primary btn-xs' %>
+            <% else %>
+            <%= f.submit "#{dimension.whole_name}", class: 'btn btn-info btn-transparent btn-xs' %>
+            <% end %>
+        <% end %>
+    <% end %>
+    
+
+
+<% else %>
+
+
+	<!-- <%= simple_form_for order_item, remote: true do |f| %>
+		<%= f.hidden_field :quantity, value: 1, class: "form-control", min: 1 %> 
+		<%= f.hidden_field :unit_price, value: visual.price %> 
+    	<%= f.hidden_field :visual_id, value: visual.id %>
+    	<%= f.collection_radio_buttons(:dimension_id, visual.dimensions, :id, :whole_name) do |b| %>
+    		<%= b.label(:"data-value" => b.value) { b.radio_button + " " + " " + b.text } %>
+    	<% end %>
+    	<%= f.submit "Confirmer", class: 'btn btn-primary btn-transparent btn-xs' %>
+	<% end %> -->
+
+    <% visual.dimensions.each do |dimension| %>
+        <%= simple_form_for order_item, remote: true do |f| %>
+            <%= f.hidden_field :quantity, value: 1, class: "form-control", min: 1 %> 
+            <%= f.hidden_field :unit_price, value: visual.price %> 
+            <%= f.hidden_field :visual_id, value: visual.id %>
+            <%= f.hidden_field :dimension_id, value: dimension.id %>
+            <% if dimension == order_item.dimension %>
+            <%= f.submit "#{dimension.whole_name}", class: 'btn btn-primary btn-xs' %>
+            <% else %>
+            <%= f.submit "#{dimension.whole_name}", class: 'btn btn-info btn-transparent btn-xs' %>
+            <% end %>
+        <% end %>
+    <% end %>
+
+<% end %>

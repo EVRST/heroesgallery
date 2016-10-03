@@ -5,15 +5,15 @@ class VisualsController < ApplicationController
   # GET /visuals
   # GET /visuals.json
   def index
-    @visuals = Visual.all
+    @visuals = Visual.for_all.all
   end
 
   def drawings
-    @visuals = Visual.where(:is_drawing => true).order("created_at DESC")
+    @visuals = Visual.for_all.where(:is_drawing => true).order("created_at DESC")
   end
 
   def photos
-    @visuals = Visual.where(:is_picture => true).order("created_at DESC")
+    @visuals = Visual.for_all.where(:is_picture => true).order("created_at DESC")
   end
 
   def gabarits
@@ -96,6 +96,7 @@ class VisualsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def visual_params
-      params.require(:visual).permit(:name, :price, :artist_id, :is_drawing, :is_picture, :presentation_fr, :presentation_en, :presentation_nl, :image, :miniature)
+      params.require(:visual).permit(:name, :price, :artist_id, :is_drawing, :is_picture, :presentation_fr, :presentation_en, :presentation_nl, :image, :miniature,
+                                     :is_upload, :upload_id)
     end
 end

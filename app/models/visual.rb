@@ -14,6 +14,9 @@ class Visual < ActiveRecord::Base
     has_attached_file :miniature, styles: { large: "976x600#", medium: "600x300#", little: "600x270#", thumb: "270x270#" }, default_url: ":style/missing.png"
     validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
+
+    scope :for_all, lambda {where(is_upload: [false, nil])}
+
     def with_this(gabarit)
 	  visual_gabarits.where(:gabarit_id => gabarit.id).last
 	end
@@ -35,4 +38,9 @@ class Visual < ActiveRecord::Base
 	      presentation_nl
 	    end
 	end
+
+	def upload
+		Upload.where(id: upload_id).last
+	end
+
 end

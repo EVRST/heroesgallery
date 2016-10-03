@@ -1,4 +1,4 @@
-<% Gabarit.all.each do |gabarit| %>
+<!-- <% Gabarit.all.each do |gabarit| %>
     <div class="col-md-6">
             <%= simple_form_for(@upload_gabarit) do |f| %>
 				  <%= f.error_notification %>
@@ -9,8 +9,54 @@
 				  </div>
 
 				  <div class="form-actions">
-				    <%= f.submit gabarit.name, class: "btn btn-default btn-block" %><br>
+				    <%= f.submit gabarit.name, class: "btn btn-default btn-block btn-sm" %><br>
 				  </div>
 				<% end %>
         </div>
+<% end %> -->
+<% if @visual.gabarits.any? %>
+
+	<%= link_to @visual.gabarits.last.name, @visual.with_this(@visual.gabarits.last), method: :delete, class: "btn btn-primary btn-block" %>
+	
+
+	<!--
+	<% @gabarits.each do |gabarit| %>
+		<div class="col-md-6">
+			<% if @visual.gabarits.include?(gabarit) %>
+				<%= link_to gabarit.name, @visual.with_this(gabarit), method: :delete, class: "btn btn-primary btn-block" %>
+			<br>
+			<div class="row text-center">
+				<% gabarit.dimensions.each do |dimension| %>
+
+					<%= link_to "#{dimension.name} (#{dimension.hauteur} cm x #{dimension.largeur} cm)", "", class: "btn btn-sm btn-info btn-transparent" %>
+				<% end %>
+			</div>
+			<br>
+		<%end%>
+	</div>
+	<% end %> -->
+<% else %>
+
+	<% @gabarits.each do |gabarit| %>
+
+		<!-- <% unless @visual.gabarits.include?(gabarit) %> -->
+			<%= simple_form_for(@visual_gabarit) do |f| %>
+				<div class="col-md-6">
+				  <%= f.error_notification %>
+
+				  <div class="form-inputs">
+				    <%= f.hidden_field :gabarit_id, value: gabarit.id %>
+				    <%= f.hidden_field :visual_id, value: @visual.id %>
+				  </div>
+
+				  <div class="form-actions">
+				    <%= f.submit gabarit.name, class: "btn btn-default btn-block" %><br>
+				  </div>
+				</div>
+			<% end %>
+		
+		<!--<% end %>-->
+	<% end %>
+
+
 <% end %>

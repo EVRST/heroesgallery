@@ -12,7 +12,7 @@
 	<div class="row">
 	<div class="col-md-8 col-md-offset-2">
 
-		<h1 class="text-center concept-title">Rien de plus <b>facile</b></h1>
+		<h1 class="text-center concept-title"><b>Concept</b></h1>
 
 		<% if @custom.concept_text.present? %>
 			<%= @custom.concept_text %>
@@ -42,6 +42,7 @@
 		</p>
 		<% end %>
 
+		<h1 class="text-center concept-title">Rien de plus <b>facile</b></h1>
 
 <div class="timeline">
 
@@ -49,7 +50,7 @@
 	<div class="col-md-6 step_text step_line first_step step_left">
 		<div class="text-right text-in-first-step">
 			<% if @custom.step_one_title.present? %>
-				<% @custom.step_one_title %>
+				<%= @custom.step_one_title %>
 			<% else %>
 			Choisissez <b>l'oeuvre</b>
 			<% end %>
@@ -57,7 +58,7 @@
 
 		<p class="text-right">
 			<% if @custom.step_one_text.present? %>
-				<% @custom.step_one_text %>
+				<%= @custom.step_one_text %>
 			<% else %>
 
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -83,7 +84,7 @@
 		<div class="second_dot"></div>
 		<div class="step_title">
 			<% if @custom.step_two_title.present? %>
-				<% @custom.step_two_title %>
+				<%= @custom.step_two_title %>
 			<% else %>
 			Choisissez <b>la taille</b>
 			<% end %>
@@ -92,7 +93,7 @@
 
 		<p>
 			<% if @custom.step_two_text.present? %>
-				<% @custom.step_two_text %>
+				<%= @custom.step_two_text %>
 			<% else %>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 			<br><br>Ut enim ad minim veniam, quis <span class="hg_color">nostrud exercitation.</span>
@@ -108,7 +109,7 @@
 		
 		<div class="step_title text-right">
 			<% if @custom.step_three_title.present? %>
-				<% @custom.step_three_title %>
+				<%= @custom.step_three_title %>
 			<% else %>
 			Choisissez <b>la finition</b>
 			<% end %>
@@ -116,7 +117,7 @@
 
 		<p class="text-right">
 			<% if @custom.step_three_text.present? %>
-				<% @custom.step_three_text %>
+				<%= @custom.step_three_text %>
 			<% else %>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 				<br><br>Ut enim ad minim veniam, quis <span class="hg_color">nostrud exercitation.</span>
@@ -141,7 +142,7 @@
 		<div class="second_dot"></div>
 		<div class="step_title">
 			<% if @custom.step_four_title.present? %>
-				<% @custom.step_four_title %>
+				<%= @custom.step_four_title %>
 			<% else %>
 				Choisissez <b>l'endroit</b>
 			<% end %>
@@ -149,7 +150,7 @@
 
 		<p>
 			<% if @custom.step_four_text.present? %>
-				<% @custom.step_four_text %>
+				<%= @custom.step_four_text %>
 			<% else %>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 			<br><br>Ut enim ad minim veniam, quis <span class="hg_color">nostrud exercitation.</span>

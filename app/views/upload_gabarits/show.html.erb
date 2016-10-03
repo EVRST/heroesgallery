@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Upload:</strong>
+  <%= @upload_gabarit.upload_id %>
+</p>
+
+<p>
+  <strong>Gabarit:</strong>
+  <%= @upload_gabarit.gabarit_id %>
+</p>
+
+<%= link_to 'Edit', edit_upload_gabarit_path(@upload_gabarit) %> |
+<%= link_to 'Back', upload_gabarits_path %>

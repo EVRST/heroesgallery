@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :upload_gabarits
   resources :customs
   resources :subscriptions
   resources :purchases

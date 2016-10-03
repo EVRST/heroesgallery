@@ -10,11 +10,13 @@ class UploadsController < ApplicationController
   # GET /uploads/1
   # GET /uploads/1.json
   def show
+    @upload_gabarit = UploadGabarit.new
   end
 
   # GET /uploads/new
   def new
     @upload = Upload.new
+    @upload_gabarit = UploadGabarit.new
   end
 
   # GET /uploads/1/edit

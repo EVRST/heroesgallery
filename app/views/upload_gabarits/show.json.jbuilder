@@ -1,0 +1,1 @@
+json.partial! "upload_gabarits/upload_gabarit", upload_gabarit: @upload_gabarit

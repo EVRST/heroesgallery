@@ -2,9 +2,8 @@
   <%= f.error_notification %>
 
 
-
   <div class="form-inputs">
-    <div class="row">
+   <!-- <div class="row">
       <div class="col-md-6">
         <%= f.input :horizontal %>
       </div>
@@ -22,13 +21,16 @@
         <%= f.input :largeur, label: false, placeholder: "largeur" %>
       </div>
     </div>
-    <%= f.input :note, label: false, placeholder: "Commentaire pour l'expert Heroes Gallery" %>
-    <!-- <%= f.input :user_id %> -->
-    <%= f.input :image, as: :file %>
+    <%= f.input :note, label: false, placeholder: "Commentaire pour l'expert Heroes Gallery" %> -->
+    <!-- <%= f.input :user_id %> --> 
+    <!--<%= f.input :image, as: :file %> -->
+    <%= f.label :image, "Ajouter mon image",  class: "btn btn-info btn-block" %>
+    <%= f.file_field :image, class: "show-for-sr" %>
+    <br>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, class: "btn btn-transparent btn-info btn-block" %>
+    <%= f.submit "Charger mon image", class: "btn btn-transparent btn-info btn-block" %>
   </div>
 <% end %>
 

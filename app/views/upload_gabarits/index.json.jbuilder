@@ -1,0 +1,1 @@
+json.array! @upload_gabarits, partial: 'upload_gabarits/upload_gabarit', as: :upload_gabarit

@@ -32,7 +32,7 @@ class Dimension < ActiveRecord::Base
 
 	def price_paysage
 		if id == 4
-			1
+			795
 		elsif id == 3
 			300
 		elsif id == 2
@@ -44,7 +44,7 @@ class Dimension < ActiveRecord::Base
 
 	def price_paysage_plexi
 		if id == 4
-			1
+			1250
 		elsif id == 3
 			500
 		elsif id == 2
@@ -56,7 +56,7 @@ class Dimension < ActiveRecord::Base
 
 	def price_portrait
 		if id == 8
-			1
+			795
 		elsif id == 7
 			300
 		elsif id == 6
@@ -68,7 +68,7 @@ class Dimension < ActiveRecord::Base
 
 	def price_portrait_plexi
 		if id == 8
-			1
+			1250
 		elsif id == 7
 			500
 		elsif id == 6
@@ -100,21 +100,21 @@ class Dimension < ActiveRecord::Base
 
 	def price_pano
 		if id == 14
-			1
+			595
 		elsif id == 13
-			1
+			425
 		else
-			1
+			200
 		end
 	end
 
 	def price_pano_plexi
 		if id == 14
-			2
+			950
 		elsif id == 13
-			2
+			675
 		else
-			2
+			350
 		end
 	end
 end

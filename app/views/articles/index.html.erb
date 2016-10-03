@@ -39,7 +39,12 @@
                 <div class="col-md-6 col-sm-6 right-article">
                   <h3>
                     <%= article.title_fr %>
-                    <br><small><i><%= article.created_at %></i></small>
+                    <% if user_signed_in? %>
+                  <%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-transparent btn-xs pull-right" %>
+                <% end %>
+                    <br><small><i><%= article.created_at %></i>
+                    
+                  </small>
                   </h3>
                   <p><%= article.content_fr %></p>
 

@@ -9,6 +9,10 @@
 			<h1><%= @book.title %>
 				<% if user_signed_in? %>
 				  <%= link_to "Modifier", edit_book_path(@book), class: "btn btn-primary btn-xs" %>
+
+              
+                  <%= link_to 'Delete', @book, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-transparent btn-xs pull-right" %>
+                
 				<% end %>
 				<br><small><i><%= @book.author %></i></small>
 			</h1>

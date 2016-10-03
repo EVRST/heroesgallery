@@ -17,13 +17,23 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li>
-     <% if I18n.locale.to_s.include?("fr") %>
-         <%= link_to "NL", url_for(:locale => 'nl') %>
+        
+        <% if I18n.locale.to_s.include?("fr") %>
+         <li><%= link_to "NL", url_for(:locale => 'nl') %></li>
+         <li><%= link_to "EN", url_for(:locale => 'en') %></li>
+        
         <% elsif I18n.locale.to_s.include?("nl") %>
-         <%= link_to "FR", url_for(:locale => 'fr') %>
+
+         <li><%= link_to "FR", url_for(:locale => 'fr') %></li>
+         <li><%= link_to "EN", url_for(:locale => 'en') %></li>
+
+        <% elsif I18n.locale.to_s.include?("en") %>
+
+          <li><%= link_to "NL", url_for(:locale => 'nl') %></li>
+          <li><%= link_to "FR", url_for(:locale => 'fr') %></li>
+
         <% end %>
-    </li>
+    
       </ul>
     </div>
   </div>

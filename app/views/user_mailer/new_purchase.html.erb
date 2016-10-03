@@ -1,0 +1,20 @@
+<p>Bonjour,</p>
+
+<p>Nouvelle commande via le site Heroes Gallery.</p>
+
+<p>
+	<b>Nom de la personne :</b> <%= @purchase.buyer.full_name %>
+
+<br><b>Adresse mail :</b> <%= @purchase.buyer.email %>
+
+<br><b>Visuel choisi :</b> <%= @purchase.visual.name %>
+
+<br><b>Format :</b> <%= @purchase.order_item.dimension.whole_name %>
+
+<br><b>Support :</b> <%= @purchase.order_item.finish.name %>
+
+<br><b>Prix :</b> <%= @purchase.order_item.price %> EUR tvac
+
+<br><b><%= link_to "Confirmer la date de livraison !", "mailto: #{@purchase.buyer.email}" %></b>
+
+</p>

@@ -1,0 +1,23 @@
+<p>Bonjour <%= @purchase.buyer.full_name %>,</p>
+
+<p>
+	
+	Merci pour votre commande :
+	<br><b>Visuel choisi :</b> <%= @purchase.visual.name %>
+    <br><b>Format :</b> <%= @purchase.order_item.dimension.whole_name %>
+    <br><b>Support :</b> <%= @purchase.order_item.finish.name %>
+	<br><b>Prix :</b> <%= @purchase.order_item.price %> EUR tvac
+
+</p>
+
+<p>Dès réception de votre paiement, nous lancerons la production de votre visuel choisi.</p>
+
+<p>Notre studio vous confirmera par mail la date de livraison à l’adresse que vous nous avez communiqué.</p>
+<br>
+ 
+
+<p>Nous vous remercions d’avoir choisi Heroes Gallery et nous espérons vous revoir très bientôt sur notre site.</p>
+<br>
+ 
+
+<p><b>L’équipe Heroes Gallery.</b></p>

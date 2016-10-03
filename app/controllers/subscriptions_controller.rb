@@ -5,6 +5,7 @@ class SubscriptionsController < ApplicationController
   # GET /subscriptions.json
   def index
     @subscriptions = Subscription.all
+    @subscription = Subscription.new
   end
 
   # GET /subscriptions/1
@@ -28,6 +29,7 @@ class SubscriptionsController < ApplicationController
 
     respond_to do |format|
       if @subscription.save
+        UserMailer.new_subscription(@subscription).deliver_now
         format.html { redirect_to :back}
         format.json { render :show, status: :created, location: @subscription }
       else

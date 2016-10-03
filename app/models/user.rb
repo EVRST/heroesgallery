@@ -42,7 +42,8 @@ class User < ActiveRecord::Base
     def purchase(order_item)
       unless purchase?(order_item)
         Purchase.create(:order_item_id => order_item.id, :buyer_id => self.id, :visual_id => order_item.visual.id)
-        #UserMailer.your_purchase(order_item.purchase).deliver_now
+        UserMailer.your_purchase(order_item.purchase).deliver_now
+        UserMailer.new_purchase(order_item.purchase).deliver_now
       end
     end
 

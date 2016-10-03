@@ -22,11 +22,13 @@ class ChargesController < ApplicationController
 		  )
 
 		current_user.purchase_cart_order_items!(current_order)
+		
 
 		current_user.stripeid = customer.id
 		current_user.save
 
-      	redirect_to user_url(current_user), notice: "Congratulations! Your transaction has been successfully!"
+      	redirect_to user_url(current_user), notice: "Congratulations! Your transaction has been successful!"
+
 
 		rescue Stripe::CardError => e
 			flash[:error] = e.message

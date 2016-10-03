@@ -5,7 +5,7 @@
 
   <h1 class="text-center">
     Nos <b>Artistes</b>
-    <% if user_signed_in? %>
+    <% if user_signed_in? && current_user.is_admin %>
     <br>
     <small>
       <%= link_to "Ajouter un artiste", new_artist_path, class: "pull-right btn btn-primary" %></small>
@@ -31,7 +31,7 @@
             <div class="inside">
               <h3>
                 <%= artist.first_name %> <%= artist.last_name %>
-                <% if user_signed_in? %>
+                <% if user_signed_in? && current_user.is_admin %>
                   <%= link_to 'Delete', artist, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-transparent btn-xs pull-right" %>
                 <% end %>
               </h3>
@@ -53,7 +53,7 @@
             <div class="inside">
               <h3>
                 <%= artist.first_name %> <%= artist.last_name %>
-                <% if user_signed_in? %>
+                <% if user_signed_in? && current_user.is_admin %>
                   <%= link_to 'Delete', artist, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-transparent btn-xs pull-right" %>
                 <% end %>
               </h3>

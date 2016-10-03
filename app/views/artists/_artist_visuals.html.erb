@@ -17,7 +17,7 @@
             	<div class="inside">
               <h3>
                 <%= visual.name %>
-                <% if user_signed_in? %>
+                <% if user_signed_in? && current_user.is_admin %>
                   <%= link_to 'Delete', visual, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-transparent btn-xs pull-right" %>
                 <% end %>
               </h3>
@@ -38,7 +38,7 @@
             	<div class="inside">
               <h3>
                 <%= visual.name %>
-                <% if user_signed_in? %>
+                <% if user_signed_in? && current_user.is_admin %>
                   <%= link_to 'Delete', visual, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-transparent btn-xs pull-right" %>
                 <% end %>
               </h3>

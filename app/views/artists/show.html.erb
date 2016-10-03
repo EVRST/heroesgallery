@@ -6,7 +6,7 @@
 <div class="start-page-artist">
 
 <p class="lead text-right">
-  <% if user_signed_in? %>
+  <% if user_signed_in? && current_user.is_admin %>
   <%= link_to "Modifier", edit_artist_path(@artist), class: "btn btn-primary btn-xs" %>
   <% end %>
   <%= @artist.full_name %>
@@ -31,7 +31,7 @@
 <div class="other-visuals">
       <h1 class="text-center">
         Visuels de <%= @visual.artist.full_name %>
-        <% if user_signed_in? %>
+        <% if user_signed_in? && current_user.is_admin %>
         <br>
         <small><%= link_to "Ajouter un visuel de #{@artist.full_name}", "#add_visual", class: "btn btn-primary pull-right" %></small>
         <br>
@@ -45,7 +45,7 @@
 
 
 
-<% if user_signed_in? %>
+<% if user_signed_in? && current_user.is_admin %>
 
 <div class="col-md-6 col-md-offset-3" id="add_visual">
 <h1 class="text-center page-header">Ajouter un visuel de <%= @artist.full_name %></h1>

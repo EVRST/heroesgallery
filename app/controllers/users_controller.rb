@@ -7,9 +7,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    unless @user == current_user
-      redirect_to :back, :alert => "Access denied."
-    end
+    # unless @user == current_user
+    #   redirect_to :back, :alert => "Access denied."
+    # end 
+  end
+
+  def edit
+    @user = User.find(params[:id])
   end
 
   def update
@@ -44,7 +48,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :users, :last_name, :email_invite, :lead_source,
+      params.require(:user).permit(:first_name, :users, :last_name, :email_invite, :lead_source, :is_admin,
                                     :shipping_street, :shipping_number, :shipping_zipcode, :shipping_city, :shipping_telephone, 
                                     :billing_street, :billing_number, :billing_zipcode, :billing_city, :billing_telephone,
                                     :billing_as_shipping)

@@ -19,7 +19,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
 
-        <% if user_signed_in? %>
+        <% if user_signed_in? && current_user.is_admin %>
     
       <small>
         <%= link_to "Modifier", edit_article_path(article), class: "btn btn-primary pull-right" %></small>

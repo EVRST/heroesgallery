@@ -113,10 +113,11 @@
 
 		<h1 class="text-center home-middle-title">
 
-			<b>Vos héros</b> sur <span class="hg_color">plexi</span> ou sur <span class="hg_color">alu</span>
+			<span class="font-black">Vos héros</span> <span class="font-light">sur <span class="hg_color">plexi</span> ou sur <span class="hg_color">alu</span></span>
 		</h1>
+
 		<% if @custom.home_text.present? %>
-			<%= @custom.home_text %>
+			<div class="home-middle-content"><%= @custom.home_text %></div>
 		<% else %>
 		<p>
 			Heroes Gallery est né dans la tête de quelques amoureux de l'univers vintage du monde automobile.

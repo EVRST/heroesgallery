@@ -3,7 +3,7 @@ $navbar-inverse-link-color: white;
 $brand-primary: #e8b053;
 $brand-info: #31313b;
 
-@import url(https://fonts.googleapis.com/css?family=Lato:400,100,300,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900);
 
 // import the CSS framework
 @import "bootstrap-sprockets";
@@ -45,7 +45,7 @@ img {
 main {
   @extend .container;
   background-color: #eee;
-  font-family: 'Lato';
+  font-family: 'Lato', sans-serif;
   width: 100%;
   margin-top: 0px; // accommodate the navbar
 

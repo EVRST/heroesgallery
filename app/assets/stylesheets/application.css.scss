@@ -91,6 +91,15 @@ header.carousel .fill {
 	text-align: justify;
 }
 
+.home-middle-title {
+  margin-bottom: 15px;
+}
+
+.home-middle-content {
+  font-size: 1.9em;
+  margin-bottom: 15px;
+}
+
 .hg_color {
   color: #e8b053;
 }
@@ -105,8 +114,14 @@ header.carousel .fill {
 }
 
 .concept-title {
-  margin-top: 90px;
-  margin-bottom: 90px;
+  margin-top: 60px;
+  margin-bottom: 50px;
+}
+
+.concept-content {
+  font-size: 1.2em;
+  line-height: 20px;
+  text-align: justify;
 }
 
 .finitions {
@@ -166,10 +181,9 @@ header.carousel .fill {
   font-size: 1.5em;
 }
 
-.step {
+/*.step {
   padding-top: 100px;
-
-}
+} */
 
 .step_title {
   text-transform: uppercase;
@@ -325,8 +339,8 @@ header.carousel .fill {
 .number {
   color: rgba(232, 176, 83, 0.3);
   font-size: 2em;
-  font-weight: 700;
-  font-style: italic;
+  font-weight: 900;
+  margin-right: -20px;
 }
 
 

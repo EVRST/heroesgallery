@@ -12,8 +12,9 @@
 	<div class="row">
 	<div class="col-md-8 col-md-offset-2">
 
-		<h1 class="text-center concept-title"><b>Concept</b></h1>
+		<h1 class="text-center concept-title"><span class="font-light">CONCEPT</span></h1>
 
+		<div class="font-regular concept-content">
 		<% if @custom.concept_text.present? %>
 			<%= @custom.concept_text %>
 		<% else %>
@@ -41,8 +42,9 @@
 			Vous aussi, vous deviendrez vos propres héros !
 		</p>
 		<% end %>
+	</div>
 
-		<h1 class="text-center concept-title">Rien de plus <b>facile</b></h1>
+		<h1 class="text-center concept-title"><span class="font-light">RIEN DE PLUS </span><span class="font-bold">FACILE</span></h1>
 
 <div class="timeline">
 
@@ -52,7 +54,7 @@
 			<span class="number">01</span><% if @custom.step_one_title.present? %>
 				<%= @custom.step_one_title %>
 			<% else %>
-			Choisissez <b>l'oeuvre</b>
+			<span class="font-light">Choisissez </span><span class="font-bold">l'oeuvre</span>
 			<% end %>
 		</div>
 
@@ -86,7 +88,8 @@
 			<span class="number">02</span><% if @custom.step_two_title.present? %>
 				<%= @custom.step_two_title %>
 			<% else %>
-			Choisissez <b>la taille</b>
+			
+			<span class="font-light">Choisissez </span><span class="font-bold">la taille</span>
 			<% end %>
 			
 		</div>
@@ -111,7 +114,8 @@
 			<span class="number">03</span><% if @custom.step_three_title.present? %>
 				<%= @custom.step_three_title %>
 			<% else %>
-			Choisissez <b>la finition</b>
+			
+			<span class="font-light">Choisissez </span><span class="font-bold">la finition</span>
 			<% end %>
 		</div>
 
@@ -144,7 +148,8 @@
 			<span class="number">04</span><% if @custom.step_four_title.present? %>
 				<%= @custom.step_four_title %>
 			<% else %>
-				Choisissez <b>l'endroit</b>
+				
+				<span class="font-light">Choisissez </span><span class="font-bold">l'endroit</span>
 			<% end %>
 		</div>
 

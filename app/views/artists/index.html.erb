@@ -30,6 +30,7 @@
           <div class="col-md-6">
             <div class="inside">
               <h3>
+                <!--<span class="number">01</span>-->
                 <%= artist.first_name %> <%= artist.last_name %>
                 <% if user_signed_in? && current_user.is_admin %>
                   <%= link_to 'Delete', artist, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-transparent btn-xs pull-right" %>

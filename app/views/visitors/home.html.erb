@@ -9,6 +9,7 @@
     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
     <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
   </ol>
 
   <!-- Wrapper for slides -->
@@ -32,7 +33,7 @@
       </div>
     </div>
     <div class="item">
-    	<% if @custom.image_one.present? %>
+    	<% if @custom.image_two.present? %>
     		<%= image_tag @custom.image_two.url(:cover) %>
     	<% else %>
     		<img src="http://placehold.it/1900x870&text=Slide Two" alt="...">
@@ -44,10 +45,21 @@
     </div>
     
     <div class="item">
-      <% if @custom.image_one.present? %>
+      <% if @custom.image_three.present? %>
     		<%= image_tag @custom.image_three.url(:cover) %>
     	<% else %>
     		<img src="http://placehold.it/1900x870&text=Slide Three" alt="...">
+    	<% end %>
+      <div class="carousel-caption">
+        <!--...-->
+      </div>
+    </div>
+
+    <div class="item">
+      <% if @custom.image_four.present? %>
+    		<%= image_tag @custom.image_four.url(:cover) %>
+    	<% else %>
+    		<img src="http://placehold.it/1900x870&text=Slide Four" alt="...">
     	<% end %>
       <div class="carousel-caption">
         <!--...-->

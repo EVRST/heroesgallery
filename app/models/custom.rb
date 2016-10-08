@@ -9,6 +9,9 @@ class Custom < ActiveRecord::Base
   	has_attached_file :image_three, styles: { cover: "1900x870#", medium: "200x300#", thumb: "65x100#" }, default_url: "/images/:style/missing.png"
   	validates_attachment_content_type :image_three, content_type: /\Aimage\/.*\Z/
 
+  	has_attached_file :image_four, styles: { cover: "1900x870#", medium: "200x300#", thumb: "65x100#" }, default_url: "/images/:style/missing.png"
+  	validates_attachment_content_type :image_four, content_type: /\Aimage\/.*\Z/
+
   	has_attached_file :image_down, styles: { cover: "1900x870#", medium: "200x300#", thumb: "65x100#" }, default_url: "/images/:style/missing.png"
   	validates_attachment_content_type :image_down, content_type: /\Aimage\/.*\Z/
 

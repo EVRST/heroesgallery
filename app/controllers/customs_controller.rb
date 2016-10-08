@@ -80,6 +80,6 @@ class CustomsController < ApplicationController
                                       :step_three_text_fr, :step_one_three_nl, :step_three_text_en,
                                       :step_four_title_fr, :step_four_title_nl, :step_four_title_en,
                                       :step_four_text_fr, :step_four_text_nl, :step_four_text_en,
-                                      :image_one, :image_two, :image_three, :image_down)
+                                      :image_one, :image_two, :image_three, :image_four, :image_down)
     end
 end

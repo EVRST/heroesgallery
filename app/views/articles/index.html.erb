@@ -1,18 +1,20 @@
 <div class="row news">
   <div class="container  container-content">
-  <div class="row">
-    <div class='text-center'>
-    <h2>
-      <span class="font-light"><%= t("news") %></span>
-      <% if user_signed_in? && current_user.is_admin %>
-      <br>
-      <small>
-        <%= link_to "Ajouter un article", new_article_path, class: "pull-right btn btn-primary" %></small>
-      <% end %>
-    </h2>
+  
+    <div class="row">
+      <div class='text-center'>
+      <h2>
+        <span class="font-light"><%= t("news") %></span>
+        <% if user_signed_in? && current_user.is_admin %>
+        <br>
+        <small>
+          <%= link_to "Ajouter un article", new_article_path, class: "pull-right btn btn-primary" %></small>
+        <% end %>
+      </h2>
+      </div>
     </div>
-  </div>
-  <div class='row'>
+
+    <div class='row'>
     
       <div class="carousel slide" data-ride="carousel" id="quote-carousel">
         <!-- Bottom Carousel Indicators -->
@@ -82,26 +84,7 @@ $(document).ready(function() {
 });
 </script>
 
-<!--<p id="notice"><%= notice %></p>
 
-<h1 class="text-center">News</h1>
-
-
-    <% @articles.each do |article| %>
-    <div class="row">
-    </div>
-      <tr>
-        <td><%= article.title_fr %></td>
-        <td><%= article.content_fr %></td>
-        <td><%= article.title_en %></td>
-        <td><%= article.content_en %></td>
-        <td><%= article.title_nl %></td>
-        <td><%= article.content_nl %></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>-->
 
 </div>
 

@@ -4,6 +4,6 @@ require File.expand_path('../application', __FILE__)
 # Initialize the Rails application.
 Rails.application.initialize!
 
-config.action_mailer.default_url_options = { :host => 'localhost' }
+#config.action_mailer.default_url_options = { :host => 'localhost' }
 
 #for heroku : config.action_mailer.default_url_options = { :host => 'heroesgallery.heroku.com' }

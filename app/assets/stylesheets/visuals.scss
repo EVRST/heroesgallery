@@ -112,8 +112,10 @@
 	margin: 10px auto;
 }
 
-.selector {
+@media (min-width: 959px) {
+  .selector {
 	position: fixed;
+}
 }
 
 .visual-right-part {

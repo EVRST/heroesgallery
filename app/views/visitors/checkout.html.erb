@@ -58,9 +58,9 @@
 					</div>
 	    			
 	    			<p class="text-center"><%= t("delivery_shall_be_at") %></p>
-	    			<%= current_user.shipping_address %>
-	    			<br><%= current_user.shipping_town %>
-	    			<br><%= current_user.shipping_telephone %>
+	    			<%= current_user.shipping_address_or_placeholder %>
+	    			<br><%= current_user.shipping_town_or_placeholder %>
+	    			<br><%= current_user.shipping_telephone_or_placeholder %>
 	    			<%= link_to t("edit_address"), shipping_path, class: 'btn btn-primary btn-transparent btn-xs pull-right' %>
 
 	    			<% else %>

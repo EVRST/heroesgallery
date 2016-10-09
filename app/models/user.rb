@@ -22,6 +22,30 @@ class User < ActiveRecord::Base
     	"#{shipping_zipcode} #{shipping_city}"
     end
 
+    def shipping_address_or_placeholder
+      if billing_as_shipping
+        billing_address
+      else
+        shipping_address
+      end
+    end
+
+    def shipping_town_or_placeholder
+      if billing_as_shipping
+        billing_town
+      else
+        shipping_town
+      end
+    end
+
+    def shipping_telephone_or_placeholder
+      if billing_as_shipping
+        billing_telephone
+      else
+        shipping_telephone
+      end
+    end
+
     def billing_address
     	"#{billing_street}, #{billing_number}"
     end

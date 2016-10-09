@@ -7,15 +7,33 @@
     	<h2 class="page-header text-center"><%= t("your_orders") %></h2>
 
     	<div class="well">
-    		<% current_user.purchases.each do |purchase| %>
+    		<% current_user.purchases.order("created_at DESC").each do |purchase| %>
                 
     			<div class="row">
     				<div class="col-md-2">
+                        <% unless purchase.visual.upload %>
     					<%= image_tag purchase.visual.miniature_or_placeholder.url(:thumb) %>
+                        <% else %>
+                        <%= image_tag purchase.visual.upload.image.url(:thumb) %>
+                        <% end %>
     				</div>
     				<div class="col-md-10">
-    			<%= purchase.created_at %>
-    			<br><%= link_to purchase.visual.name, visual_path(purchase.visual) %>
+    			
+                <%= t("ordered_on") %> <%= purchase.created_at.strftime("%d/%m/%Y") %>
+    			<br>
+                <% unless purchase.visual.upload %>
+                <%= link_to purchase.visual.name, visual_path(purchase.visual) %>
+                <% else %>
+                <%= link_to t("your_own_visual"), upload_path(purchase.visual.upload) %>
+                <% end %>
+
+               
+                <p>
+            <strong><%= number_to_currency purchase.price %></strong>
+            <br><%= purchase.dimension.whole_name if purchase.dimension %></p>
+           
+
+                
 
     		</div>
     	</div>

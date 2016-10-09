@@ -4,7 +4,7 @@
 	
 	<%= t("thanks_for_your_order") %> :
 	<br><b>Visuel choisi :</b> 
-		<% unless @purchase.is_upload %>
+		<% unless @purchase.visual.upload %>
 		<%= link_to @purchase.visual.name, visual_url(@purchase.visual) %>
 		<% else %>
 		<%= link_to t("own_visual"), upload_url(@purchase.visual.upload) %>

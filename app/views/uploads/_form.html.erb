@@ -24,13 +24,17 @@
     <%= f.input :note, label: false, placeholder: "Commentaire pour l'expert Heroes Gallery" %> -->
     <!-- <%= f.input :user_id %> --> 
     <!--<%= f.input :image, as: :file %> -->
-    <%= f.label :image, "1- Ajouter mon image",  class: "btn btn-info btn-block" %>
+    <%= f.label :image, t("add_my_image"),  class: "btn btn-info btn-block" %>
     <%= f.file_field :image, class: "show-for-sr" %>
     <br>
   </div>
 
   <div class="form-actions">
-    <%= f.submit "2- Charger mon image", class: "btn btn-transparent btn-info btn-block" %>
+    <%= f.submit t("upload_my_image"), class: "btn btn-transparent btn-info btn-block" %>
   </div>
 <% end %>
+
+<br>
+<br>
+<p class="lead"><%= t("see_your_pic_here") %></p>
 

@@ -3,7 +3,7 @@
   <%= hidden_field_tag 'stripeToken' %>
   <%= hidden_field_tag 'stripeEmail' %>
 
-    <button id="customButton" class="btn btn-success btn-block">Payer <%= number_to_currency current_order.total %></button>
+    <button id="customButton" class="btn btn-success btn-block"><%= t("pay") %> <%= number_to_currency current_order.total %></button>
 
     <script>
       var handler = StripeCheckout.configure({

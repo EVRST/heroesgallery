@@ -12,7 +12,7 @@
 	<div class="row">
 	<div class="col-md-8 col-md-offset-2">
 
-		<h1 class="text-center concept-title"><span class="font-light">CONCEPT</span></h1>
+		<h1 class="text-center concept-title"><span class="font-light"><%= t("concept_capital") %></span></h1>
 
 		<div class="font-regular concept-content">
 		<% if @custom.concept_text.present? %>
@@ -44,7 +44,7 @@
 		<% end %>
 	</div>
 
-		<h1 class="text-center concept-title"><span class="font-light">RIEN DE PLUS </span><span class="font-bold">FACILE</span></h1>
+		<h1 class="text-center concept-title"><span class="font-light"><%= t("nothing_more") %> </span><span class="font-bold"><%= t("easy") %></span></h1>
 
 <div class="timeline">
 
@@ -54,7 +54,7 @@
 			<span class="number">01</span><% if @custom.step_one_title.present? %>
 				<%= @custom.step_one_title %>
 			<% else %>
-			<span class="font-light">Choisissez </span><span class="font-bold">l'oeuvre</span>
+			<span class="font-light"><%= t("choose") %> </span><span class="font-bold"><%= t("the_visual") %></span>
 			<% end %>
 		</div>
 
@@ -89,7 +89,7 @@
 				<%= @custom.step_two_title %>
 			<% else %>
 			
-			<span class="font-light">Choisissez </span><span class="font-bold">la taille</span>
+			<span class="font-light"><%= t("choose") %> </span><span class="font-bold"><%= t("the_size") %></span>
 			<% end %>
 			
 		</div>
@@ -115,7 +115,7 @@
 				<%= @custom.step_three_title %>
 			<% else %>
 			
-			<span class="font-light">Choisissez </span><span class="font-bold">la finition</span>
+			<span class="font-light"><%= t("choose") %> </span><span class="font-bold"><%= t("the_finish") %></span>
 			<% end %>
 		</div>
 
@@ -149,7 +149,7 @@
 				<%= @custom.step_four_title %>
 			<% else %>
 				
-				<span class="font-light">Choisissez </span><span class="font-bold">l'endroit</span>
+				<span class="font-light"><%= t("choose") %> </span><span class="font-bold"><%= t("the_place") %></span>
 			<% end %>
 		</div>
 
@@ -180,7 +180,7 @@
 
 
 <h3 class="text-center">
-<%= link_to "Essayer", visuals_path, class: "btn btn-primary btn-transparent btn-lg" %>
+<%= link_to t("try"), visuals_path, class: "btn btn-primary btn-transparent btn-lg" %>
 </h3>
 
 </div>

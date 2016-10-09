@@ -30,7 +30,7 @@
 
 <div class="other-visuals">
       <h1 class="text-center">
-        Visuels de <%= @visual.artist.full_name %>
+        <%= t("visuals_of") %> <%= @visual.artist.full_name %>
         <% if user_signed_in? && current_user.is_admin %>
         <br>
         <small><%= link_to "Ajouter un visuel de #{@artist.full_name}", "#add_visual", class: "btn btn-primary pull-right" %></small>

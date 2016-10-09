@@ -1,28 +1,28 @@
-<p>Bonjour <%= @purchase.buyer.full_name %>,</p>
+<p><%= t("hello") %> <%= @purchase.buyer.full_name %>,</p>
 
 <p>
 	
-	Merci pour votre commande :
+	<%= t("thanks_for_your_order") %> :
 	<br><b>Visuel choisi :</b> 
 		<% unless @purchase.is_upload %>
 		<%= link_to @purchase.visual.name, visual_url(@purchase.visual) %>
 		<% else %>
-		<%= link_to "Visuel personnalisé", upload_url(@purchase.visual.upload) %>
+		<%= link_to t("own_visual"), upload_url(@purchase.visual.upload) %>
 		<% end %>
-    <br><b>Format :</b> <%= @purchase.order_item.dimension.whole_name %>
-    <br><b>Support :</b> <%= @purchase.order_item.finish.name %>
-	<br><b>Prix :</b> <%= @purchase.order_item.price %> EUR tvac
+    <br><b><%= t("format") %> :</b> <%= @purchase.order_item.dimension.whole_name %>
+    <br><b><%= t("finish") %> :</b> <%= @purchase.order_item.finish.name %>
+	<br><b><%= t("price") %> :</b> <%= @purchase.order_item.price %> EUR tvac
 
 </p>
 
-<p>Dès réception de votre paiement, nous lancerons la production de votre visuel choisi.</p>
+<p><%= t("when_received_we_launch") %></p>
 
-<p>Notre studio vous confirmera par mail la date de livraison à l’adresse que vous nous avez communiqué.</p>
+<p><%= t("we_confirm_delivery") %></p>
 <br>
  
 
-<p>Nous vous remercions d’avoir choisi Heroes Gallery et nous espérons vous revoir très bientôt sur notre site.</p>
+<p><%= t("thank_you_for_choosing_us") %></p>
 <br>
  
 
-<p><b>L’équipe Heroes Gallery.</b></p>
+<p><b><%= t("hg_team") %></b></p>

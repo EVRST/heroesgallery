@@ -4,7 +4,7 @@
 <div class="container container-content start-page">
 
   <h1 class="text-center">
-    <span class="font-light">Nos </span><span class="font-bold">Artistes</span>
+    <span class="font-light"><%= t("our") %> </span><span class="font-bold"><%= t("artists") %></span>
     <% if user_signed_in? && current_user.is_admin %>
     <br>
     <small>
@@ -33,12 +33,12 @@
                 <!--<span class="number">01</span>-->
                 <%= artist.first_name %> <%= artist.last_name %>
                 <% if user_signed_in? && current_user.is_admin %>
-                  <%= link_to 'Delete', artist, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-transparent btn-xs pull-right" %>
+                  <%= link_to 'Supprimer', artist, method: :delete, data: { confirm: 'Etes-vous sûr ?' }, class: "btn btn-danger btn-transparent btn-xs pull-right" %>
                 <% end %>
               </h3>
               <p><%= truncate(artist.presentation, length: 650) %></p>
               <h3>
-                <%= link_to 'Discover', artist, class: 'btn btn-primary btn-lg btn-transparent pull-left' %>
+                <%= link_to t('discover'), artist, class: 'btn btn-primary btn-lg btn-transparent pull-left' %>
 
               </h3>
             </div>
@@ -55,11 +55,11 @@
               <h3>
                 <%= artist.first_name %> <%= artist.last_name %>
                 <% if user_signed_in? && current_user.is_admin %>
-                  <%= link_to 'Delete', artist, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-transparent btn-xs pull-right" %>
+                  <%= link_to 'Supprimer', artist, method: :delete, data: { confirm: 'Etes-vous sûr ?' }, class: "btn btn-danger btn-transparent btn-xs pull-right" %>
                 <% end %>
               </h3>
               <p><%= truncate(artist.presentation, length: 650) %></p>
-              <h3><%= link_to 'Discover', artist, class: 'btn btn-primary btn-lg pull-right btn-transparent' %></h3>
+              <h3><%= link_to t('discover'), artist, class: 'btn btn-primary btn-lg pull-right btn-transparent' %></h3>
             </div>
           </div>
           <div class="col-md-6">

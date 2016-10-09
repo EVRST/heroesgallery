@@ -16,7 +16,7 @@
               <% unless visual.is_upload %>
               <%= link_to visual.name, visual_path(visual) %>
               <% else %>
-              <i><%= link_to "Votre visuel personnalisé", upload_path(visual.upload) %></i>
+              <i><%= link_to t("your_own_visual"), upload_path(visual.upload) %></i>
               <% end %>
             </span>
             <br><small><span class="neutral_link">

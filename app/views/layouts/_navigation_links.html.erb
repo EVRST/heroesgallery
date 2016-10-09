@@ -1,13 +1,13 @@
 <%# add navigation links to this file %>
-<li><%= link_to 'Accueil', root_path %></li>
-<li><%= link_to 'Concept', concept_path %></li>
-<li><%= link_to 'Visuels', visuals_path %></li>
-<li><%= link_to 'Artistes', artists_path %></li>
-<li><!--<%= link_to 'Vos photos', "#" %> --><%= link_to 'Vos photos', your_visuals_path %></li>
-<li><%= link_to 'Formats et finitions', finitions_path %></li>
-<li><%= link_to 'News', articles_path %></li>
-<li><%= link_to 'Livres', books_path %></li>
-<li><%= link_to 'Contact', contact_path %></li>
+<li><%= link_to t('home'), root_path %></li>
+<li><%= link_to t('concept'), concept_path %></li>
+<li><%= link_to t('visuals'), visuals_path %></li>
+<li><%= link_to t('artists'), artists_path %></li>
+<li><%= link_to t('your_pictures'), your_visuals_path %></li>
+<li><%= link_to t('sizes_finishes'), finitions_path %></li>
+<li><%= link_to t('news'), articles_path %></li>
+<li><%= link_to t('books'), books_path %></li>
+<li><%= link_to t('contact'), contact_path %></li>
 
 <li><%= render 'layouts/cart_text' %></li>
 

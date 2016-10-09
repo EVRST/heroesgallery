@@ -5,45 +5,49 @@
 			<div class="row">
 				<h1 class="text-center">
 					
-					<span class="font-light">Formats </span><span class="font-bold">possibles</span>
-					<br><small>Formats possibles en fonction du choix du visuel</small>
+					<% if I18n.locale.to_s.include?("fr") %>
+						<span class="font-light"><%= t("formats").titleize %> </span><span class="font-bold"><%= t("possibles") %></span>
+					<% else %>
+						<span class="font-bold"><%= t("possible").titleize %> </span><span class="font-light"><%= t("formats") %></span>
+					<% end %>
+					<br><small><%= t("possible_formats") %></small>
 				</h1>
 
 				<div class="row">
 					<div class="col-md-3">
-						<p class="lead with-underline text-center"><span class="number">01</span>Format Paysage</p>
+						<p class="lead with-underline text-center"><span class="number">01</span><%= t("format_paysage") %></p>
 						<p>
-							<b>Standard:</b> 60 x 80 cm<br>
-							<b>Grand:</b> 80 x 120 cm<br>
-							<b>Etonnant:</b> 100 x 150 cm<br>
-							<b>Impressionnant:</b> 120 x 180 cm
+							<b><%= t("standard") %>:</b> 60 x 80 cm<br>
+							<b><%= t("grand") %>:</b> 80 x 120 cm<br>
+							<b><%= t("etonnant") %>:</b> 100 x 150 cm<br>
+							<b><%= t("impressive") %>:</b> 120 x 180 cm
 						</p>
 					</div>
 					<div class="col-md-3 format-border-left">
-						<p class="lead with-underline text-center"><span class="number">02</span>Format Portrait</p>
+						<p class="lead with-underline text-center"><span class="number">02</span><%= t("format_portrait") %></p>
 						<p>
-							<b>Standard:</b> 80 x 60 cm<br>
-							<b>Grand:</b> 120 x 80 cm<br>
-							<b>Etonnant:</b> 150 x 100 cm<br>
-							<b>Impressionnant:</b> 180 x 120 cm
+							<b><%= t("standard") %>:</b> 80 x 60 cm<br>
+							<b><%= t("grand") %>:</b> 120 x 80 cm<br>
+							<b><%= t("etonnant") %>:</b> 150 x 100 cm<br>
+							<b><%= t("impressive") %>:</b> 180 x 120 cm
 						</p>
 					</div>
 					<div class="col-md-3 format-border-left">
-						<p class="lead with-underline text-center"><span class="number">03</span>Format Carré</p>
+						<p class="lead with-underline text-center"><span class="number">03</span><%= t("format_carre") %></p>
 						<p>
-							<b>Standard:</b> 80 x 80 cm<br>
+							<b><%= t("standard") %>:</b> 80 x 80 cm<br>
 							<!--<b>Grand:</b> <br> -->
-							<b>Etonnant:</b> 100 x 100 cm<br>
-							<b>Impressionnant:</b> 120 x 120 cm
+							<b><%= t("etonnant") %>:</b> 100 x 100 cm<br>
+							<b><%= t("impressive") %>:</b> 120 x 120 cm
 						</p>
 					</div>
 					<div class="col-md-3 format-border-left">
-						<p class="lead with-underline-last text-center"><span class="number">04</span>Format Panoramique</p>
+						<p class="lead with-underline-last text-center"><span class="number">04</span><%= t("format_pano") %></p>
 						<p>
 							<!--<b>Standard:</b> <br>-->
-							<b>Grand:</b> 45 x 90 cm<br>
-							<b>Etonnant:</b> 75 x 150 cm<br>
-							<b>Impressionnant:</b> 90 x 180 cm
+							<b><%= t("grand") %>:</b> 45 x 90 cm<br>
+							<b><%= t("etonnant") %>:</b> 75 x 150 cm<br>
+							<b><%= t("impressive") %>:</b> 90 x 180 cm
 						</p>
 					</div>
 				</div>
@@ -51,7 +55,7 @@
 
 			<h1 class="text-center other-visuals">
 					
-					<span class="font-light">Nos matières </span><span class="font-bold">finishes</span>
+					<span class="font-light"><%= t("our_materials") %> </span><span class="font-bold"><%= t("finishes") %></span>
 				</h1>
 
 
@@ -64,13 +68,13 @@
 
 				<div class="col-md-6">
 					<div class="inside">
-					<h3><span class="number">01</span>Aluminium</h3>
-					<p>Votre photographie imprimée, recouverte par un film Ultra Gloss qui la protège de l'humidité et des rayons UV, est collée sur une plaque d'aluminium composite Dibond.
+					<h3><span class="number">01</span><%= t("aluminium") %></h3>
+					<p><%= t("alu_par_one") %>
 					<br>
-					Ce matiériau hors-norme issu de l'assemblage de deux plaques d'aluminium de quelques dixièmes de millimètres d'épaisseur confère à votre tirage d'étonnantes propriétés mécaniques, notamment sa légèreté et sa haute indéformabilité.
+					<%= t("alu_par_two") %>
 					<br>
 					<br>
-					Un cadre de suspension discret, facile à l'emploi et ultra-resistant est inclus pour assurer un accrochage parallèle au mur.
+					<%= t("alu_par_three") %>
 				</div>
 				</div>
 			</div>
@@ -78,13 +82,13 @@
 			<div class="row">
 				<div class="col-md-6 right-line plexi">
 					<div class="inside">
-					<h3><span class="number">02</span>Plexi</h3>
+					<h3><span class="number">02</span><%= t("plexi").titleize %></h3>
 
 					<p>
-						Votre visuel, collé sur une plaque d'aluminium composite Dibond, est recouvert par une plaque de verre acrylique plexi. Le tirage est parfaitement protégé et acquiert une profondeur, en meilleur contraste et l'intensité des couleurs est renforcée.
+						<%= t("plexi_par_one") %>
 						<br>
 						<br>
-						Un cadre de suspension discret, facile à l'emploi et ultra-resistant est inclus pour assurer un accrochage parallèle au mur.
+						<%= t("plexi_par_two") %>
 					</p>
 				</div>
 				</div>

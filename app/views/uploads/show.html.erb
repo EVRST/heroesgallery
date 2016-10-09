@@ -1,5 +1,4 @@
 <div class="row upload">
-<p id="notice"><%= notice %></p>
 
 <div class="container container-content">
 
@@ -9,7 +8,7 @@
     <%= image_tag "logo.png", size:"234x108", class: "pull-left" %>
   </div>
 
-    <p class="lead">Aperçu de votre photo</p>
+    <p class="lead"><%= t("preview") %></p>
     <%= image_tag @upload.image.url(:medium) %>
     <!--<br>
     <% if user_signed_in? %>
@@ -20,16 +19,16 @@
   </div>
 <div class="col-md-4 uploads-form text-center">
   <p class="lead">
-    Modifiez votre image
+    <%= t("edit_your_image") %>
     <hr></p>
   <p class="lead">  <small>
-    <u><strong>Format</strong> requis</u> : jpg | <u><strong>Taille</strong> min</u> : 2Mb</small>
+    <u><strong><%= t("format") %></strong> <%= t("required") %></u> : jpg | <u><strong><%= t("size") %></strong> <%= t("minimum") %></u> : 2Mb</small>
   </p>
 
    <%= render 'uploads/choose_gabarits' %>
 <% if @visual.gabarits.any? %>
-  <h4>Format</h4>
-      <small> <%= @visual.gabarits.last.name if @visual.gabarits.any? %></small>
+  <h4><%= t("format") %>
+      <br><small> <%= @visual.gabarits.last.name if @visual.gabarits.any? %></small>
             </h4>
 
          <%= render partial: "visuals/choose_dimensions", locals: {visual: @visual, order_item: @order_item} %>
@@ -37,7 +36,7 @@
 <% if @current_order_item && @current_order_item.dimension_id %>            
           <hr>
 
-            <h4>Finition</h4>
+            <h4><%= t("finitions") %></h4>
           <%= render partial: "visuals/chooser_finish", locals: {visual: @visual, order_item: @order_item} %>
 <% end %>
           

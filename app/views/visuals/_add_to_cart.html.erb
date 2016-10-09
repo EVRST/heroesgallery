@@ -19,7 +19,7 @@
 	    <%= f.submit "Add to Cart", class: "btn btn-primary btn-block" %>    
 	<% end %> -->
 	
-	<%= link_to "Remove from cart", @current_order_item, { data: { confirm: "Are you sure you wish to delete the product '#{@current_order_item.visual.name}' from your cart?" }, method: :delete, class: "btn btn-danger btn-transparent btn-block" } %>
+	<%= link_to t("remove_from_cart"), @current_order_item, { data: { confirm: "#{I18n.t("are_you_sure_remove")} '#{@current_order_item.visual.name}' #{I18n.t("from_your_card")}" }, method: :delete, class: "btn btn-danger btn-transparent btn-block" } %>
 
 <% else %>
 
@@ -37,7 +37,7 @@
 	    <%= f.hidden_field :unit_price, value: visual.price %>
 	    <%= f.hidden_field :visual_id, value: visual.id %>
 	    
-	    <%= f.submit "Add to Cart", class: "btn btn-primary btn-block" %>    
+	    <%= f.submit t("add_to_cart"), class: "btn btn-primary btn-block" %>    
 	<% end %>
 
 <% end %>

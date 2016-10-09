@@ -9,17 +9,26 @@
 				<div class="row">
 		    		<%= image_tag "logo.png", size:"234x108", class: "pull-left" %>
 		  		</div>
+
+		  		<p class="lead"><%= t("be_your_own_hero") %></p>
+<br>
+<p class="lead"><%= t("it_is_easy") %>
+
+<br>1.       <%= t("step_one") %>
+<br>2.       <%= t("step_two") %>
+<br>3.       <%= t("step_three") %>
+<br>4.       <%= t("step_four") %></p>
 		  
-		    	<p class="lead">Vous apercevrez votre photo ici</p>
+		    	
 			</div>
 
 			<div class="col-md-4 uploads-form text-center">
 			
 				<p class="lead">
-					Chargez votre image depuis votre périphérique local
+					<%= t("upload_your_image") %>
 					<hr></p>
 				<p class="lead">	<small>
-					<u><strong>Format</strong> requis</u> : jpg | <u><strong>Taille</strong> min</u> : 2Mb</small>
+					<u><strong><%= t("format") %></strong> <%= t("required") %></u> : jpg | <u><strong><%= t("size") %></strong> <%= t("minimum") %></u> : 2Mb</small>
 				</p>
 
 				<%= render 'form' %>

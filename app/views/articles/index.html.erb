@@ -3,7 +3,7 @@
   <div class="row">
     <div class='text-center'>
     <h2>
-      <span class="font-light">News</span>
+      <span class="font-light"><%= t("news") %></span>
       <% if user_signed_in? && current_user.is_admin %>
       <br>
       <small>
@@ -38,18 +38,18 @@
                 </div>
                 <div class="col-md-6 col-sm-6 right-article">
                   <h3>
-                    <%= article.title_fr %>
+                    <%= article.title %>
                     <% if user_signed_in? && current_user.is_admin %>
-                  <%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-transparent btn-xs pull-right" %>
+                  <%= link_to 'Supprimer', article, method: :delete, data: { confirm: 'Etes-vous sûr ?' }, class: "btn btn-danger btn-transparent btn-xs pull-right" %>
                 <% end %>
                     <br><small><i><%= article.created_at.strftime("%d/%m/%Y") %></i>
                     
                   </small>
                   </h3>
-                  <p><%= article.content_fr %></p>
+                  <p><%= article.content %></p>
 
                   <button type="button" class="btn btn-transparent btn-primary pull-right" data-toggle="modal" data-target="#article_<%= article.id %>">
-                    Voir tout l'article
+                    <%= t("see_article") %>
                   </button>
 
 

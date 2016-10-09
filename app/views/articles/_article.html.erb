@@ -8,21 +8,21 @@
                   
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">
-        	<%= article.title_fr %>
+        	<%= article.title %>
             <br><small><i><%= article.created_at %></i></small>
         </h4>
 
       </div>
       <div class="modal-body in-black">
-        <p><%= article.content_fr %></p>
+        <p><%= article.content %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><%= t("close") %></button>
 
         <% if user_signed_in? && current_user.is_admin %>
     
       <small>
-        <%= link_to "Modifier", edit_article_path(article), class: "btn btn-primary pull-right" %></small>
+        <%= link_to t("edit"), edit_article_path(article), class: "btn btn-primary pull-right" %></small>
 
       <% end %>
       </div>

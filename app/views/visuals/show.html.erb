@@ -9,7 +9,7 @@
         <div class="panel panel-default visual-cart">
           <div class="panel-body text-center">
             <h4>
-              Format
+              <%= t("format") %>
               <small> <%= @visual.gabarits.last.name if @visual.gabarits.any? %></small>
             </h4>
 
@@ -17,7 +17,7 @@
             
           <hr>
 
-            <h4>Finition</h4>
+            <h4><%= t("finitions") %></h4>
           <%= render partial: "visuals/chooser_finish", locals: {visual: @visual, order_item: @order_item} %>
           <hr>
             
@@ -50,14 +50,16 @@
           <div class="col-md-9">
             <h3>
               <%= @visual.name %>
+              <% if user_signed_in? && current_user.is_admin %>
               <%= link_to "Modifier", edit_visual_path(@visual), class: "btn btn-primary btn-xs" %>
+              <% end %>
             </h3>
             <h4><%= link_to @visual.artist.full_name, artist_path(@visual.artist) %></h4>
 
           </div>
           <div class='col-md-3 text-right'>
             <br>
-            <p class='lead'>à partir de <%= @visual.price %> €</p>
+            <p class='lead'><%= t("as_from") %> <%= @visual.price %> €</p>
           </div>
         </div>
         <p><%= @visual.presentation_fr %></p>
@@ -66,7 +68,7 @@
 
     <% if @visual.artist.visuals.count > 1 %>
     <div class="other-visuals">
-      <h1 class="text-center">Autres visuels de <%= @visual.artist.full_name %></h1>
+      <h1 class="text-center"><%= t("other_visuals_from") %> <%= @visual.artist.full_name %></h1>
 
       <%= render partial: "artists/artist_visuals", locals: {visuals: @visual.artist.visuals} %>
 

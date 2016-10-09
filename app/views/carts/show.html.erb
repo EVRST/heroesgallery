@@ -12,12 +12,12 @@
 		<div class="cart_subtotal">
 			
 				<p class="lead text-right">
-				Total : <span class="hg_color"><%= number_to_currency current_order.subtotal %></span></p>
+				<%= t("total") %> <span class="hg_color"><%= number_to_currency current_order.subtotal %></span></p>
 
 				<% if user_signed_in? %>
-					<%= link_to "Finaliser la commande", billing_path, class: "btn btn-primary btn-block" %>
+					<%= link_to t("finalize_order"), billing_path, class: "btn btn-primary btn-block" %>
 				<% else %>
-			<%= link_to "Finaliser la commande", new_user_registration_path, class: "btn btn-primary btn-block" %>
+			<%= link_to t("finalize_order"), new_user_registration_path, class: "btn btn-primary btn-block" %>
 			<% end %>
 		</div>
 		<% end %>

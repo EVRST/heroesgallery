@@ -5,16 +5,16 @@
 
   <div class="col-md-3">
     <div class="selector">
-  <h2><span class="hg_color font-bold">SELECTIONNEZ</span> <span class="font-light">PAR</span></h2>
+  <h2><span class="hg_color font-bold"><%= t("filter") %></span> <span class="font-light"><%= t("by") %></span></h2>
 
   <ul class="nav nav-pills nav-stacked">
-    <li><%= link_to "Tous", visuals_path %></li>
-    <li><%= link_to "Dessins", drawings_path %></li>
-    <li> <%= link_to "Photos", photos_path %></li>
-    <li class="active"><%= link_to "Artiste : #{@artist.full_name}", "" %></li>
+    <li><%= link_to t("all"), visuals_path %></li>
+    <li><%= link_to t("drawings"), drawings_path %></li>
+    <li> <%= link_to t("pictures"), photos_path %></li>
+    <li class="active"><%= link_to "#{I18n.t("artist")} : #{@artist.full_name}", "" %></li>
     <li role="presentation" class="dropdown">
 	    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-	      Autres artistes<span class="caret"></span>
+	      <%= t("other_artists") %><span class="caret"></span>
 	    </a>
 	    <ul class="dropdown-menu">
 	      <% @other_artists.each do |artist| %>
@@ -44,7 +44,7 @@
               
               <p>
             
-              à partir de <%= visual.price %> €</p>
+              <%= t("as_from") %> <%= visual.price %> €</p>
               
             </span>
           <% end %>

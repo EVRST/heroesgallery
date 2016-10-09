@@ -18,7 +18,7 @@
               <% unless visual.is_upload %>
                 <%= link_to visual.name, visual_path(visual) %>
               <% else %>
-                <i><%= link_to "Votre visuel personnalisé", upload_path(visual.upload) %></i>
+                <i><%= link_to t("your_own_visual"), upload_path(visual.upload) %></i>
               <% end %>
             </span>
             <br><small><span class="neutral_link">
@@ -31,7 +31,7 @@
           <p>
             <strong><%= number_to_currency order_item.price %></strong>
             <br><%= order_item.dimension.whole_name if order_item.dimension %></p>
-          <p><%= link_to "Supprimer", order_item, { data: { confirm: "Are you sure you wish to delete the product '#{order_item.visual.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger btn-xs btn-transparent" } %>
+          <p><%= link_to t("remove"), order_item, { data: { confirm: "#{I18n.t("are_you_sure_remove")} '#{order_item.visual.name}' #{I18n.t("from_your_card")}" }, method: :delete, remote: true, class: "btn btn-danger btn-xs btn-transparent" } %>
           </p>
         </div>
       </div>

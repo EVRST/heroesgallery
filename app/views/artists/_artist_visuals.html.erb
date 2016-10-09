@@ -18,11 +18,11 @@
               <h3>
                 <%= visual.name %>
                 <% if user_signed_in? && current_user.is_admin %>
-                  <%= link_to 'Delete', visual, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-transparent btn-xs pull-right" %>
+                  <%= link_to 'Supprimer', visual, method: :delete, data: { confirm: 'Etes-vous sûr ?' }, class: "btn btn-danger btn-transparent btn-xs pull-right" %>
                 <% end %>
               </h3>
               <p><%= truncate(visual.presentation, length: 500) %></p>
-              <h3><%= link_to 'Discover', visual, class: 'btn btn-primary btn-lg btn-transparent' %></h3>
+              <h3><%= link_to t('discover'), visual, class: 'btn btn-primary btn-lg btn-transparent' %></h3>
           </div>
             </div>
           </div>
@@ -39,11 +39,11 @@
               <h3>
                 <%= visual.name %>
                 <% if user_signed_in? && current_user.is_admin %>
-                  <%= link_to 'Delete', visual, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-transparent btn-xs pull-right" %>
+                  <%= link_to 'Supprimer', visual, method: :delete, data: { confirm: 'Etes-vous sûr ?' }, class: "btn btn-danger btn-transparent btn-xs pull-right" %>
                 <% end %>
               </h3>
               <p><%= truncate(visual.presentation, length: 500) %></p>
-              <h3><%= link_to 'Discover', visual, class: 'btn btn-primary btn-lg pull-right btn-transparent' %></h3>
+              <h3><%= link_to t('discover'), visual, class: 'btn btn-primary btn-lg pull-right btn-transparent' %></h3>
           </div>
             </div>
             <div class="col-md-6">

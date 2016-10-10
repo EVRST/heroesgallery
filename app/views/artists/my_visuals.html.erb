@@ -1,5 +1,5 @@
 <div class="row artists">
-<p id="notice"><%= notice %></p>
+
 
 <div class="container container-content">
 
@@ -33,6 +33,7 @@
 <div class="col-md-8 col-md-offset-1">
   <div class="row">
     <% @visuals.each do |visual| %>
+    <% if visual.dimensions.any? %>
       <div class="col-md-4">
 
         <div class="card_image">
@@ -59,6 +60,7 @@
 
 
       </div>
+      <% end %>
     <% end %>
   </div>
 

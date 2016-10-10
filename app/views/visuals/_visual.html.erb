@@ -1,10 +1,18 @@
+
+
 <% @visuals.each do |visual| %>
+
       <div class="col-md-4">
 
         <div class="card_image">
-          
+          <% if visual.dimensions.any? %>
+
           <%= link_to visual_path(visual) do %>
+
             <span class="card_caption" id="card_caption_<%= visual.id %>">
+              
+              
+
               <%= truncate(visual.artist.full_name, length: 15) %>
               <br>
               <br>
@@ -13,9 +21,38 @@
               <p><span class= "visual_name"><%= visual.name %></span>
             
               <br><%= t("as_from") %> <%= visual.price %> €</p>
+
+              
               
             </span>
           <% end %>
+
+          <% else %>
+                <% if user_signed_in? && current_user.is_admin %>
+
+                <span class="card_caption" id="card_caption_<%= visual.id %>">
+                   
+                  <%= link_to "Présicer le format", gabarits_visual_path(visual), class: "btn btn-danger" %>
+                </span>
+                <% else %>
+                <span class="card_caption" id="card_caption_<%= visual.id %>">
+              
+              
+
+              <%= truncate(visual.artist.full_name, length: 15) %>
+              <br>
+              <br>
+              <br>
+              
+              <p><span class= "visual_name"><%= visual.name %></span>
+            
+              <br><%= t("as_from") %> <%= visual.price %> €</p>
+
+              
+              
+            </span>
+                <% end %>
+              <% end %>
 
             <% if visual.miniature.blank? %>
             <%= image_tag visual.image.url(:thumb) %> 

@@ -10,7 +10,7 @@
                 
                 <% if @current_order_item.finish_id.blank? %>
                     <% if finish.id == 1 %>
-                    <%= f.submit "#{finish.name}", class: 'btn btn-primary btn-xs btn-block' %>
+                    <%= f.submit "#{finish.name}", class: 'btn btn-info btn-transparent btn-xs btn-block' %>
                     <% else %>
                     <%= f.submit "#{finish.name}", class: 'btn btn-info btn-transparent btn-xs btn-block' %>
                     <% end %>
@@ -36,7 +36,7 @@
                
                 <% if order_item.finish_id.blank? %>
                     <% if finish.id == 1 %>
-                    <%= f.submit "#{finish.name}", class: 'btn btn-primary btn-xs btn-block' %>
+                    <%= f.submit "#{finish.name}", class: 'btn btn-info btn-transparent btn-xs btn-block' %>
                     <% else %>
                     <%= f.submit "#{finish.name}", class: 'btn btn-info btn-transparent btn-xs btn-block' %>
                     <% end %>
@@ -52,5 +52,16 @@
         <% end %>
 
     <% end %>
+<% else %>
+
+    <% Finish.all.each do |finish| %>
+    <div class="col-md-6">
+    <button class= 'btn btn-info btn-transparent btn-xs btn-block'>
+        <%= finish.name %>
+    </button>
+    </div>
+   
+    <% end %>
+
 
 <% end %>

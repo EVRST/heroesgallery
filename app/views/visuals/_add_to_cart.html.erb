@@ -21,6 +21,17 @@
 	
 	<%= link_to t("remove_from_cart"), @current_order_item, { data: { confirm: "#{I18n.t("are_you_sure_remove")} '#{@current_order_item.visual.name}' #{I18n.t("from_your_card")}" }, method: :delete, class: "btn btn-danger btn-transparent btn-block" } %>
 
+
+	<div class="row">
+		<br>
+		<div class="col-md-6">
+			<%= link_to t("pursue"), visuals_path, class: "btn btn-xs btn-info btn-transparent btn-block" %>
+		</div>
+		<div class="col-md-6">
+			<%= link_to t("go_to_cart"), cart_path, class: "btn btn-xs btn-primary btn-transparent btn-block" %>
+		</div>
+	</div>
+
 <% else %>
 
 	<!-- achat direct avec les données de base point de vue dimensions et finitions -->

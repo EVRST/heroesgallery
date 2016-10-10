@@ -28,7 +28,7 @@ class VisualGabaritsController < ApplicationController
 
     respond_to do |format|
       if @visual_gabarit.save
-        format.html { redirect_to :back, notice: 'Visual gabarit was successfully created.' }
+        format.html { redirect_to visual_path(@visual_gabarit.visual), notice: 'Visual gabarit was successfully created.' }
         format.json { render :show, status: :created, location: @visual_gabarit }
       else
         format.html { render :new }

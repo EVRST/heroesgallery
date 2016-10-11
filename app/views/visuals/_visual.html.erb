@@ -2,7 +2,7 @@
 
 <% @visuals.each do |visual| %>
 
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-6">
 
         <div class="card_image">
           <% if visual.dimensions.any? %>
@@ -13,12 +13,10 @@
               
               
 
-              <%= truncate(visual.artist.full_name, length: 15) %>
-              <br>
-              <br>
-              <br>
+              <div class="visual_artist_name"><%= truncate(visual.artist.full_name, length: 15) %></div>
               
-              <p><span class= "visual_name"><%= visual.name %></span>
+              
+              <p><span class= "visual_name"><%= truncate(visual.name, length: 20) %></span>
             
               <br><%= t("as_from") %> <%= visual.price %> €</p>
 
@@ -32,17 +30,15 @@
 
                 <span class="card_caption" id="card_caption_<%= visual.id %>">
                    
-                  <%= link_to "Présicer le format", gabarits_visual_path(visual), class: "btn btn-danger" %>
+                  <%= link_to "Préciser le format", gabarits_visual_path(visual), class: "btn btn-danger" %>
                 </span>
                 <% else %>
                 <span class="card_caption" id="card_caption_<%= visual.id %>">
               
               
 
-              <%= truncate(visual.artist.full_name, length: 15) %>
-              <br>
-              <br>
-              <br>
+              <div class="visual_artist_name"><%= truncate(visual.artist.full_name, length: 15) %></div>
+              
               
               <p><span class= "visual_name"><%= visual.name %></span>
             

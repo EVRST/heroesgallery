@@ -103,6 +103,10 @@
 	text-decoration: none;
 }
 
+.visual_artist_name {
+	margin-bottom: 20px;
+}
+
 .visual_name {
 	color: black;
 }
@@ -112,11 +116,23 @@
 	margin: 10px auto;
 }
 
-@media (min-width: 959px) {
+@media (min-width: 1200px) {
   .selector {
 	position: fixed;
+  }
+
 }
+
+@media (max-width: 959px) {
+	.card_caption {
+  	  width: 70%;
+      height: 90%;
+      margin-top: 5%;
+      margin-left: 15%;
+    }
 }
+
+
 
 .visual-right-part {
 	background-color: rgba(0, 0, 0, 0.3);

@@ -10,6 +10,11 @@
 
     <p class="lead"><%= t("preview") %></p>
     <%= image_tag @upload.image.url(:medium) %>
+    <% if user_signed_in? && current_user.is_admin %>
+      <div class="text-center">
+        <%= link_to "voir l'image originale - #{@upload.size_in_mega} Mb", @upload.image.url, class: "hg_color" %>
+      </div>
+    <% end %>
     <!--<br>
     <% if user_signed_in? %>
       <%= link_to "Valider & envoyer la demande", user_path(current_user), class: "btn btn-transparent btn-primary btn-lg" %>

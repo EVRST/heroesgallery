@@ -8,4 +8,9 @@ class Upload < ActiveRecord::Base
 						      paysage: "435x680#", portrait: "680x435#", carre: "435x435#", pano: "340,680#"},
 					default_url: ":style/missing.png"
     validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
+    def size_in_mega
+    	(image_file_size.round(1) / 1000000).round(2)
+    end
+
 end

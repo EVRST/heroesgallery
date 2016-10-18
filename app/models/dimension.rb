@@ -31,51 +31,51 @@ class Dimension < ActiveRecord::Base
 		end
 	end
 
-	def price_paysage
-		if id == 4
-			795
-		elsif id == 3
-			300
-		elsif id == 2
-			225
-		else
-			135
+	def price_paysage #prix ttc
+		if id == 4 # impressionnant alu
+			695 #795
+		elsif id == 3 # étonnant alu
+			495 #300
+		elsif id == 2 # grand alu
+			355 #225
+		else # standard alu
+			255 #135
 		end
 	end
 
 	def price_paysage_plexi
-		if id == 4
-			1250
-		elsif id == 3
-			500
-		elsif id == 2
-			400
-		else
-			275
+		if id == 4 # impressionnant plexi
+			950 #1250
+		elsif id == 3 # étonnant plexi
+			750 #500
+		elsif id == 2 # grand plexi
+			545 #400
+		else # standard plexi
+			395 #275
 		end
 	end
 
 	def price_portrait
-		if id == 8
-			795
-		elsif id == 7
-			300
-		elsif id == 6
-			225
-		else
-			135
+		if id == 8 # impressionnant alu
+			695 #795
+		elsif id == 7 # étonnant alu
+			495 #300
+		elsif id == 6 # grand alu
+			355 #225
+		else # standard alu
+			255 #135
 		end
 	end
 
 	def price_portrait_plexi
-		if id == 8
-			1250
-		elsif id == 7
-			500
-		elsif id == 6
-			400
-		else
-			275
+		if id == 8 # impressionnant plexi
+			950 #1250
+		elsif id == 7 # étonnant plexi
+			750 #500
+		elsif id == 6 # grand plexi
+			545 #400
+		else # standard plexi
+			395 #275
 		end
 	end
 
@@ -100,22 +100,22 @@ class Dimension < ActiveRecord::Base
 	end
 
 	def price_pano
-		if id == 14
-			595
-		elsif id == 13
-			425
-		else
-			200
+		if id == 14 # impressionnant alu
+			635 #595
+		elsif id == 13 # étonnant alu
+			435 #425
+		else # grand alu
+			195 #200
 		end
 	end
 
 	def price_pano_plexi
-		if id == 14
-			950
-		elsif id == 13
-			675
-		else
-			350
+		if id == 14 # impressionnant plexi
+			975 #950
+		elsif id == 13 # étonnant plexi
+			675 #675
+		else # grand plexi
+			245 #350
 		end
 	end
 end

@@ -4,8 +4,8 @@ class UserMailer < ApplicationMailer
 	  	@purchase = purchase
 	    mail(
 	    	to: "michel.c.desmit@heroes-gallery.com",
-	    	cc: "quentin.Haerinck@heroes-gallery.com",
-	    	bcc: "didier.haerinck@marcelandco.com",
+	    	cc: "quentin.Haerinck@heroes-gallery.com, dev@heroes-gallery.com, didier.haerinck@marcelandco.com",
+	    	#bcc: "didier.haerinck@marcelandco.com",
 	    	subject: 'Nouvelle commande sur Heroes Gallery'
 	    	)
 	  end
@@ -25,8 +25,8 @@ class UserMailer < ApplicationMailer
 	  	@subscription = subscription
 	    mail(
 	    	to: "michel.c.desmit@heroes-gallery.com",
-	    	cc: "quentin.Haerinck@heroes-gallery.com",
-	    	bcc: "didier.haerinck@marcelandco.com",
+	    	cc: "quentin.Haerinck@heroes-gallery.com, dev@heroes-gallery.com, didier.haerinck@marcelandco.com",
+	    	#bcc: "didier.haerinck@marcelandco.com",
 	    	subject: 'Nouvel abonné à la newsletter'
 	    	)
 	  end

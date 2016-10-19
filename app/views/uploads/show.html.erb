@@ -48,7 +48,9 @@
 
 <% if @current_order_item && @current_order_item.dimension_id && @current_order_item.finish_id %>
 <hr>
-              <%= render partial: "visuals/add_to_cart", locals: {visual: @visual, order_item: @order_item} %>
+  <%= render partial: "visuals/add_to_cart", locals: {visual: @visual, order_item: @order_item} %>
+<% else %>
+  <%= render "uploads/add_to_cart_suggestion" %>
 <% end %>
 
 </div>

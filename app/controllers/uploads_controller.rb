@@ -19,6 +19,8 @@ class UploadsController < ApplicationController
 
     @gabarits = Gabarit.all
     @visual_gabarit = VisualGabarit.new
+
+    @default_upload_price = 155
   end
 
   # GET /uploads/new

@@ -36,7 +36,7 @@
       <br><small> <%= @visual.gabarits.last.name if @visual.gabarits.any? %></small>
             </h4>
 
-         <%= render partial: "visuals/choose_dimensions", locals: {visual: @visual, order_item: @order_item} %>
+      <%= render partial: "visuals/choose_dimensions", locals: {visual: @visual, order_item: @order_item} %>
 <% end %>
 <% if @current_order_item && @current_order_item.dimension_id %>            
           <hr>

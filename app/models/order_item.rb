@@ -22,9 +22,17 @@ class OrderItem < ActiveRecord::Base
 
   def price
     if finish_id == 2
-      dimension.price_plexi
+      if visual.is_upload
+        dimension.price_plexi_upload
+      else
+        dimension.price_plexi
+      end
     else
-      dimension.price
+      if visual.is_upload
+        dimension.price_upload 
+      else
+        dimension.price
+      end
     end
   end
 

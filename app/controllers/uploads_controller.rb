@@ -27,6 +27,8 @@ class UploadsController < ApplicationController
   def new
     @upload = Upload.new
     @upload_gabarit = UploadGabarit.new
+
+    @default_upload_price = 155
   end
 
   # GET /uploads/1/edit

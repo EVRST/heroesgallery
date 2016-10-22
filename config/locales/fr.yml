@@ -136,6 +136,8 @@ fr:
   pursue: "<< Poursuivre"
   go_to_cart: "Panier >>"
   partner: "Partenaire"
+  register: "Créer un compte"
+  login: "Vous avez déjà un compte ?  Connectez-vous"
 
 
 

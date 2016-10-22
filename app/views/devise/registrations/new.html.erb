@@ -26,7 +26,8 @@
           <div class="form-group">
             <%= f.password_field :password_confirmation, placeholder: "confirmation mot de passe", class: 'form-control' %>
           </div>
-           <%= f.submit 'Créer un compte', :class => 'btn btn-primary btn-block' %>
+           <%= f.submit t("register"), :class => 'btn btn-primary btn-block' %>
+           <%= link_to t("login"), new_user_session_path, class: 'btn btn-primary btn-block btn-transparent' %>
         <% end %>
         </div>
       </div>

@@ -157,3 +157,5 @@ en:
   pursue: "<< Continue"
   go_to_cart: "Cart >>"
   partner: "Partner"
+  register: "Create an account"
+  login: "Already have an account? Login"

@@ -5,11 +5,8 @@ Rails.application.routes.draw do
   resources :purchases
   resources :finishes
   get 'order_items/create'
-
   get 'order_items/update'
-
   get 'order_items/destroy'
-
   get 'carts/show'
 
 
@@ -41,6 +38,12 @@ Rails.application.routes.draw do
   resources :visuals do
     member do
       get 'gabarits'
+    end
+  end
+
+  resources :uploads do
+    member do 
+      get 'download'
     end
   end
 

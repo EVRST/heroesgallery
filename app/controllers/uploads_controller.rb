@@ -1,5 +1,5 @@
 class UploadsController < ApplicationController
-  before_action :set_upload, only: [:show, :edit, :update, :destroy]
+  before_action :set_upload, only: [:show, :edit, :update, :destroy, :download]
 
   # GET /uploads
   # GET /uploads.json
@@ -64,6 +64,11 @@ class UploadsController < ApplicationController
         format.json { render json: @upload.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def download
+    extension = File.extname(@upload.image_file_name)
+    send_data open("#{@upload.image.expiring_url(10000, :original)}").read, filename: "original_#{@upload.id}#{extension}", type: @upload.image_content_type
   end
 
   # DELETE /uploads/1

@@ -7,20 +7,29 @@
     <div class="row">
     <%= image_tag "logo.png", size:"234x108", class: "pull-left" %>
   </div>
+    <p class="lead">
 
-    <p class="lead"><%= t("preview") %></p>
+      <% if user_signed_in? && current_user.is_admin %>
+    <small>Vous pouvez voir ou télécharger l'image originale (<%= @upload.size_in_mega %> Mb)</small>
+      <% else %>
+        <%= t("preview") %>
+      <% end %>
+    </p>
     <%= image_tag @upload.image.url(:medium) %>
     <% if user_signed_in? && current_user.is_admin %>
-      <div class="text-center">
-        <%= link_to "voir l'image originale - #{@upload.size_in_mega} Mb", @upload.image.url, class: "hg_color" %>
+      <p>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2">
+          <%= link_to "Voir l'image originale", @upload.image.url, class: "btn btn-block btn-primary btn-sm", target: "_blank" %>
+        </div>
+        <div class="col-md-4">
+          <%= link_to "Télécharger l'image", download_upload_path(@upload), class: "btn btn-block btn-primary btn-transparent btn-sm" %>
+        </div>
+
       </div>
+    </p>
     <% end %>
-    <!--<br>
-    <% if user_signed_in? %>
-      <%= link_to "Valider & envoyer la demande", user_path(current_user), class: "btn btn-transparent btn-primary btn-lg" %>
-    <% else %>
-    <%= link_to "Valider & envoyer la demande", new_user_registration_path, class: "btn btn-transparent btn-primary btn-lg" %>
-    <% end %>-->
+    
   </div>
 <div class="col-md-4 uploads-form text-center">
   <p class="lead">

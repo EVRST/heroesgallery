@@ -68,7 +68,7 @@ class UploadsController < ApplicationController
 
   def download
     extension = File.extname(@upload.image_file_name)
-    send_data open("#{@upload.image.expiring_url(10000, :original)}").read, filename: "original_#{@upload.id}#{extension}", type: @upload.image_content_type
+    send_data open("#{@upload.image.expiring_url(10000, :original)}").read, filename: "original_#{@upload.id}#{extension}", type: @upload.image_content_type, :x_sendfile => true
   end
 
   # DELETE /uploads/1

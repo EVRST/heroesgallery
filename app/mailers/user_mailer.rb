@@ -3,7 +3,7 @@ class UserMailer < ApplicationMailer
 	def new_purchase(purchase)
 	  	@purchase = purchase
 	    mail(
-	    	to: "Michel.c.desmit@marcelandco.com, Didier.haerinck@marcelandco.com, Quentin.haerinck@marcelandco.com",
+	    	to: "michel.c.desmit@marcelandco.com, didier.haerinck@marcelandco.com, quentin.haerinck@marcelandco.com",
 	    	#to: "michel.c.desmit@heroes-gallery.com",
 	    	#cc: "quentin.Haerinck@heroes-gallery.com",
 	    	#bcc: "didier.haerinck@marcelandco.com",
@@ -25,7 +25,7 @@ class UserMailer < ApplicationMailer
 	  def new_subscription(subscription)
 	  	@subscription = subscription
 	    mail(
-	    	to: "Michel.c.desmit@marcelandco.com, Didier.haerinck@marcelandco.com, Quentin.haerinck@marcelandco.com",
+	    	to: "michel.c.desmit@marcelandco.com, didier.haerinck@marcelandco.com, quentin.haerinck@marcelandco.com",
 	    	#to: "michel.c.desmit@heroes-gallery.com",
 	    	#cc: "quentin.Haerinck@heroes-gallery.com",
 	    	#bcc: "didier.haerinck@marcelandco.com",

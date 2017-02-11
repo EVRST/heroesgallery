@@ -70,14 +70,18 @@ class CustomsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def custom_params
       params.require(:custom).permit(:home_text_fr, :home_text_nl, :home_text_en, 
+
                                       :concept_title_fr, :concept_title_nl, :concept_title_en,
                                       :concept_text_fr, :concept_text_nl, :concept_text_en,
+
                                       :step_one_title_fr, :step_one_title_nl, :step_one_title_en,
                                       :step_one_text_fr, :step_one_text_nl, :step_one_text_en,
+
                                       :step_two_title_fr, :step_two_title_nl, :step_two_title_en,
                                       :step_two_text_fr, :step_two_text_nl, :step_two_text_en,
+
                                       :step_three_title_fr, :step_three_title_nl, :step_three_title_en,
-                                      :step_three_text_fr, :step_one_three_nl, :step_three_text_en,
+                                      :step_three_text_fr, :step_three_text_nl, :step_three_text_en,
                                       :step_four_title_fr, :step_four_title_nl, :step_four_title_en,
                                       :step_four_text_fr, :step_four_text_nl, :step_four_text_en,
                                       :image_one, :image_two, :image_three, :image_four, :image_down)
